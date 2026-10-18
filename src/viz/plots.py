@@ -25,6 +25,12 @@ STRATEGY_COLORS = {
     "+ DDM": "#eda100",
     "+ ADWIN + accumulate": "#e87ba4",
 }
+IMBALANCE_COLORS = {
+    "no handling": "#2a78d6",
+    "class weights": "#eb6834",
+    "SMOTE": "#1baf7a",
+    "undersampling": "#eda100",
+}
 SINGLE_SERIES = STRATEGY_COLORS["base"]
 # DDM is drawn first and wider so that where it matches ADWIN exactly (same alarm batch) the
 # ADWIN line stays visible on top of it instead of being hidden
@@ -120,6 +126,54 @@ def plot_metric_over_time(results, out_path, metric="pr_auc", drift_batch=None, 
     fig.suptitle(title or f"{METRIC_LABELS.get(metric, metric)} over time{smooth_note}",
                  x=0.01, y=0.995, ha="left", va="top", fontsize=12, color=INK)
     fig.legend(handles, labels, loc="upper left", ncol=len(labels), fontsize=9,
+               bbox_to_anchor=(0.005, 1 - 0.3 / fig.get_figheight()))
+    fig.tight_layout(rect=(0, 0, 1, top))
+    fig.savefig(out_path)
+    plt.close(fig)
+    return out_path
+
+
+def plot_grouped_bars(summary, out_path, metrics, group="family", color_by="imbalance", row_by="strategy",
+                      colors=IMBALANCE_COLORS, title=None):
+    """Grid of grouped horizontal bar charts: one row per `row_by` value, one column per metric;
+    inside each panel, one group of bars per `group` value, one coloured bar per `color_by` level."""
+    _style()
+    rows = list(dict.fromkeys(summary[row_by]))
+    groups = list(dict.fromkeys(summary[group]))
+    levels = [c for c in colors if c in set(summary[color_by])]
+    slot = 0.8 / len(levels)
+    panel_h = 0.24 * len(groups) * len(levels) + 0.7
+    fig, axes = plt.subplots(len(rows), len(metrics), figsize=(5.4 * len(metrics), panel_h * len(rows) + 0.9),
+                             squeeze=False, sharey=True)
+
+    for i, row in enumerate(rows):
+        sub = summary[summary[row_by] == row]
+        for j, metric in enumerate(metrics):
+            ax = axes[i, j]
+            ax.set_axisbelow(True)
+            for g_i, g in enumerate(groups):
+                for l_i, level in enumerate(levels):
+                    value = sub.loc[(sub[group] == g) & (sub[color_by] == level), metric]
+                    if value.empty or value.isna().all():
+                        continue
+                    v = float(value.iloc[0])
+                    y = g_i + (l_i - (len(levels) - 1) / 2) * slot
+                    ax.barh(y, v, height=slot * 0.85, color=colors[level])
+                    ax.annotate(f"{v:.2f}", (v, y), xytext=(3, 0), textcoords="offset points",
+                                va="center", fontsize=8, color=INK_SECONDARY)
+            ax.set_yticks(range(len(groups)), groups)
+            ax.set_xlim(0, 1.1)
+            ax.grid(axis="y", visible=False)
+            ax.grid(axis="x", visible=True)
+            ax.tick_params(axis="y", length=0, labelcolor=INK_SECONDARY)
+            ax.set_title(f"{row}: {METRIC_LABELS.get(metric, metric)}", loc="left", fontsize=10)
+    # first group and first legend level on top; the y-axis is shared, so flip it exactly once
+    axes[0, 0].invert_yaxis()
+
+    handles = [plt.Rectangle((0, 0), 1, 1, color=colors[level]) for level in levels]
+    top = 1 - 0.55 / fig.get_figheight()
+    fig.suptitle(title or "", x=0.01, y=0.995, ha="left", va="top", fontsize=12, color=INK)
+    fig.legend(handles, levels, loc="upper left", ncol=len(levels), fontsize=9,
                bbox_to_anchor=(0.005, 1 - 0.3 / fig.get_figheight()))
     fig.tight_layout(rect=(0, 0, 1, top))
     fig.savefig(out_path)

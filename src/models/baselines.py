@@ -6,6 +6,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
+from src.imbalance.samplers import with_imbalance_handling
 from src.models.base import BaseDetector
 
 
@@ -35,21 +36,24 @@ class StaticModel(BaseDetector):
         return self.model.predict_proba(X)[:, 1]
 
 
-def make_logreg(seed=42):
-    return StaticModel("logreg", make_pipeline(
+def _static(name, estimator, imbalance, seed):
+    # class weights are the default, so those models keep their plain names
+    suffix = "" if imbalance == "weights" else f"_{imbalance}"
+    return StaticModel(name + suffix, with_imbalance_handling(estimator, imbalance, seed=seed))
+
+
+def make_logreg(seed=42, imbalance="weights"):
+    return _static("logreg", make_pipeline(
         StandardScaler(),
-        LogisticRegression(class_weight="balanced", max_iter=1000, random_state=seed),
-    ))
+        LogisticRegression(max_iter=1000, random_state=seed),
+    ), imbalance, seed)
 
 
-def make_random_forest(seed=42):
-    return StaticModel("random_forest", RandomForestClassifier(
-        n_estimators=200, min_samples_leaf=2, class_weight="balanced_subsample",
-        n_jobs=-1, random_state=seed,
-    ))
+def make_random_forest(seed=42, imbalance="weights"):
+    return _static("random_forest", RandomForestClassifier(
+        n_estimators=200, min_samples_leaf=2, n_jobs=-1, random_state=seed,
+    ), imbalance, seed)
 
 
-def make_gradient_boosting(seed=42):
-    return StaticModel("gradient_boosting", HistGradientBoostingClassifier(
-        class_weight="balanced", random_state=seed,
-    ))
+def make_gradient_boosting(seed=42, imbalance="weights"):
+    return _static("gradient_boosting", HistGradientBoostingClassifier(random_state=seed), imbalance, seed)

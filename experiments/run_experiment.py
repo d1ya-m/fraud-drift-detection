@@ -95,12 +95,8 @@ def summarise(results, drift_batch):
     return summary.reset_index()
 
 
-def main():
-    args = parse_args()
-    out = Path(args.out)
-    figures = out / "figures"
-    figures.mkdir(parents=True, exist_ok=True)
-
+def load_data(args):
+    """Return (df, tag, drift_batch). drift_batch is where the known drift falls, or None."""
     if args.data:
         df = load_dataset(args.data)
         tag = Path(args.data).stem
@@ -119,17 +115,34 @@ def main():
     n_batches = -(-len(df) // args.batch_size)
     print(f"{tag}: {len(df):,} rows, fraud rate {df['Class'].mean():.4f}, "
           f"{n_batches} batches of {args.batch_size}, ~{df['Class'].mean() * args.batch_size:.1f} frauds per batch")
+    return df, tag, drift_batch
+
+
+def evaluate(model, detector, df, args, **labels):
+    """Run one model down the stream; `labels` (family, strategy, ...) become extra columns."""
+    start = time.time()
+    res = prequential_eval(model, make_stream(df, args.batch_size), drift_detector=detector,
+                           precision_target=args.precision_target, warmup_batches=args.warmup_batches)
+    for column, value in labels.items():
+        res[column] = value
+    res["runtime_s"] = round(time.time() - start, 1)
+    print(f"  {res['model_name'][0]:36s} mean PR-AUC {res['pr_auc'].mean():.3f}   "
+          f"drift flags {res['drift_flag'].sum():2d}   {res['runtime_s'][0]:6.1f}s", flush=True)
+    return res
+
+
+def main():
+    args = parse_args()
+    out = Path(args.out)
+    figures = out / "figures"
+    figures.mkdir(parents=True, exist_ok=True)
+    df, tag, drift_batch = load_data(args)
 
     all_results = []
     for family, strategy, model, detector in build_runs(args):
-        start = time.time()
-        res = prequential_eval(model, make_stream(df, args.batch_size), drift_detector=detector,
-                               precision_target=args.precision_target, warmup_batches=args.warmup_batches)
-        res["family"], res["strategy"], res["runtime_s"] = family, strategy, round(time.time() - start, 1)
+        res = evaluate(model, detector, df, args, family=family, strategy=strategy)
         res.to_csv(out / f"{tag}_{res['model_name'][0]}.csv", index=False)
         all_results.append(res)
-        print(f"  {res['model_name'][0]:32s} mean PR-AUC {res['pr_auc'].mean():.3f}   "
-              f"drift flags {res['drift_flag'].sum():2d}   {res['runtime_s'][0]:6.1f}s", flush=True)
 
     results = pd.concat(all_results, ignore_index=True)
     summary = summarise(results, drift_batch)
