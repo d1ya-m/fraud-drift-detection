@@ -1,0 +1,22 @@
+model_name,family,strategy,mean_pr_auc,mean_recall_at_p,mean_fpr,n_drift_flags,runtime_s
+logreg,Logistic regression (static),base,0.42929184324607983,0.20265625888231253,3.720979341270947e-05,0,0.3
+logreg_retrain3,Logistic regression (static),periodic retrain,0.6551193074575917,0.43122797983909095,6.321161861897243e-05,0,2.1
+logreg+adwin,Logistic regression (static),+ ADWIN,0.42929184324607983,0.20265625888231253,3.720979341270947e-05,0,0.3
+logreg+ddm,Logistic regression (static),+ DDM,0.4444218120221464,0.16051731190620078,2.9752078964644955e-05,2,0.4
+logreg_acc6+adwin,Logistic regression (static),+ ADWIN + accumulate,0.42929184324607983,0.20265625888231253,3.720979341270947e-05,0,0.3
+random_forest,Random forest (static),base,0.75996891358603,0.6277485658232784,6.690445628507637e-05,0,2.3
+random_forest_retrain3,Random forest (static),periodic retrain,0.7597464199222311,0.6823579428943413,8.918505338148775e-05,0,30.2
+random_forest+adwin,Random forest (static),+ ADWIN,0.75996891358603,0.6277485658232784,6.690445628507637e-05,0,2.2
+random_forest+ddm,Random forest (static),+ DDM,0.6962354071051022,0.5802462774206069,6.692609430215737e-05,2,3.3
+random_forest_acc6+adwin,Random forest (static),+ ADWIN + accumulate,0.75996891358603,0.6277485658232784,6.690445628507637e-05,0,2.2
+gradient_boosting,Gradient boosting (static),base,0.5417423571713983,0.3602358493642019,3.344603111987906e-05,0,3.3
+gradient_boosting_retrain3,Gradient boosting (static),periodic retrain,0.6812928800698055,0.5315150898484231,6.690519865814702e-05,0,42.1
+gradient_boosting+adwin,Gradient boosting (static),+ ADWIN,0.5417423571713983,0.3602358493642019,3.344603111987906e-05,0,3.4
+gradient_boosting+ddm,Gradient boosting (static),+ DDM,0.5536528174572846,0.43094181963913764,5.208418598583879e-05,3,10.4
+gradient_boosting_acc6+adwin,Gradient boosting (static),+ ADWIN + accumulate,0.5417423571713983,0.3602358493642019,3.344603111987906e-05,0,3.4
+online_logreg,Logistic regression (online),base,0.6058771583917874,0.4255118143528105,6.321868318733884e-05,0,4.1
+online_logreg+adwin,Logistic regression (online),+ ADWIN,0.6058771583917874,0.4255118143528105,6.321868318733884e-05,0,4.2
+online_logreg+ddm,Logistic regression (online),+ DDM,0.5274528708034364,0.3396382955769929,5.578297343240497e-05,2,4.4
+online_arf,Adaptive random forest (online),base,0.7258271299080647,0.5740631140535355,7.063870582245124e-05,0,19.7
+online_arf+adwin,Adaptive random forest (online),+ ADWIN,0.7258271299080647,0.5740631140535355,7.063870582245124e-05,0,29.4
+online_arf+ddm,Adaptive random forest (online),+ DDM,0.6792926308667874,0.5169240774125832,6.321273229007931e-05,1,27.1
