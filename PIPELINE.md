@@ -1,5 +1,10 @@
 # Implementation Pipeline — Concept-Drift-Aware Credit-Card Fraud Detection
 
+> **Historical plan.** This was the original build plan. The code has since moved on: experiments warm up on
+> 6 batches (not 1), results in `results/` are committed (not git-ignored), SHAP and further experiments were
+> added, and `xgboost`/`lightgbm`/`seaborn` were dropped as unused. For the current state, decisions and
+> remaining work, see [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md).
+
 A single, follow-along guide: create the repo, get the data, set up the environment, build the pipeline in the right order, run it, test it, and push. Pure classical ML (scikit-learn, River, imbalanced-learn) — no deep learning.
 
 The guiding principle: **the pipeline runs on a built-in synthetic stream from day one**, so you can build and test every module before downloading anything. Real datasets (ULB, then IEEE-CIS) slot in behind the same loader interface later, changing nothing else.

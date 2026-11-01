@@ -1,0 +1,97 @@
+scenario,role,family,a,b,mean,lo,hi,n_batches,significant
+drift40,fresh (independent),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,17,False
+drift40,fresh (independent),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.009419357607713234,-0.16078068236738027,0.10058461743175989,17,False
+drift40,fresh (independent),Logistic regression (static),+ ADWIN + accumulate,periodic retrain,-0.009419357607713234,-0.10058461743175992,0.16078068236738027,17,False
+drift40,fresh (independent),Random forest (static),periodic + ADWIN reset,periodic retrain,-0.01124035935911378,-0.03356128553782848,0.004417752647178118,17,False
+drift40,fresh (independent),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.0513241730700227,-0.002523383971780817,0.13513835148472042,17,False
+drift40,fresh (independent),Random forest (static),+ ADWIN + accumulate,periodic retrain,-0.06256453242913647,-0.14200328483788105,0.000340944258457412,17,False
+drift40,fresh (independent),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,-0.01864021450173112,-0.07883712567982011,0.020630087471199158,17,False
+drift40,fresh (independent),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.0539917211409278,-0.009830539218444463,0.1278598873922435,17,False
+drift40,fresh (independent),Gradient boosting (static),+ ADWIN + accumulate,periodic retrain,-0.0726319356426589,-0.14735925893906401,-0.0060913707891459635,17,True
+drift60_k3,fresh (independent),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,11,False
+drift60_k3,fresh (independent),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.38706203110455367,0.3203883730705523,0.4593747375220694,11,True
+drift60_k3,fresh (independent),Logistic regression (static),+ ADWIN + accumulate,periodic retrain,-0.38706203110455367,-0.4593747375220694,-0.3203883730705523,11,True
+drift60_k3,fresh (independent),Random forest (static),periodic + ADWIN reset,periodic retrain,-0.004759868260029473,-0.00862587511160849,-0.000627487619080501,11,True
+drift60_k3,fresh (independent),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.16242170374201262,-0.005545712313249869,0.3735611720754317,11,False
+drift60_k3,fresh (independent),Random forest (static),+ ADWIN + accumulate,periodic retrain,-0.16718157200204206,-0.3770603537332875,0.001669136513238422,11,False
+drift60_k3,fresh (independent),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,11,False
+drift60_k3,fresh (independent),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.14660627191095416,-0.0165776650447066,0.361883141061084,11,False
+drift60_k3,fresh (independent),Gradient boosting (static),+ ADWIN + accumulate,periodic retrain,-0.14660627191095416,-0.36188314106108466,0.016577665044706577,11,False
+rand2_at35,fresh (independent),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,19,False
+rand2_at35,fresh (independent),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.29765018960967227,0.19307823679140534,0.4072451093425383,19,True
+rand2_at35,fresh (independent),Logistic regression (static),+ ADWIN + accumulate,periodic retrain,-0.29765018960967227,-0.4072451093425383,-0.19307823679140534,19,True
+rand2_at35,fresh (independent),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,19,False
+rand2_at35,fresh (independent),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.0018519743091655828,-0.01370140944481131,0.018026969551253054,19,False
+rand2_at35,fresh (independent),Random forest (static),+ ADWIN + accumulate,periodic retrain,-0.0018519743091655828,-0.01802696955125306,0.013701409444811305,19,False
+rand2_at35,fresh (independent),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,19,False
+rand2_at35,fresh (independent),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.18170334879016498,0.1406872977261114,0.25024242040302974,19,True
+rand2_at35,fresh (independent),Gradient boosting (static),+ ADWIN + accumulate,periodic retrain,-0.18170334879016498,-0.2502424204030298,-0.14068729772611144,19,True
+gradual_late,fresh (independent),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,13,False
+gradual_late,fresh (independent),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,-0.01675286414438156,-0.12333765620187648,0.17707991555615785,13,False
+gradual_late,fresh (independent),Logistic regression (static),+ ADWIN + accumulate,periodic retrain,0.01675286414438156,-0.17707991555615785,0.12333765620187633,13,False
+gradual_late,fresh (independent),Random forest (static),periodic + ADWIN reset,periodic retrain,-0.002313121251333926,-0.006051273786160761,-6.202286378608743e-05,13,True
+gradual_late,fresh (independent),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.14421270491689336,0.003845689702216356,0.37732503212498114,13,True
+gradual_late,fresh (independent),Random forest (static),+ ADWIN + accumulate,periodic retrain,-0.1465258261682273,-0.3792615323450719,-0.007455077276780762,13,True
+gradual_late,fresh (independent),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,13,False
+gradual_late,fresh (independent),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.10523862126756363,-0.013678953107891903,0.335493773577706,13,False
+gradual_late,fresh (independent),Gradient boosting (static),+ ADWIN + accumulate,periodic retrain,-0.10523862126756363,-0.3354937735777061,0.013678953107891897,13,False
+dev,existing development (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+dev,existing development (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,-0.07118033444410442,-0.22553607651719992,0.007807210785631895,14,False
+dev,existing development (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+dev,existing development (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.040939589578750386,0.002764480425599022,0.06580307690560833,14,True
+dev,existing development (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+dev,existing development (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.03568895890850909,-0.05814203867999333,0.0973968759692133,14,False
+drift30,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,20,False
+drift30,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.008920916067513707,-0.12748337183776862,0.12231712619306538,20,False
+drift30,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,20,False
+drift30,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.1020702429434303,0.00023421521580427738,0.21659884455481995,20,True
+drift30,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,20,False
+drift30,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.11474353291150348,-0.018230935712257673,0.25561434667376315,20,False
+drift70,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,9,False
+drift70,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.005030348236401589,-0.09170698632168268,0.13363472717440467,9,False
+drift70,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,9,False
+drift70,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.12770294909958022,-0.010677814762321831,0.33412332702346376,9,False
+drift70,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,9,False
+drift70,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.11283706719701023,-0.07544154351076143,0.3566406866258149,9,False
+k2,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+k2,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.29040795233058125,0.12059624131213023,0.4480200146029166,14,True
+k2,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+k2,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.03362924426521895,0.005840249226389581,0.06753962449736907,14,True
+k2,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+k2,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.04449956395712298,-0.0350165200908875,0.09806217634678621,14,False
+k6,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+k6,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.3907960537569419,0.14552268839546367,0.6090053417118642,14,True
+k6,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+k6,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.05777241077250495,-0.0007369662637417803,0.08802030244437632,14,False
+k6,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+k6,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.01915313413397688,-0.07934217222259364,0.0749180079883845,14,False
+random_pairs,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+random_pairs,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,-0.06619618838947405,-0.17433710296366,0.019471788899137074,14,False
+random_pairs,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+random_pairs,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,-0.008319815717918526,-0.02887434934054919,0.011705531128753664,14,False
+random_pairs,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,14,False
+random_pairs,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.034669209833143866,-0.023019356735610754,0.10342397875434794,14,False
+gradual,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,17,False
+gradual,existing held-out (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.02002167517572359,-0.07262520131612396,0.1248337999809075,17,False
+gradual,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,17,False
+gradual,existing held-out (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.13365599763864555,-0.004171896490638747,0.3678133406597781,17,False
+gradual,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,17,False
+gradual,existing held-out (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.14595249483513525,0.020382288989039467,0.3312240723505933,17,True
+delay1,existing label delay (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.12151859023908494,0.03578648331316919,0.2561894579393526,14,True
+delay1,existing label delay (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.025007586430334728,0.0,0.03690685530949778,14,False
+delay1,existing label delay (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0018913901094913255,-0.00817899329702258,0.012817832894397517,14,False
+delay1,existing label delay (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.0408302897775746,0.0,0.1277920992246517,14,False
+delay1,existing label delay (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.039539249937086386,0.001191744013285177,0.09140070193331987,14,True
+delay1,existing label delay (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.06567857005992885,-0.007953058189560349,0.20779468021402345,14,False
+delay3,existing label delay (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.09884209823608202,-0.00022658876908794392,0.23822617571996266,14,False
+delay3,existing label delay (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.0230172371261294,-0.0007889595588629556,0.03769419895758812,14,False
+delay3,existing label delay (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,-0.009962919107524936,-0.03351060724063603,0.004156078768234951,14,False
+delay3,existing label delay (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.01899142907556969,-0.041560508571105874,0.1179387796544361,14,False
+delay3,existing label delay (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.008585942964463704,-0.05688824909003744,0.08467326148684041,14,False
+delay3,existing label delay (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.018997566135511852,-0.009685604482934243,0.07683831371212992,14,False
+synthetic,existing development (development for the fix),Logistic regression (static),periodic + ADWIN reset,periodic retrain,0.17391587097835107,0.018345744958792865,0.361341366673084,12,True
+synthetic,existing development (development for the fix),Logistic regression (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.0012637343830746897,-0.00584218748077638,0.003198243499405283,12,False
+synthetic,existing development (development for the fix),Random forest (static),periodic + ADWIN reset,periodic retrain,0.0,0.0,0.0,12,False
+synthetic,existing development (development for the fix),Random forest (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.20384235709631135,0.012167753331344566,0.5170263473310833,12,True
+synthetic,existing development (development for the fix),Gradient boosting (static),periodic + ADWIN reset,periodic retrain,0.0027968638049228056,-0.01977071888711036,0.03193573965611556,12,False
+synthetic,existing development (development for the fix),Gradient boosting (static),periodic + ADWIN reset,+ ADWIN + accumulate,0.0033897512770675684,-0.0006685193530097862,0.00749838537187697,12,False

@@ -1,649 +1,553 @@
-model_name,batch_idx,n,n_fraud,pr_auc,roc_auc,recall_at_p,fpr,threshold,drift_flag,strategy,family,imbalance,runtime_s
-logreg_none,2,10000,9,0.3120383418019017,0.9640899031350437,0.2222222222222222,0.0,0.17130029976111488,0,base,Logistic regression,no handling,1.2
-logreg_none,3,10000,10,0.366481126230356,0.9556556556556557,0.2,0.0,0.6632671877206786,0,base,Logistic regression,no handling,1.2
-logreg_none,4,10000,44,0.8058528795542794,0.9821464443551627,0.6590909090909091,0.0003013258336681398,0.5232926252223568,0,base,Logistic regression,no handling,1.2
-logreg_none,5,10000,15,0.016398338087834977,0.8546619929894842,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,6,10000,12,0.14555275407373794,0.9260863035642771,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,7,10000,21,0.23155992128701203,0.9082120071197133,0.047619047619047616,0.0,0.9601014579217914,0,base,Logistic regression,no handling,1.2
-logreg_none,8,10000,15,0.23674328518424922,0.974588549490903,0.06666666666666667,0.0,0.9091950996084733,0,base,Logistic regression,no handling,1.2
-logreg_none,9,10000,12,0.20342224470243955,0.8300210252302762,0.08333333333333333,0.0,0.8382447781338619,0,base,Logistic regression,no handling,1.2
-logreg_none,10,10000,16,0.13169218301955268,0.8289951422275642,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,11,10000,8,0.010510748688667684,0.7425440352281825,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,12,10000,14,0.21112969519313132,0.9879688707047009,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,13,10000,3,0.03832297665137564,0.8518889000033343,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,14,10000,29,0.2065249661642955,0.8867128465653844,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,15,10000,63,0.7577980653310462,0.9718017158894687,0.6666666666666666,0.00040253597665291336,0.9834609818991994,0,base,Logistic regression,no handling,1.2
-logreg_none,16,10000,4,0.09063925785744324,0.975765306122449,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,17,10000,4,0.25232320558743676,0.8543167266906763,0.25,0.0,0.9998301101166048,0,base,Logistic regression,no handling,1.2
-logreg_none,18,10000,7,0.07767353310895897,0.9343540478334834,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,19,10000,14,0.08488294608278286,0.8473291179079283,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,20,10000,9,0.041590407529705,0.8654344465574572,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,21,10000,12,0.006487010558433851,0.8271175410492592,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,22,10000,13,0.12948119790348706,0.9608491038349855,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,23,10000,18,0.15514307266526628,0.9016785769941451,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,24,10000,21,0.41730079767522693,0.906436850719845,0.2857142857142857,0.0,0.9986234751600198,0,base,Logistic regression,no handling,1.2
-logreg_none,25,10000,13,0.26619562087606335,0.9198265437376281,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,26,10000,10,0.14780720352490148,0.9361161161161161,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,27,10000,7,0.003734250359806194,0.69335677831625,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none,28,4807,4,0.008285323915705496,0.751665625650635,0.0,0.0,inf,0,base,Logistic regression,no handling,1.2
-logreg_none_acc6+adwin,2,10000,9,0.3120383418019017,0.9640899031350437,0.2222222222222222,0.0,0.17130029976111488,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,3,10000,10,0.366481126230356,0.9556556556556557,0.2,0.0,0.6632671877206786,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,4,10000,44,0.8058528795542794,0.9821464443551627,0.6590909090909091,0.0003013258336681398,0.5232926252223568,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,5,10000,15,0.016398338087834977,0.8546619929894842,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,6,10000,12,0.14555275407373794,0.9260863035642771,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,7,10000,21,0.23155992128701203,0.9082120071197133,0.047619047619047616,0.0,0.9601014579217914,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,8,10000,15,0.23674328518424922,0.974588549490903,0.06666666666666667,0.0,0.9091950996084733,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,9,10000,12,0.20342224470243955,0.8300210252302762,0.08333333333333333,0.0,0.8382447781338619,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,10,10000,16,0.13169218301955268,0.8289951422275642,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,11,10000,8,0.010510748688667684,0.7425440352281825,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,12,10000,14,0.21112969519313132,0.9879688707047009,0.0,0.0,inf,1,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,13,10000,3,0.3356016830918436,0.6890733886832716,0.3333333333333333,0.0,0.8420916114937927,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,14,10000,29,0.1820150196934193,0.775424593389796,0.1724137931034483,0.0,0.9999419232386665,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,15,10000,63,0.9268768556173117,0.9919412936420081,0.8888888888888888,0.00060380396497937,0.533917037803919,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,16,10000,4,0.8928571428571428,0.9999249699879953,0.75,0.0,0.7085161808624882,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,17,10000,4,0.26623393096523695,0.8796518607442978,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,18,10000,7,0.4470663265306122,0.9991708481651442,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,19,10000,14,0.624459394576292,0.8794884266544591,0.42857142857142855,0.0,0.9879664026952337,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,20,10000,9,0.8344692132048455,0.9806937354730367,0.6666666666666666,0.0,0.6221168247432918,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,21,10000,12,0.6945322411762485,0.9008476838873314,0.5833333333333334,0.0,0.6705907760518007,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,22,10000,13,0.7258000304040375,0.9945621615792839,0.07692307692307693,0.0,0.9997067653936957,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,23,10000,18,0.7657927378579552,0.9902769429417395,0.7777777777777778,0.00010018032458425165,0.09172774843555553,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,24,10000,21,0.7959576204896602,0.9915059720651463,0.6666666666666666,0.0001002104419280489,0.35725510218261236,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,25,10000,13,0.7649703172615315,0.9790573899916045,0.6923076923076923,0.00010013016921998598,0.5947445215988999,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,26,10000,10,0.7133278978942705,0.994974974974975,0.4,0.0,0.9874053163373135,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,27,10000,7,0.31979190051631257,0.8166430787265371,0.2857142857142857,0.0,0.3380401085405801,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg_none_acc6+adwin,28,4807,4,0.48355263157894735,0.9881844680408078,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,no handling,2.2
-logreg,2,10000,9,0.4260495557218638,0.9513450994784195,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,3,10000,10,0.6196027583323732,0.9837237237237237,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,4,10000,44,0.9235910212207925,0.9988289382373352,0.8863636363636364,0.0004017677782241864,0.9995568284118185,0,base,Logistic regression,class weights,1.2
-logreg,5,10000,15,0.21867065810470665,0.9139642797529628,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,6,10000,12,0.45467415335415756,0.970556334267788,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,7,10000,21,0.6626416681630862,0.9505628486488292,0.2857142857142857,0.0,0.999999639684442,0,base,Logistic regression,class weights,1.2
-logreg,8,10000,15,0.8011665832851284,0.9970555833750625,0.6,0.00010015022533800701,0.9947116487439117,0,base,Logistic regression,class weights,1.2
-logreg,9,10000,12,0.32107027032666174,0.8626852222667201,0.08333333333333333,0.0,0.9999999088565964,0,base,Logistic regression,class weights,1.2
-logreg,10,10000,16,0.2933362112979682,0.8758889222756411,0.125,0.0,0.9999349412613323,0,base,Logistic regression,class weights,1.2
-logreg,11,10000,8,0.15311486948263403,0.8269615692554043,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,12,10000,14,0.6360865828412394,0.994449371977912,0.35714285714285715,0.0,0.9999994520702877,0,base,Logistic regression,class weights,1.2
-logreg,13,10000,3,0.3334775710370691,0.7688306491947583,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,14,10000,29,0.1718096082579525,0.5751714454677185,0.13793103448275862,0.0,0.9999999966034268,0,base,Logistic regression,class weights,1.2
-logreg,15,10000,63,0.0349861455063221,0.5392240959313517,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,16,10000,4,0.00047808093826543505,0.48199279711884757,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,17,10000,4,0.0014162047684846903,0.5459183673469388,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,18,10000,7,0.0018900991520869519,0.5300567540135237,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,19,10000,14,0.0034924155747130727,0.6963892306371777,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,20,10000,9,0.0014813279107047533,0.4977924576563352,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,21,10000,12,0.001721055047123433,0.4117274062207983,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,22,10000,13,0.006690717762856001,0.6306352103888901,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,23,10000,18,0.007029245887210838,0.7257007057147309,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,24,10000,21,0.01491601628860018,0.7271078789266985,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,25,10000,13,0.012869709693848286,0.8298326285709884,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,26,10000,10,0.0030940724446883667,0.6361961961961962,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,27,10000,7,0.0010776999500459465,0.4095438235336164,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg,28,4807,4,0.0007601662443615234,0.34816781178430145,0.0,0.0,inf,0,base,Logistic regression,class weights,1.2
-logreg_acc6+adwin,2,10000,9,0.4260495557218638,0.9513450994784195,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,3,10000,10,0.6196027583323732,0.9837237237237237,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,4,10000,44,0.9235910212207925,0.9988289382373352,0.8863636363636364,0.0004017677782241864,0.9995568284118185,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,5,10000,15,0.21867065810470665,0.9139642797529628,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,6,10000,12,0.45467415335415756,0.970556334267788,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,7,10000,21,0.6626416681630862,0.9505628486488292,0.2857142857142857,0.0,0.999999639684442,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,8,10000,15,0.8011665832851284,0.9970555833750625,0.6,0.00010015022533800701,0.9947116487439117,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,9,10000,12,0.32107027032666174,0.8626852222667201,0.08333333333333333,0.0,0.9999999088565964,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,10,10000,16,0.2933362112979682,0.8758889222756411,0.125,0.0,0.9999349412613323,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,11,10000,8,0.15311486948263403,0.8269615692554043,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,12,10000,14,0.6360865828412394,0.994449371977912,0.35714285714285715,0.0,0.9999994520702877,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,13,10000,3,0.3334775710370691,0.7688306491947583,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,14,10000,29,0.1718096082579525,0.5751714454677185,0.13793103448275862,0.0,0.9999999966034268,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,15,10000,63,0.0349861455063221,0.5392240959313517,0.0,0.0,inf,1,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,16,10000,4,0.6083333333333333,0.9998499399759904,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,17,10000,4,0.4575716736094094,0.9416016406562624,0.25,0.0,1.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,18,10000,7,0.20819570290707215,0.9687495532587097,0.14285714285714285,0.0,0.9999999989088773,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,19,10000,14,0.6242088132127422,0.9375911991073217,0.5714285714285714,0.0,0.9999976642678816,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,20,10000,9,0.8901676612674057,0.9914033741478441,0.8888888888888888,0.0,0.9999998872925944,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,21,10000,12,0.6846566368183378,0.9160325724202376,0.5833333333333334,0.0,0.9999991143296131,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,22,10000,13,0.5859851349729892,0.9979819919741819,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,23,10000,18,0.8187758130339996,0.9948741067254391,0.7222222222222222,0.00010018032458425165,0.9999998306086115,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,24,10000,21,0.8041063822733029,0.9701611479344718,0.6190476190476191,0.0001002104419280489,0.9999987175000572,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,25,10000,13,0.7085489744958348,0.9868367339079265,0.6923076923076923,0.00010013016921998598,0.9999987213848994,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,26,10000,10,0.8987719298245616,0.9989489489489489,0.9,0.0001001001001001001,0.9998781965473132,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,27,10000,7,0.24537240188327508,0.6430501350945661,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_acc6+adwin,28,4807,4,0.4825564971751412,0.9846970643347908,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
-logreg_smote,2,10000,9,0.28347243243261083,0.9640899031350438,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,3,10000,10,0.6011593220669444,0.9828528528528528,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,4,10000,44,0.9041626714944302,0.9963087585375653,0.8863636363636364,0.0004017677782241864,0.9861471553462035,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,5,10000,15,0.15880771628807647,0.9056718410949759,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,6,10000,12,0.4660383432709695,0.9649996662661862,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,7,10000,21,0.3912975276533214,0.937888613707834,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,8,10000,15,0.6805968900941562,0.9963077950258722,0.4,0.0,0.9990981339956727,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,9,10000,12,0.2618961138533147,0.8510963155786944,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,10,10000,16,0.18002164822669756,0.8638133513621795,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,11,10000,8,0.08412120008727683,0.8142263811048838,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,12,10000,14,0.4848817592756949,0.9952004234499727,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,13,10000,3,0.24459655883446574,0.7807342202660797,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,14,10000,29,0.1265857663083445,0.805830010478664,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,15,10000,63,0.280479079920135,0.7712461523470882,0.12698412698412698,0.0,0.9999996762659453,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,16,10000,4,0.002488980824777775,0.8701480592236894,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,17,10000,4,0.05067848249609597,0.7229641856742698,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,18,10000,7,0.007329893980297692,0.7324126888822176,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,19,10000,14,0.006711788828294148,0.8063145546622414,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,20,10000,9,0.0034628909918877943,0.693568656235056,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,21,10000,12,0.0029453042138675835,0.6594997330129488,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,22,10000,13,0.03373158939477327,0.7967049472005916,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,23,10000,18,0.018535779924474756,0.8621963979607739,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,24,10000,21,0.2023898538578945,0.8479044087822523,0.047619047619047616,0.0,0.9999918453479871,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,25,10000,13,0.03502512447217178,0.8683750413999738,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,26,10000,10,0.018354809316564847,0.835105105105105,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,27,10000,7,0.0014120735729498239,0.5567039784992351,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote,28,4807,4,0.0018734960208491754,0.6361648969394128,0.0,0.0,inf,0,base,Logistic regression,SMOTE,1.3
-logreg_smote_acc6+adwin,2,10000,9,0.28347243243261083,0.9640899031350438,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,3,10000,10,0.6011593220669444,0.9828528528528528,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,4,10000,44,0.9041626714944302,0.9963087585375653,0.8863636363636364,0.0004017677782241864,0.9861471553462035,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,5,10000,15,0.15880771628807647,0.9056718410949759,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,6,10000,12,0.4660383432709695,0.9649996662661862,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,7,10000,21,0.3912975276533214,0.937888613707834,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,8,10000,15,0.6805968900941562,0.9963077950258722,0.4,0.0,0.9990981339956727,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,9,10000,12,0.2618961138533147,0.8510963155786944,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,10,10000,16,0.18002164822669756,0.8638133513621795,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,11,10000,8,0.08412120008727683,0.8142263811048838,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,12,10000,14,0.4848817592756949,0.9952004234499727,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,13,10000,3,0.24459655883446574,0.7807342202660797,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,14,10000,29,0.1265857663083445,0.805830010478664,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,15,10000,63,0.280479079920135,0.7712461523470882,0.12698412698412698,0.0,0.9999996762659453,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,16,10000,4,0.002488980824777775,0.8701480592236894,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,17,10000,4,0.05067848249609597,0.7229641856742698,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,18,10000,7,0.007329893980297692,0.7324126888822176,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,19,10000,14,0.006711788828294148,0.8063145546622414,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,20,10000,9,0.0034628909918877943,0.693568656235056,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,21,10000,12,0.0029453042138675835,0.6594997330129488,0.0,0.0,inf,1,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,22,10000,13,0.8744128181717852,0.9730957937626608,0.8461538461538461,0.00010013016921998598,0.999848247403317,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,23,10000,18,0.7252649906385388,0.9179578797390859,0.7222222222222222,0.00010018032458425165,0.9999688645737015,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,24,10000,21,0.8048353416501854,0.8791939262928339,0.7619047619047619,0.0001002104419280489,0.9999556341919321,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,25,10000,13,0.7771515616091229,0.9845876562608314,0.6923076923076923,0.00010013016921998598,0.9972673435100959,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,26,10000,10,0.903448275862069,0.9971971971971973,0.9,0.0001001001001001001,0.9999763623015668,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,27,10000,7,0.18925243479237672,0.7298680504924877,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_smote_acc6+adwin,28,4807,4,0.7533898305084745,0.9848532167395379,0.75,0.0,1.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,3.9
-logreg_undersample,2,10000,9,0.2831952892505233,0.9662696426784105,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,3,10000,10,0.5204038432275663,0.9935535535535536,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,4,10000,44,0.913096986000685,0.9995092041345557,0.6590909090909091,0.0003013258336681398,0.9999999966520994,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,5,10000,15,0.1725566174810788,0.9100984810549158,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,6,10000,12,0.332064432636583,0.9389934588172473,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,7,10000,21,0.6881789350319625,0.9833078035302707,0.38095238095238093,0.0,0.9999999933361097,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,8,10000,15,0.6697666025657911,0.9988249040227006,0.13333333333333333,0.0,0.9999983831520364,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,9,10000,12,0.2691724802057558,0.8271258843946069,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,10,10000,16,0.6479107525504795,0.9093361879006411,0.375,0.0,0.9999999999949687,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,11,10000,8,0.31136107304468214,0.8198558847077662,0.125,0.0,0.9999981660074333,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,12,10000,14,0.6373830774279269,0.9972962147005808,0.35714285714285715,0.0,0.9999981963092434,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,13,10000,3,0.1502368545712932,0.8589576873061918,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,14,10000,29,0.18475412718774253,0.8417099242977049,0.1724137931034483,0.0,0.999999339833757,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,15,10000,63,0.5661161204382831,0.9487181944664081,0.30158730158730157,0.00020126798832645668,0.9999999688967093,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,16,10000,4,0.0022677108737457685,0.8325080032012806,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,17,10000,4,0.01891230182620911,0.8052721088435374,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,18,10000,7,0.007988484362223845,0.739346113708167,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,19,10000,14,0.004154253714285063,0.6539512460301565,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,20,10000,9,0.0027037599483290342,0.6815244831459425,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,21,10000,12,0.0038585487921850427,0.7845915098117741,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,22,10000,13,0.014740662626653413,0.8668884935030925,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,23,10000,18,0.010944627931428912,0.7641142946192034,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,24,10000,21,0.018337914937040397,0.8618050286554144,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,25,10000,13,0.008487048474569115,0.8020580600935062,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,26,10000,10,0.004911312744553351,0.8393093093093094,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,27,10000,7,0.011142340861215728,0.6533287587025203,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample,28,4807,4,0.002072829113347373,0.6231001457422445,0.0,0.0,inf,0,base,Logistic regression,undersampling,0.9
-logreg_undersample_acc6+adwin,2,10000,9,0.2831952892505233,0.9662696426784105,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,3,10000,10,0.5204038432275663,0.9935535535535536,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,4,10000,44,0.913096986000685,0.9995092041345557,0.6590909090909091,0.0003013258336681398,0.9999999966520994,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,5,10000,15,0.1725566174810788,0.9100984810549158,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,6,10000,12,0.332064432636583,0.9389934588172473,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,7,10000,21,0.6881789350319625,0.9833078035302707,0.38095238095238093,0.0,0.9999999933361097,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,8,10000,15,0.6697666025657911,0.9988249040227006,0.13333333333333333,0.0,0.9999983831520364,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,9,10000,12,0.2691724802057558,0.8271258843946069,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,10,10000,16,0.6479107525504795,0.9093361879006411,0.375,0.0,0.9999999999949687,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,11,10000,8,0.31136107304468214,0.8198558847077662,0.125,0.0,0.9999981660074333,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,12,10000,14,0.6373830774279269,0.9972962147005808,0.35714285714285715,0.0,0.9999981963092434,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,13,10000,3,0.1502368545712932,0.8589576873061918,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,14,10000,29,0.18475412718774253,0.8417099242977049,0.1724137931034483,0.0,0.999999339833757,1,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,15,10000,63,0.5646813644205262,0.9774835431472242,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,16,10000,4,0.055311305386267905,0.9951980792316926,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,17,10000,4,0.1445258954645688,0.9974489795918368,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,18,10000,7,0.08714030944733708,0.9772840988692084,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,19,10000,14,0.29697579090223847,0.8802967010958199,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,20,10000,9,0.25499004468667175,0.9715632958551585,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,21,10000,12,0.18913699840266526,0.9504989320517956,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,22,10000,13,0.24631683966054774,0.9880074866557294,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,23,10000,18,0.42118262639490855,0.9967274427302478,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,24,10000,21,0.4800095052816706,0.9822579798529293,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,25,10000,13,0.6911970935906121,0.974682471828762,0.6153846153846154,0.0,0.9999975666040679,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,26,10000,10,0.54251196831842,0.9964664664664664,0.3,0.0,0.999999998978484,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,27,10000,7,0.1261813003172037,0.9490500493202384,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-logreg_undersample_acc6+adwin,28,4807,4,0.18265749696104858,0.9516448053300021,0.0,0.0,inf,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.5
-random_forest_none,2,10000,9,0.6230162124388541,0.878101402373247,0.4444444444444444,0.0,0.46934523809523826,0,base,Random forest,no handling,6.9
-random_forest_none,3,10000,10,0.9232558139534884,0.9996696696696697,0.9,0.0001001001001001001,0.1406666666666667,0,base,Random forest,no handling,6.9
-random_forest_none,4,10000,44,0.9445466826891772,0.999575404507104,0.9772727272727273,0.0004017677782241864,0.19801190476190475,0,base,Random forest,no handling,6.9
-random_forest_none,5,10000,15,0.486562029256147,0.7836688365882157,0.26666666666666666,0.0,0.493,0,base,Random forest,no handling,6.9
-random_forest_none,6,10000,12,0.5596874094874095,0.9099252436256843,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,7,10000,21,0.8561421642128411,0.9458267122862773,0.8571428571428571,0.0002004208838560978,0.23376190476190473,0,base,Random forest,no handling,6.9
-random_forest_none,8,10000,15,0.9463203463203462,0.9995960607578034,0.9333333333333333,0.00010015022533800701,0.22551190476190475,0,base,Random forest,no handling,6.9
-random_forest_none,9,10000,12,0.6316813813813814,0.8658098050994527,0.5833333333333334,0.0,0.4261785714285715,0,base,Random forest,no handling,6.9
-random_forest_none,10,10000,16,0.705352010299069,0.9267390324519231,0.6875,0.00010016025641025641,0.21792857142857142,0,base,Random forest,no handling,6.9
-random_forest_none,11,10000,8,0.43541904761904765,0.7999211869495597,0.125,0.0,0.597654761904762,0,base,Random forest,no handling,6.9
-random_forest_none,12,10000,14,0.5604885700140936,0.9595755486252181,0.35714285714285715,0.0,0.5244166666666668,0,base,Random forest,no handling,6.9
-random_forest_none,13,10000,3,0.6746666666666666,0.9959821279717249,0.6666666666666666,0.0,0.28659523809523807,0,base,Random forest,no handling,6.9
-random_forest_none,14,10000,29,0.5817111847149746,0.9374288886045393,0.3448275862068966,0.00010029084344599338,0.3461785714285714,0,base,Random forest,no handling,6.9
-random_forest_none,15,10000,63,0.8190061583450088,0.9891570864701588,0.7777777777777778,0.0005031699708161417,0.3513690476190476,0,base,Random forest,no handling,6.9
-random_forest_none,16,10000,4,0.08598901098901099,0.9973864545818327,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,17,10000,4,0.09656877129147558,0.9874074629851941,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,18,10000,7,0.07081271998259589,0.9921516490114509,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,19,10000,14,0.04455555183776673,0.8727003519212614,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,20,10000,9,0.13959838865399077,0.9252549516787331,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,21,10000,12,0.07442004523669937,0.9246887932185288,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,22,10000,13,0.17389802247829403,0.9914889356163012,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,23,10000,18,0.21618122861270622,0.958592132505176,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,24,10000,21,0.33141489263049195,0.9465138696023554,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,25,10000,13,0.4445200318902352,0.9407229398217684,0.23076923076923078,0.0,0.3457261904761905,0,base,Random forest,no handling,6.9
-random_forest_none,26,10000,10,0.21979933177401906,0.981871871871872,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,27,10000,7,0.007693329497490975,0.8042844276707982,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none,28,4807,4,0.014466132380856015,0.8274515927545285,0.0,0.0,inf,0,base,Random forest,no handling,6.9
-random_forest_none_acc6+adwin,2,10000,9,0.6230162124388541,0.878101402373247,0.4444444444444444,0.0,0.46934523809523826,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,3,10000,10,0.9232558139534884,0.9996696696696697,0.9,0.0001001001001001001,0.1406666666666667,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,4,10000,44,0.9445466826891772,0.999575404507104,0.9772727272727273,0.0004017677782241864,0.19801190476190475,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,5,10000,15,0.486562029256147,0.7836688365882157,0.26666666666666666,0.0,0.493,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,6,10000,12,0.5596874094874095,0.9099252436256843,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,7,10000,21,0.8561421642128411,0.9458267122862773,0.8571428571428571,0.0002004208838560978,0.23376190476190473,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,8,10000,15,0.9463203463203462,0.9995960607578034,0.9333333333333333,0.00010015022533800701,0.22551190476190475,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,9,10000,12,0.6316813813813814,0.8658098050994527,0.5833333333333334,0.0,0.4261785714285715,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,10,10000,16,0.705352010299069,0.9267390324519231,0.6875,0.00010016025641025641,0.21792857142857142,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,11,10000,8,0.43541904761904765,0.7999211869495597,0.125,0.0,0.597654761904762,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,12,10000,14,0.5604885700140936,0.9595755486252181,0.35714285714285715,0.0,0.5244166666666668,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,13,10000,3,0.6746666666666666,0.9959821279717249,0.6666666666666666,0.0,0.28659523809523807,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,14,10000,29,0.5817111847149746,0.9374288886045393,0.3448275862068966,0.00010029084344599338,0.3461785714285714,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,15,10000,63,0.8190105885778474,0.9891586838351455,0.7777777777777778,0.0005031699708161417,0.3513690476190476,1,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,16,10000,4,0.6791666666666667,0.9998999599839936,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,17,10000,4,0.7501,0.8698729491796718,0.75,0.0,0.4061666666666666,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,18,10000,7,0.6254501400560224,0.9255121442152364,0.5714285714285714,0.0,0.1906666666666667,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,19,10000,14,0.508358032958033,0.8528368287030414,0.21428571428571427,0.0,0.5607916666666667,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,20,10000,9,0.888988888888889,0.9422813865812564,0.8888888888888888,0.0,0.23324999999999999,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,21,10000,12,0.6799927368993359,0.9100670804965959,0.5833333333333334,0.0,0.7227916666666665,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,22,10000,13,0.841855319148936,0.9595820720783171,0.7692307692307693,0.00010013016921998598,0.22274999999999998,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,23,10000,18,0.8982441740628102,0.9986253033237605,0.8888888888888888,0.00010018032458425165,0.23450000000000004,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,24,10000,21,0.8541084801878289,0.973983460505156,0.7619047619047619,0.0,0.19112500000000002,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,25,10000,13,0.7024740246275003,0.9184632329720944,0.6923076923076923,0.00010013016921998598,0.20066666666666663,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,26,10000,10,0.9000999999999999,0.9482332332332332,0.9,0.0001001001001001001,0.2814523809523809,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,27,10000,7,0.2841271943909796,0.9224600077196895,0.14285714285714285,0.0,0.8735833333333334,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest_none_acc6+adwin,28,4807,4,0.755586592178771,0.991229439933375,0.75,0.0,0.32483333333333336,0,+ ADWIN + accumulate,Random forest,no handling,37.4
-random_forest,2,10000,9,0.68004934086629,0.8828834840245109,0.6666666666666666,0.0,0.4043142920901173,0,base,Random forest,class weights,6.0
-random_forest,3,10000,10,0.9058479532163742,0.9983883883883884,0.9,0.0001001001001001001,0.12456016344495408,0,base,Random forest,class weights,6.0
-random_forest,4,10000,44,0.9681718164068202,0.9998767303407722,0.9772727272727273,0.0004017677782241864,0.23478876647415386,0,base,Random forest,class weights,6.0
-random_forest,5,10000,15,0.5285598242310107,0.7884526790185279,0.4666666666666667,0.0,0.23958046106018563,0,base,Random forest,class weights,6.0
-random_forest,6,10000,12,0.7085183020683021,0.9116189427312776,0.3333333333333333,0.0,0.6341988612335748,0,base,Random forest,class weights,6.0
-random_forest,7,10000,21,0.8574428571428574,0.9245844845604341,0.8571428571428571,0.0002004208838560978,0.14445270055597606,0,base,Random forest,class weights,6.0
-random_forest,8,10000,15,0.9958333333333333,0.9999933233183107,1.0,0.00010015022533800701,0.07998,0,base,Random forest,class weights,6.0
-random_forest,9,10000,12,0.7153997150997151,0.8684755039380591,0.5833333333333334,0.0,0.32466707937205025,0,base,Random forest,class weights,6.0
-random_forest,10,10000,16,0.7450149263292761,0.9007004957932693,0.6875,0.00010016025641025641,0.11467946517979266,0,base,Random forest,class weights,6.0
-random_forest,11,10000,8,0.41250238095238095,0.8038555844675741,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,12,10000,14,0.8357753365681937,0.9622650281823123,0.35714285714285715,0.0,0.6496077833062818,0,base,Random forest,class weights,6.0
-random_forest,13,10000,3,0.6667666666666666,0.8259144409989664,0.6666666666666666,0.0,0.4395797800803989,0,base,Random forest,class weights,6.0
-random_forest,14,10000,29,0.5873428345641686,0.9512776707624524,0.3793103448275862,0.00010029084344599338,0.14471384968242323,0,base,Random forest,class weights,6.0
-random_forest,15,10000,63,0.7242899008592434,0.9911130598963951,0.06349206349206349,0.0,0.24481619240354124,0,base,Random forest,class weights,6.0
-random_forest,16,10000,4,0.22530637254901958,0.99749899959984,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,17,10000,4,0.09294373157813089,0.9761904761904762,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,18,10000,7,0.06293731136997391,0.9835885119583708,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,19,10000,14,0.17519661436208328,0.8638379445509426,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,20,10000,9,0.14869453903216334,0.9322890601541386,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,21,10000,12,0.06846500964194485,0.9297448604992657,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,22,10000,13,0.2995673519515546,0.9951244309910577,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,23,10000,18,0.2231745453889092,0.9587813620071683,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,24,10000,21,0.4860946851116214,0.960879752241612,0.047619047619047616,0.0,0.18476091692282137,0,base,Random forest,class weights,6.0
-random_forest,25,10000,13,0.4721907809617487,0.9539324198380974,0.07692307692307693,0.0,0.16989287642157497,0,base,Random forest,class weights,6.0
-random_forest,26,10000,10,0.1935785038629112,0.9334234234234234,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,27,10000,7,0.01568296620486802,0.8855055681834427,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest,28,4807,4,0.017068149003932758,0.838720591297106,0.0,0.0,inf,0,base,Random forest,class weights,6.0
-random_forest_acc6+adwin,2,10000,9,0.68004934086629,0.8828834840245109,0.6666666666666666,0.0,0.4043142920901173,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,3,10000,10,0.9058479532163742,0.9983883883883884,0.9,0.0001001001001001001,0.12456016344495408,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,4,10000,44,0.9681718164068202,0.9998767303407722,0.9772727272727273,0.0004017677782241864,0.23478876647415386,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,5,10000,15,0.5285598242310107,0.7884526790185279,0.4666666666666667,0.0,0.23958046106018563,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,6,10000,12,0.7085183020683021,0.9116189427312776,0.3333333333333333,0.0,0.6341988612335748,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,7,10000,21,0.8574428571428574,0.9245844845604341,0.8571428571428571,0.0002004208838560978,0.14445270055597606,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,8,10000,15,0.9958333333333333,0.9999933233183107,1.0,0.00010015022533800701,0.07998,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,9,10000,12,0.7153997150997151,0.8684755039380591,0.5833333333333334,0.0,0.32466707937205025,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,10,10000,16,0.7450149263292761,0.9007004957932693,0.6875,0.00010016025641025641,0.11467946517979266,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,11,10000,8,0.41250238095238095,0.8038555844675741,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,12,10000,14,0.8357753365681937,0.9622650281823123,0.35714285714285715,0.0,0.6496077833062818,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,13,10000,3,0.6667666666666666,0.8259144409989664,0.6666666666666666,0.0,0.4395797800803989,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,14,10000,29,0.5873428345641686,0.9512776707624524,0.3793103448275862,0.00010029084344599338,0.14471384968242323,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,15,10000,63,0.7242899008592434,0.9911130598963951,0.06349206349206349,0.0,0.24481619240354124,1,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,16,10000,4,0.9166666666666666,0.9999499799919969,0.75,0.0,0.5635232201059437,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,17,10000,4,0.7501,0.8700980392156863,0.75,0.0,0.43936406008682594,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,18,10000,7,0.7325213369523678,0.9959400151534645,0.7142857142857143,0.0,0.10989911252804059,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,19,10000,14,0.4498331065759638,0.8526937712797917,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,20,10000,9,0.8889888888888888,0.9422035387404218,0.8888888888888888,0.0,0.42974225292923324,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,21,10000,12,0.6538547785547786,0.8692055466559873,0.5833333333333334,0.0,0.5947022502744319,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,22,10000,13,0.8882118881118879,0.9600211043587434,0.8461538461538461,0.00010013016921998598,0.10976286640416522,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,23,10000,18,0.896605376344086,0.9706276853892561,0.8888888888888888,0.00010018032458425165,0.17984230144433844,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,24,10000,21,0.8909945192255153,0.9740621972809566,0.8095238095238095,0.0001002104419280489,0.11482216876011955,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,25,10000,13,0.6927076923076922,0.8419021651223513,0.6923076923076923,0.00010013016921998598,0.11984833005624383,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,26,10000,10,0.9001,0.9484284284284284,0.9,0.0001001001001001001,0.13969147973026913,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,27,10000,7,0.3686882982091874,0.9208660347957858,0.2857142857142857,0.0,0.7948120875937115,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_acc6+adwin,28,4807,4,0.7502080299563136,0.871070164480533,0.75,0.0,0.504637374255137,0,+ ADWIN + accumulate,Random forest,class weights,25.2
-random_forest_smote,2,10000,9,0.6719065343796339,0.9249101969550373,0.6666666666666666,0.0,0.5895833333333333,0,base,Random forest,SMOTE,7.2
-random_forest_smote,3,10000,10,0.9344827586206897,0.9998098098098099,0.9,0.0001001001001001001,0.24308333333333335,0,base,Random forest,SMOTE,7.2
-random_forest_smote,4,10000,44,0.962812180104816,0.9998424887687642,0.9545454545454546,0.0004017677782241864,0.5175,0,base,Random forest,SMOTE,7.2
-random_forest_smote,5,10000,15,0.538275073289092,0.8035052578868302,0.5333333333333333,0.0,0.5120833333333334,0,base,Random forest,SMOTE,7.2
-random_forest_smote,6,10000,12,0.8080489411082101,0.9483838940061408,0.75,0.00010012014417300761,0.7608333333333333,0,base,Random forest,SMOTE,7.2
-random_forest_smote,7,10000,21,0.8605075931774244,0.9641294337155647,0.8571428571428571,0.0002004208838560978,0.3001666666666667,0,base,Random forest,SMOTE,7.2
-random_forest_smote,8,10000,15,1.0,1.0,1.0,0.00010015022533800701,0.1925,0,base,Random forest,SMOTE,7.2
-random_forest_smote,9,10000,12,0.7503,0.8557393872647177,0.75,0.00010012014417300761,0.3466666666666666,0,base,Random forest,SMOTE,7.2
-random_forest_smote,10,10000,16,0.7420994751664107,0.8847718850160258,0.6875,0.00010016025641025641,0.26625,0,base,Random forest,SMOTE,7.2
-random_forest_smote,11,10000,8,0.47696045399209747,0.9111101381104884,0.125,0.0,0.9516666666666665,0,base,Random forest,SMOTE,7.2
-random_forest_smote,12,10000,14,0.7629072871826367,0.9935981803095763,0.21428571428571427,0.0,0.9229761904761904,0,base,Random forest,SMOTE,7.2
-random_forest_smote,13,10000,3,0.6674101610904585,0.9590543829815612,0.6666666666666666,0.0,0.8520595238095237,0,base,Random forest,SMOTE,7.2
-random_forest_smote,14,10000,29,0.4133334330544795,0.9577913881290224,0.1724137931034483,0.0,0.7510833333333332,0,base,Random forest,SMOTE,7.2
-random_forest_smote,15,10000,63,0.36241934622295197,0.9907233028396356,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,16,10000,4,0.08164335664335665,0.9952606042416966,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,17,10000,4,0.028634777581147765,0.9866946778711484,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,18,10000,7,0.044216824960991864,0.9828308387299682,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,19,10000,14,0.09806520565426702,0.91055334611313,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,20,10000,9,0.052250568634517006,0.9055928113079549,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,21,10000,12,0.038933619071269646,0.9032755973835269,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,22,10000,13,0.18024325984642467,0.9936802458580771,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,23,10000,18,0.131310308087006,0.980865558004408,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,24,10000,21,0.17334316662767923,0.9386592797255187,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,25,10000,13,0.18686023223840809,0.9378114625936794,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,26,10000,10,0.04993313173510425,0.9673223223223224,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,27,10000,7,0.005946494094676702,0.9052122199825592,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote,28,4807,4,0.01176854997719989,0.8734384759525298,0.0,0.0,inf,0,base,Random forest,SMOTE,7.2
-random_forest_smote_acc6+adwin,2,10000,9,0.6719065343796339,0.9249101969550373,0.6666666666666666,0.0,0.5895833333333333,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,3,10000,10,0.9344827586206897,0.9998098098098098,0.9,0.0001001001001001001,0.24308333333333335,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,4,10000,44,0.962812180104816,0.9998424887687642,0.9545454545454546,0.0004017677782241864,0.5175,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,5,10000,15,0.538275073289092,0.8035052578868302,0.5333333333333333,0.0,0.5120833333333334,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,6,10000,12,0.80804894110821,0.9483880656788146,0.75,0.00010012014417300761,0.7608333333333333,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,7,10000,21,0.8605075931774244,0.9641294337155647,0.8571428571428571,0.0002004208838560978,0.3001666666666667,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,8,10000,15,1.0,1.0,1.0,0.00010015022533800701,0.1925,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,9,10000,12,0.7503000000000001,0.8557393872647177,0.75,0.00010012014417300761,0.3466666666666666,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,10,10000,16,0.7420994751664107,0.8847718850160258,0.6875,0.00010016025641025641,0.26625,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,11,10000,8,0.47696045399209747,0.9111101381104884,0.125,0.0,0.9516666666666665,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,12,10000,14,0.7629072871826367,0.9935981803095764,0.21428571428571427,0.0,0.9229761904761904,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,13,10000,3,0.6674101610904585,0.9590543829815612,0.6666666666666666,0.0,0.8520595238095239,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,14,10000,29,0.41333343305447945,0.9577913881290224,0.1724137931034483,0.0,0.7510833333333332,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,15,10000,63,0.3624121645127569,0.990719309427169,0.0,0.0,inf,1,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,16,10000,4,0.9166666666666666,0.9999499799919968,0.75,0.0,0.8470833333333334,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,17,10000,4,0.7501,0.861969787915166,0.75,0.0,0.86725,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,18,10000,7,0.7236657549617784,0.9931166101985676,0.7142857142857143,0.0,0.415,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,19,10000,14,0.5234382186476021,0.8802788189179136,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,20,10000,9,0.888988888888889,0.9386892647827488,0.8888888888888888,0.0,0.7279166666666669,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,21,10000,12,0.6500874100961216,0.9044812107862769,0.5833333333333334,0.0,0.60175,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,22,10000,13,0.902472690707985,0.996310588380279,0.8461538461538461,0.00010013016921998598,0.4960833333333333,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,23,10000,18,0.9138857482212401,0.9994072664128765,0.8333333333333334,0.00010018032458425165,0.4894166666666666,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,24,10000,21,0.8975614583779005,0.9714495679021182,0.9047619047619048,0.0002004208838560978,0.23708333333333337,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,25,10000,13,0.7080821913380737,0.9126171715537892,0.6923076923076923,0.00010013016921998598,0.3441666666666666,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,26,10000,10,0.9000999999999999,0.9445995995995995,0.9,0.0001001001001001001,0.3837499999999999,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,27,10000,7,0.46045684745362164,0.9134608511672457,0.42857142857142855,0.0,0.9124999999999999,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_smote_acc6+adwin,28,4807,4,0.7547619047619047,0.9900843222985634,0.75,0.0,0.8501666666666665,0,+ ADWIN + accumulate,Random forest,SMOTE,35.3
-random_forest_undersample,2,10000,9,0.6194501623300985,0.9407577931249236,0.5555555555555556,0.0,0.7783333333333334,0,base,Random forest,undersampling,3.2
-random_forest_undersample,3,10000,10,0.903717472118959,0.9974074074074073,0.9,0.0001001001001001001,0.6646785714285716,0,base,Random forest,undersampling,3.2
-random_forest_undersample,4,10000,44,0.928313401217953,0.9996998155520653,0.9545454545454546,0.0004017677782241864,0.7245119047619049,0,base,Random forest,undersampling,3.2
-random_forest_undersample,5,10000,15,0.4743997902422434,0.7899182106493072,0.4,0.0,0.7219166666666667,0,base,Random forest,undersampling,3.2
-random_forest_undersample,6,10000,12,0.4993409406521168,0.8927671539180349,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,7,10000,21,0.856454869507106,0.9892822546395049,0.8095238095238095,0.0001002104419280489,0.6209166666666667,0,base,Random forest,undersampling,3.2
-random_forest_undersample,8,10000,15,0.9102642276422763,0.999599399098648,0.8666666666666667,0.00010015022533800701,0.5489285714285714,0,base,Random forest,undersampling,3.2
-random_forest_undersample,9,10000,12,0.6049603976706286,0.8479425310372447,0.5,0.0,0.7323333333333334,0,base,Random forest,undersampling,3.2
-random_forest_undersample,10,10000,16,0.7123016476851469,0.9419258313301282,0.6875,0.00010016025641025641,0.6185833333333335,0,base,Random forest,undersampling,3.2
-random_forest_undersample,11,10000,8,0.41345725513806514,0.9131054843875098,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,12,10000,14,0.5240737013894987,0.9792709793711196,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,13,10000,3,0.6673346693386774,0.9502017271848221,0.6666666666666666,0.0,0.6152500000000001,0,base,Random forest,undersampling,3.2
-random_forest_undersample,14,10000,29,0.5832253741875847,0.9616439398393273,0.1724137931034483,0.0,0.99,0,base,Random forest,undersampling,3.2
-random_forest_undersample,15,10000,63,0.7990765655704789,0.9962318159963325,0.746031746031746,0.0005031699708161417,0.5947857142857144,0,base,Random forest,undersampling,3.2
-random_forest_undersample,16,10000,4,0.30925421930094826,0.9951730692276911,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,17,10000,4,0.05005554777861426,0.9811174469787914,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,18,10000,7,0.04552292653856194,0.9721161956226501,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,19,10000,14,0.1478351716418058,0.9505629309604875,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,20,10000,9,0.12410790481086674,0.935358489307043,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,21,10000,12,0.10147165637746709,0.9040223267921506,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,22,10000,13,0.21855632110402004,0.9917277075582873,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,23,10000,18,0.2703507813520524,0.9820287628843027,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,24,10000,21,0.4249894171581538,0.9675103431491847,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,25,10000,13,0.4603398109799234,0.9440695981699285,0.07692307692307693,0.0,0.6770238095238096,0,base,Random forest,undersampling,3.2
-random_forest_undersample,26,10000,10,0.10953847626713675,0.9811161161161162,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,27,10000,7,0.014003224958922178,0.8096524710154251,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample,28,4807,4,0.009264452356786851,0.860191546949823,0.0,0.0,inf,0,base,Random forest,undersampling,3.2
-random_forest_undersample_acc6+adwin,2,10000,9,0.6194501623300985,0.9407577931249236,0.5555555555555556,0.0,0.7783333333333334,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,3,10000,10,0.9037174721189591,0.9974074074074074,0.9,0.0001001001001001001,0.6646785714285716,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,4,10000,44,0.9283134012179531,0.9996998155520653,0.9545454545454546,0.0004017677782241864,0.7245119047619049,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,5,10000,15,0.4743997902422434,0.7899215489901519,0.4,0.0,0.7219166666666667,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,6,10000,12,0.4993409406521168,0.8927671539180351,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,7,10000,21,0.8564548695071058,0.9892822546395049,0.8095238095238095,0.0001002104419280489,0.6209166666666667,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,8,10000,15,0.9102642276422763,0.999599399098648,0.8666666666666667,0.00010015022533800701,0.5489285714285714,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,9,10000,12,0.6049603976706286,0.8479425310372447,0.5,0.0,0.7323333333333334,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,10,10000,16,0.7123016476851469,0.9419258313301282,0.6875,0.00010016025641025641,0.6185833333333335,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,11,10000,8,0.41345725513806514,0.91310548438751,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,12,10000,14,0.5240737013894986,0.9792709793711196,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,13,10000,3,0.6673346693386774,0.9502017271848222,0.6666666666666666,0.0,0.6152500000000001,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,14,10000,29,0.5832254110633845,0.9616473981442735,0.1724137931034483,0.0,0.99,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,15,10000,63,0.799076565570479,0.9962318159963324,0.746031746031746,0.0005031699708161417,0.5947857142857144,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,16,10000,4,0.30925421930094826,0.995173069227691,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,17,10000,4,0.05005554777861426,0.9811174469787916,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,18,10000,7,0.04552292653856194,0.9721161956226502,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,19,10000,14,0.1478351716418058,0.9505593545249063,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,20,10000,9,0.12410790481086674,0.9353696104271622,0.0,0.0,inf,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,21,10000,12,0.10147165637746709,0.9040223267921506,0.0,0.0,inf,1,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,22,10000,13,0.8128619074314923,0.9586154308293089,0.6153846153846154,0.0,0.7654166666666667,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,23,10000,18,0.8517263213824873,0.9932656559585031,0.7777777777777778,0.00010018032458425165,0.7389166666666667,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,24,10000,21,0.8283969531859023,0.9685148335313682,0.7142857142857143,0.0001002104419280489,0.8206388888888889,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,25,10000,13,0.7694897012290963,0.9696875168488266,0.6923076923076923,0.00010013016921998598,0.9263690476190476,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,26,10000,10,0.808975858975859,0.9592642642642644,0.6,0.0,0.9823333333333332,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,27,10000,7,0.3816628179725073,0.9693213821103344,0.2857142857142857,0.0,0.9591666666666668,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-random_forest_undersample_acc6+adwin,28,4807,4,0.7506016847172082,0.913699770976473,0.75,0.0,0.9025833333333333,0,+ ADWIN + accumulate,Random forest,undersampling,6.2
-gradient_boosting_none,2,10000,9,0.6540001300384654,0.8883661962432857,0.5555555555555556,0.0,0.9985341353847997,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,3,10000,10,0.9042857142857144,0.9993893893893895,0.9,0.0001001001001001001,0.04674042016772041,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,4,10000,44,0.837766759880006,0.9078102742978196,0.7954545454545454,0.0003013258336681398,0.0033838204943295266,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,5,10000,15,0.4374193360070863,0.68676347855116,0.4,0.0,0.4907633067033265,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,6,10000,12,0.7393243639209485,0.9245177546389001,0.6666666666666666,0.0,0.9999819519411288,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,7,10000,21,0.6915915951448947,0.8157320849975424,0.6666666666666666,0.0001002104419280489,0.09663155602529593,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,8,10000,15,0.853821354328777,0.9331196795192791,0.8,0.00010015022533800701,0.02798939051967467,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,9,10000,12,0.6094879640940885,0.8111400347083165,0.5833333333333334,0.0,0.01694155138484219,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,10,10000,16,0.7045523613544539,0.8373616536458333,0.625,0.00010016025641025641,0.012771616069780396,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,11,10000,8,0.5135217934990238,0.7822445456365091,0.25,0.0,0.9999984673146097,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,12,10000,14,0.6237230524739521,0.9323195330605705,0.35714285714285715,0.0,0.9999998940941003,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,13,10000,3,0.6692982456140351,0.9874295622019938,0.6666666666666666,0.0,0.583065771787756,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,14,10000,29,0.372015458169405,0.8519603401588745,0.3448275862068966,0.00010029084344599338,0.9999939651711746,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,15,10000,63,0.5692036091150059,0.8882723060040157,0.4126984126984127,0.00020126798832645668,0.9999888910150502,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,16,10000,4,0.07438651743785846,0.9704131652661063,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,17,10000,4,0.004550592246840562,0.9431647659063626,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,18,10000,7,0.008516067532012452,0.6911695329587854,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,19,10000,14,0.011738224293530816,0.6891827129409746,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,20,10000,9,0.017919098536716065,0.9168362637484847,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,21,10000,12,0.01592676192464697,0.843449639567481,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,22,10000,13,0.014289400021105306,0.7446257057251349,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,23,10000,18,0.010268040723361505,0.5669872437053362,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,24,10000,21,0.12044729501361734,0.8153646467104729,0.09523809523809523,0.0,0.9999996060077512,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,25,10000,13,0.19506166377637857,0.9474008518766704,0.15384615384615385,0.0,0.9999996058575998,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,26,10000,10,0.010386096141881568,0.820725725725726,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,27,10000,7,0.015515879030306459,0.84170347814899,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none,28,4807,4,0.0016779345483049187,0.6139652300645431,0.0,0.0,inf,0,base,Gradient boosting,no handling,1.2
-gradient_boosting_none_acc6+adwin,2,10000,9,0.6540001300384654,0.8883661962432857,0.5555555555555556,0.0,0.9985341353847997,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,3,10000,10,0.9042857142857144,0.9993893893893895,0.9,0.0001001001001001001,0.04674042016772041,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,4,10000,44,0.837766759880006,0.9078102742978196,0.7954545454545454,0.0003013258336681398,0.0033838204943295266,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,5,10000,15,0.4374193360070863,0.68676347855116,0.4,0.0,0.4907633067033265,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,6,10000,12,0.7393243639209485,0.9245177546389001,0.6666666666666666,0.0,0.9999819519411288,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,7,10000,21,0.6915915951448947,0.8157320849975424,0.6666666666666666,0.0001002104419280489,0.09663155602529593,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,8,10000,15,0.853821354328777,0.9331196795192791,0.8,0.00010015022533800701,0.02798939051967467,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,9,10000,12,0.6094879640940885,0.8111400347083165,0.5833333333333334,0.0,0.01694155138484219,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,10,10000,16,0.7045523613544539,0.8373616536458333,0.625,0.00010016025641025641,0.012771616069780396,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,11,10000,8,0.5135217934990238,0.7822445456365091,0.25,0.0,0.9999984673146097,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,12,10000,14,0.6237230524739521,0.9323195330605705,0.35714285714285715,0.0,0.9999998940941003,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,13,10000,3,0.6692982456140351,0.9874295622019938,0.6666666666666666,0.0,0.583065771787756,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,14,10000,29,0.372015458169405,0.8519603401588745,0.3448275862068966,0.00010029084344599338,0.9999939651711746,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,15,10000,63,0.5692036091150059,0.8882723060040157,0.4126984126984127,0.00020126798832645668,0.9999888910150502,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,16,10000,4,0.07438651743785846,0.9704131652661063,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,17,10000,4,0.004550592246840562,0.9431647659063626,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,18,10000,7,0.008516067532012452,0.6911695329587854,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,19,10000,14,0.011738224293530816,0.6891827129409746,0.0,0.0,inf,1,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,20,10000,9,0.011476474657393385,0.5204128159788254,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,21,10000,12,0.08407725488776752,0.41788479508743825,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,22,10000,13,0.4187380182863742,0.6234566474878882,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,23,10000,18,0.0036044087677849024,0.11530477080967966,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,24,10000,21,0.5555411223426641,0.8726182125320316,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,25,10000,13,0.5590351574526451,0.8012570187397464,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,26,10000,10,0.5866637655004039,0.6919219219219217,0.5,0.0,1.0,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,27,10000,7,0.036153992363945044,0.2625266257809038,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting_none_acc6+adwin,28,4807,4,0.750218818380744,0.7623880907765981,0.75,0.0,1.0,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.7
-gradient_boosting,2,10000,9,0.5873061341824993,0.7847117961721105,0.5555555555555556,0.0,0.9835489535750856,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,3,10000,10,0.8361010611419909,0.900890890890891,0.8,0.0,0.9686570969647025,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,4,10000,44,0.9330973842119352,0.999363106760656,0.8636363636363636,0.0004017677782241864,0.02525019562271912,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,5,10000,15,0.3145576169760352,0.7716407945251208,0.26666666666666666,0.0,0.26221961107595376,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,6,10000,12,0.7503028568032234,0.8358446802830062,0.75,0.00010012014417300761,0.022590566516770254,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,7,10000,21,0.8144905336534286,0.9459722560233634,0.8095238095238095,0.0001002104419280489,0.025566885882837478,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,8,10000,15,0.8131034482758621,0.9978567851777665,0.7333333333333333,0.00010015022533800701,0.3270749130582327,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,9,10000,12,0.5617964931669546,0.7964849486049925,0.5,0.0,0.9969975339333027,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,10,10000,16,0.6973899080471108,0.820537860576923,0.6875,0.00010016025641025641,0.054176452706672935,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,11,10000,8,0.289870567649632,0.8142076160928742,0.125,0.0,0.9996561120367328,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,12,10000,14,0.5808993931273148,0.8945023032245142,0.35714285714285715,0.0,0.9430945199556203,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,13,10000,3,0.6702898550724637,0.9908972691807543,0.6666666666666666,0.0,0.9993739592127897,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,14,10000,29,0.2218475310370665,0.8429531849259403,0.1724137931034483,0.0,0.9991002163561691,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,15,10000,63,0.07980338450743281,0.9359664297774389,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,16,10000,4,0.0033101491609437055,0.8276310524209685,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,17,10000,4,0.0010145588284261166,0.4796418567426971,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,18,10000,7,0.006725060178429444,0.8223613672427843,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,19,10000,14,0.09003040023226354,0.7646204686561184,0.07142857142857142,0.0,0.9821650046015279,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,20,10000,9,0.01532970456738803,0.8607190916269086,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,21,10000,12,0.010002218159959345,0.8015118141770123,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,22,10000,13,0.05199094593161359,0.9776247583396879,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,23,10000,18,0.05165402389744475,0.9439157149535832,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,24,10000,21,0.02678731057484575,0.7900495803091253,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,25,10000,13,0.07548260893844738,0.9435650961634741,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,26,10000,10,0.009877545737691824,0.8229029029029029,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,27,10000,7,0.003370877966346841,0.6829066060528084,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting,28,4807,4,0.002008380976446929,0.5917135123880908,0.0,0.0,inf,0,base,Gradient boosting,class weights,7.6
-gradient_boosting_acc6+adwin,2,10000,9,0.5873061341824993,0.7847117961721105,0.5555555555555556,0.0,0.9835489535750856,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,3,10000,10,0.8361010611419909,0.900890890890891,0.8,0.0,0.9686570969647025,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,4,10000,44,0.9330973842119352,0.999363106760656,0.8636363636363636,0.0004017677782241864,0.02525019562271912,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,5,10000,15,0.3145576169760352,0.7716407945251208,0.26666666666666666,0.0,0.26221961107595376,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,6,10000,12,0.7503028568032234,0.8358446802830062,0.75,0.00010012014417300761,0.022590566516770254,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,7,10000,21,0.8144905336534286,0.9459722560233634,0.8095238095238095,0.0001002104419280489,0.025566885882837478,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,8,10000,15,0.8131034482758621,0.9978567851777665,0.7333333333333333,0.00010015022533800701,0.3270749130582327,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,9,10000,12,0.5617964931669546,0.7964849486049925,0.5,0.0,0.9969975339333027,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,10,10000,16,0.6973899080471108,0.820537860576923,0.6875,0.00010016025641025641,0.054176452706672935,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,11,10000,8,0.289870567649632,0.8142076160928742,0.125,0.0,0.9996561120367328,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,12,10000,14,0.5808993931273148,0.8945023032245142,0.35714285714285715,0.0,0.9430945199556203,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,13,10000,3,0.6702898550724637,0.9908972691807543,0.6666666666666666,0.0,0.9993739592127897,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,14,10000,29,0.2218475310370665,0.8429531849259403,0.1724137931034483,0.0,0.9991002163561691,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,15,10000,63,0.07980338450743281,0.9359664297774389,0.0,0.0,inf,1,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,16,10000,4,0.7678571428571428,0.9998749499799919,0.25,0.0,0.9995892113827827,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,17,10000,4,0.7501022599447796,0.8761129451780711,0.75,0.0,0.9684229727800611,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,18,10000,7,0.35747502259597264,0.5736729996711984,0.14285714285714285,0.0,0.9453329952196514,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,19,10000,14,0.05691804131238007,0.5983627077909073,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,20,10000,9,0.8890172915596646,0.9555989279240203,0.8888888888888888,0.0,0.8501646002755281,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,21,10000,12,0.4962891735402153,0.6852472967561074,0.25,0.0,0.9635268781276803,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,22,10000,13,0.8463574709087452,0.8556431052676171,0.8461538461538461,0.00010013016921998598,0.800471028821142,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,23,10000,18,0.6861289458503238,0.730039070326588,0.6666666666666666,0.00010018032458425165,0.919318786029765,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,24,10000,21,0.7403988920287383,0.9341402659871445,0.6190476190476191,0.0001002104419280489,0.9034023690721114,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,25,10000,13,0.6774842683946216,0.892140551948302,0.6153846153846154,0.0,0.6661475697549067,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,26,10000,10,0.9001025115325474,0.902967967967968,0.9,0.0001001001001001001,0.9293359799411753,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,27,10000,7,0.3931945926544369,0.5347100112936195,0.2857142857142857,0.0,0.964063289893921,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_acc6+adwin,28,4807,4,0.7502189621195533,0.7634291068082449,0.75,0.0,0.963493866420057,0,+ ADWIN + accumulate,Gradient boosting,class weights,44.2
-gradient_boosting_smote,2,10000,9,0.6386332392588727,0.9354029737875198,0.5555555555555556,0.0,0.9997528661319535,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,3,10000,10,0.896524064171123,0.9993993993993995,0.8,0.0,0.9963868472090531,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,4,10000,44,0.8794554212860618,0.9994589831622777,0.8636363636363636,0.0004017677782241864,0.15764841466762755,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,5,10000,15,0.3669893996349531,0.7954364880654318,0.26666666666666666,0.0,0.9056752145624657,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,6,10000,12,0.8057711657323561,0.9161744092911493,0.75,0.00010012014417300761,0.2795643851493851,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,7,10000,21,0.8397959368294365,0.95080621686494,0.8095238095238095,0.0001002104419280489,0.16831325335864764,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,8,10000,15,0.8987654320987655,0.9997129026873645,0.8,0.00010015022533800701,0.41124795090405863,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,9,10000,12,0.7205404525416799,0.8382642504338538,0.6666666666666666,0.0,0.056950286169976945,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,10,10000,16,0.7245351444394854,0.9009915865384615,0.6875,0.00010016025641025641,0.0883625347124579,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,11,10000,8,0.4371278935806979,0.8129753803042434,0.125,0.0,0.9998347198816071,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,12,10000,14,0.574610664622669,0.8627292495207576,0.2857142857142857,0.0,0.9996539413336061,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,13,10000,3,0.6686507936507936,0.9835283918508887,0.6666666666666666,0.0,0.9998443182669894,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,14,10000,29,0.29066742709765153,0.9194249530535104,0.1724137931034483,0.0,0.9997534213654906,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,15,10000,63,0.16740219323658034,0.9304267680035014,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,16,10000,4,0.013656372996223666,0.8594687875150059,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,17,10000,4,0.009914642472034843,0.7281162464985995,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,18,10000,7,0.008270986108931606,0.8248559706079972,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,19,10000,14,0.05126738531104604,0.8773604474836199,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,20,10000,9,0.02116242651270332,0.7654611372457434,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,21,10000,12,0.014612201288190595,0.6895232612468297,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,22,10000,13,0.08466943029246085,0.9150742118600333,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,23,10000,18,0.0573630363413848,0.9010496671786996,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,24,10000,21,0.0911981187941709,0.8947146149771662,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,25,10000,13,0.10672766369987002,0.9533162341813589,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,26,10000,10,0.027843345856725536,0.8367517517517516,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,27,10000,7,0.011788866094441698,0.7022129776557875,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote,28,4807,4,0.004421458513327574,0.6036591713512388,0.0,0.0,inf,0,base,Gradient boosting,SMOTE,1.4
-gradient_boosting_smote_acc6+adwin,2,10000,9,0.6386332392588727,0.9354029737875198,0.5555555555555556,0.0,0.9997528661319535,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,3,10000,10,0.896524064171123,0.9993993993993995,0.8,0.0,0.9963868472090531,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,4,10000,44,0.8794554212860618,0.9994589831622777,0.8636363636363636,0.0004017677782241864,0.15764841466762755,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,5,10000,15,0.3669893996349531,0.7954364880654318,0.26666666666666666,0.0,0.9056752145624657,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,6,10000,12,0.8057711657323561,0.9161744092911493,0.75,0.00010012014417300761,0.2795643851493851,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,7,10000,21,0.8397959368294365,0.95080621686494,0.8095238095238095,0.0001002104419280489,0.16831325335864764,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,8,10000,15,0.8987654320987655,0.9997129026873645,0.8,0.00010015022533800701,0.41124795090405863,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,9,10000,12,0.7205404525416799,0.8382642504338538,0.6666666666666666,0.0,0.056950286169976945,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,10,10000,16,0.7245351444394854,0.9009915865384615,0.6875,0.00010016025641025641,0.0883625347124579,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,11,10000,8,0.4371278935806979,0.8129753803042434,0.125,0.0,0.9998347198816071,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,12,10000,14,0.574610664622669,0.8627292495207576,0.2857142857142857,0.0,0.9996539413336061,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,13,10000,3,0.6686507936507936,0.9835283918508887,0.6666666666666666,0.0,0.9998443182669894,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,14,10000,29,0.29066742709765153,0.9194249530535104,0.1724137931034483,0.0,0.9997534213654906,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,15,10000,63,0.16740219323658034,0.9304267680035014,0.0,0.0,inf,1,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,16,10000,4,1.0,0.9999999999999999,1.0,0.0,0.7179970644134304,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,17,10000,4,0.7501003613006825,0.7509003601440576,0.75,0.0,0.9997160100599382,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,18,10000,7,0.6928441456218437,0.8523537905105001,0.5714285714285714,0.0,0.03371341116545401,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,19,10000,14,0.4018315793903912,0.8734478269577407,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,20,10000,9,0.8897443208820454,0.9871161823418855,0.8888888888888888,0.0,0.999889833785724,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,21,10000,12,0.688324283929198,0.9076308236550528,0.6666666666666666,0.0,0.7852092969659991,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,22,10000,13,0.8920347518548419,0.9986752008380124,0.8461538461538461,0.00010013016921998598,0.7634841355941347,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,23,10000,18,0.8680413945032639,0.9977014181081503,0.7222222222222222,0.00010018032458425165,0.936706540276148,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,24,10000,21,0.899279043814543,0.9814276647626683,0.8571428571428571,0.0002004208838560978,0.3200927665163567,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,25,10000,13,0.7015354249058511,0.9503777988307878,0.6923076923076923,0.00010013016921998598,0.20368519565529267,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,26,10000,10,0.9015455950540958,0.9936236236236236,0.9,0.0001001001001001001,0.4907951974991507,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,27,10000,7,0.44158743404562134,0.9073494303155065,0.42857142857142855,0.0,0.9994855398750857,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_smote_acc6+adwin,28,4807,4,0.7530395136778115,0.9830834894857381,0.75,0.0,0.9976439236694914,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,6.2
-gradient_boosting_undersample,2,10000,9,0.5291918254595497,0.9242985353484803,0.4444444444444444,0.0,0.9994607727272941,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,3,10000,10,0.8154019688269073,0.9952552552552552,0.8,0.0,0.9996349288002858,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,4,10000,44,0.8688213977467291,0.9980664925672961,0.8636363636363636,0.0004017677782241864,0.9991252826680493,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,5,10000,15,0.28437293690814597,0.8675312969454181,0.26666666666666666,0.0,0.9998350379662068,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,6,10000,12,0.5552838209869244,0.9633643705780269,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,7,10000,21,0.8168289417636815,0.967183466231467,0.8095238095238095,0.0001002104419280489,0.9972057456502482,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,8,10000,15,0.8026352020068397,0.9988516107494576,0.6666666666666666,0.00010015022533800701,0.9978620062449925,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,9,10000,12,0.6097036726209663,0.8748122747296757,0.5,0.0,0.999081517768028,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,10,10000,16,0.7138182767944227,0.9104035206330128,0.625,0.00010016025641025641,0.9966677445049247,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,11,10000,8,0.29473908028329265,0.7963871096877502,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,12,10000,14,0.6302377122300971,0.9916883637091929,0.35714285714285715,0.0,0.9999453750681139,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,13,10000,3,0.6680017801513128,0.9751258710946618,0.6666666666666666,0.0,0.999768807347952,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,14,10000,29,0.21859425319537423,0.917306741273832,0.1724137931034483,0.0,0.9998496293558761,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,15,10000,63,0.07107487417108246,0.9419038354330695,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,16,10000,4,0.0027010431663918558,0.8026710684273709,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,17,10000,4,0.001316192750487723,0.6454081632653061,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,18,10000,7,0.010337255644510584,0.7400180126088262,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,19,10000,14,0.09625591586131578,0.8404981259477554,0.07142857142857142,0.0,0.9970614022115702,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,20,10000,9,0.009496277951916479,0.8285123277616522,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,21,10000,12,0.01598840567568948,0.85024112268055,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,22,10000,13,0.055869046517001156,0.9755297271067773,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,23,10000,18,0.032857874460198465,0.895269819007547,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,24,10000,21,0.04249718774059516,0.9049718694973732,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,25,10000,13,0.038171760009115194,0.9186827491123075,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,26,10000,10,0.0062390504187204016,0.8438638638638639,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,27,10000,7,0.0036431045868644653,0.7661791825706566,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample,28,4807,4,0.0021730879193058317,0.6454819904226525,0.0,0.0,inf,0,base,Gradient boosting,undersampling,0.7
-gradient_boosting_undersample_acc6+adwin,2,10000,9,0.5291918254595497,0.9242985353484803,0.4444444444444444,0.0,0.9994607727272941,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,3,10000,10,0.8154019688269073,0.9952552552552552,0.8,0.0,0.9996349288002858,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,4,10000,44,0.8688213977467291,0.9980664925672961,0.8636363636363636,0.0004017677782241864,0.9991252826680493,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,5,10000,15,0.28437293690814597,0.8675312969454181,0.26666666666666666,0.0,0.9998350379662068,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,6,10000,12,0.5552838209869244,0.9633643705780269,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,7,10000,21,0.8168289417636815,0.967183466231467,0.8095238095238095,0.0001002104419280489,0.9972057456502482,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,8,10000,15,0.8026352020068397,0.9988516107494576,0.6666666666666666,0.00010015022533800701,0.9978620062449925,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,9,10000,12,0.6097036726209663,0.8748122747296757,0.5,0.0,0.999081517768028,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,10,10000,16,0.7138182767944227,0.9104035206330128,0.625,0.00010016025641025641,0.9966677445049247,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,11,10000,8,0.29473908028329265,0.7963871096877502,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,12,10000,14,0.6302377122300971,0.9916883637091929,0.35714285714285715,0.0,0.9999453750681139,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,13,10000,3,0.6680017801513128,0.9751258710946618,0.6666666666666666,0.0,0.999768807347952,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,14,10000,29,0.21859425319537423,0.917306741273832,0.1724137931034483,0.0,0.9998496293558761,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,15,10000,63,0.07107487417108246,0.9419038354330695,0.0,0.0,inf,1,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,16,10000,4,0.787037037037037,0.9994247699079631,0.75,0.0,0.997504576997469,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,17,10000,4,0.7559523809523809,0.9958983593437375,0.75,0.0,0.9897163618646413,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,18,10000,7,0.22092178859102846,0.9811296478963846,0.14285714285714285,0.0,0.9997896792361473,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,19,10000,14,0.5294061094003131,0.9283353838230666,0.07142857142857142,0.0,0.9999085286324729,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,20,10000,9,0.8668326693227092,0.9330842202426628,0.7777777777777778,0.0,0.9996386225008486,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,21,10000,12,0.6595988933019633,0.9390184888532906,0.4166666666666667,0.0,0.9997539787639498,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,22,10000,13,0.8706058726220015,0.9961180303625483,0.8461538461538461,0.00010013016921998598,0.9995740063840323,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,23,10000,18,0.7960067195364143,0.9960039181638058,0.7777777777777778,0.00010018032458425165,0.9992243765905251,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,24,10000,21,0.7338423313793708,0.9869058355880682,0.6190476190476191,0.0001002104419280489,0.999495465882442,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,25,10000,13,0.6833543061683826,0.9647926920381111,0.23076923076923078,0.0,0.9998402667994801,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,26,10000,10,0.6407196360896601,0.9954254254254256,0.5,0.0,0.9995625449406237,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,27,10000,7,0.20053067693205248,0.9192291747080099,0.0,0.0,inf,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
-gradient_boosting_undersample_acc6+adwin,28,4807,4,0.6106991525423728,0.9968769519050593,0.5,0.0,0.9995089860660974,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.6
+model_name,batch_idx,n,n_fraud,pr_auc,roc_auc,recall_at_p,fpr,threshold,op_recall,op_precision,op_fpr,drift_flag,strategy,family,imbalance,runtime_s
+logreg_none,6,10000,12,0.4353697985964555,0.9410208917367506,0.0,0.0,inf,,,,0,base,Logistic regression,no handling,1.1
+logreg_none,7,10000,21,0.6715456471168054,0.9275383066344084,0.38095238095238093,0.0,0.6384860365205799,,,,0,base,Logistic regression,no handling,1.1
+logreg_none,8,10000,15,0.7416542681309788,0.9993924219662829,0.3333333333333333,0.0,0.38343591364298835,0.2,1.0,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,9,10000,12,0.4866685749832708,0.8868308637031104,0.3333333333333333,0.0,0.16733026768369658,0.16666666666666666,1.0,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,10,10000,16,0.5166756286168785,0.836144080528846,0.375,0.0,0.9960896589050445,0.4375,0.6363636363636364,0.00040064102564102563,0,base,Logistic regression,no handling,1.1
+logreg_none,11,10000,8,0.06494907330150622,0.8678567854283427,0.0,0.0,inf,0.0,0.0,0.00010008006405124099,0,base,Logistic regression,no handling,1.1
+logreg_none,12,10000,14,0.555280359187111,0.9964807873880576,0.35714285714285715,0.0,0.6276318185647882,0.0,,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,13,10000,3,0.19507140369209333,0.9466506618652263,0.0,0.0,inf,0.0,0.0,0.00010003000900270081,0,base,Logistic regression,no handling,1.1
+logreg_none,14,10000,29,0.170303002384076,0.7390743500980429,0.13793103448275862,0.0,0.9805192811538034,0.13793103448275862,0.6666666666666666,0.00020058168689198675,0,base,Logistic regression,no handling,1.1
+logreg_none,15,10000,63,0.07858981403909658,0.7442219315017946,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,16,10000,4,0.05928180010184168,0.6458083233293317,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,17,10000,4,0.014227045891163448,0.5002751100440177,0.0,0.0,inf,0.0,0.0,0.00020008003201280514,0,base,Logistic regression,no handling,1.1
+logreg_none,18,10000,7,0.017547287253984033,0.8444196651942073,0.0,0.0,inf,0.0,0.0,0.00010007004903432403,0,base,Logistic regression,no handling,1.1
+logreg_none,19,10000,14,0.02512657625692997,0.8732940402277474,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,20,10000,9,0.010939528406232522,0.6763642834106252,0.0,0.0,inf,0.0,0.0,0.00010009008107296567,0,base,Logistic regression,no handling,1.1
+logreg_none,21,10000,12,0.019991414446943585,0.5579612201308236,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,22,10000,13,0.030500979767937527,0.7670818217528942,0.0,0.0,inf,0.0,0.0,0.00040052067687994393,0,base,Logistic regression,no handling,1.1
+logreg_none,23,10000,18,0.04498452948191186,0.893302388744184,0.0,0.0,inf,0.0,0.0,0.00030054097375275494,0,base,Logistic regression,no handling,1.1
+logreg_none,24,10000,21,0.21141539805002232,0.87019884614834,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,25,10000,13,0.09698893233905057,0.8954332940514977,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,26,10000,10,0.03883448786998553,0.8524424424424425,0.0,0.0,inf,0.0,0.0,0.0002002002002002002,0,base,Logistic regression,no handling,1.1
+logreg_none,27,10000,7,0.0012884878564849503,0.6122142642707038,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none,28,4807,4,0.0016973549588924735,0.5957214241099313,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,no handling,1.1
+logreg_none_acc6+adwin,6,10000,12,0.4353697985964555,0.9410208917367506,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,7,10000,21,0.6715456471168054,0.9275383066344084,0.38095238095238093,0.0,0.6384860365205799,,,,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,8,10000,15,0.7416542681309788,0.9993924219662829,0.3333333333333333,0.0,0.38343591364298835,0.2,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,9,10000,12,0.4866685749832708,0.8868308637031104,0.3333333333333333,0.0,0.16733026768369658,0.16666666666666666,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,10,10000,16,0.5166756286168785,0.836144080528846,0.375,0.0,0.9960896589050445,0.4375,0.6363636363636364,0.00040064102564102563,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,11,10000,8,0.06494907330150622,0.8678567854283427,0.0,0.0,inf,0.0,0.0,0.00010008006405124099,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,12,10000,14,0.555280359187111,0.9964807873880576,0.35714285714285715,0.0,0.6276318185647882,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,13,10000,3,0.19507140369209333,0.9466506618652263,0.0,0.0,inf,0.0,0.0,0.00010003000900270081,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,14,10000,29,0.170303002384076,0.7390743500980429,0.13793103448275862,0.0,0.9805192811538034,0.13793103448275862,0.6666666666666666,0.00020058168689198675,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,15,10000,63,0.07858981403909658,0.7442219315017946,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,16,10000,4,0.05928180010184168,0.6458083233293317,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,17,10000,4,0.014227045891163448,0.5002751100440177,0.0,0.0,inf,0.0,0.0,0.00020008003201280514,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,18,10000,7,0.017547287253984033,0.8444196651942073,0.0,0.0,inf,0.0,0.0,0.00010007004903432403,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,19,10000,14,0.02512657625692997,0.8732940402277474,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,20,10000,9,0.010939528406232522,0.6763642834106252,0.0,0.0,inf,0.0,0.0,0.00010009008107296567,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,21,10000,12,0.019991414446943585,0.5579612201308236,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,22,10000,13,0.030500979767937527,0.7670818217528942,0.0,0.0,inf,0.0,0.0,0.00040052067687994393,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,23,10000,18,0.04498452948191186,0.893302388744184,0.0,0.0,inf,0.0,0.0,0.00030054097375275494,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,24,10000,21,0.21141539805002232,0.87019884614834,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,25,10000,13,0.09698893233905057,0.8954332940514977,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,26,10000,10,0.03883448786998553,0.8524424424424425,0.0,0.0,inf,0.0,0.0,0.0002002002002002002,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,27,10000,7,0.0012884878564849503,0.6122142642707038,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg_none_acc6+adwin,28,4807,4,0.0016973549588924735,0.5957214241099313,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,no handling,1.0
+logreg,6,10000,12,0.603863833788831,0.9544787077826725,0.75,0.00010012014417300761,0.9996594984895782,,,,0,base,Logistic regression,class weights,1.2
+logreg,7,10000,21,0.697146888017313,0.9679135708797999,0.5714285714285714,0.0001002104419280489,0.9999963412866044,0.6666666666666666,0.7777777777777778,0.0004008417677121956,0,base,Logistic regression,class weights,1.2
+logreg,8,10000,15,0.8743042872620337,0.9994525121014856,0.6666666666666666,0.00010015022533800701,0.999283013495538,0.4,1.0,0.0,0,base,Logistic regression,class weights,1.2
+logreg,9,10000,12,0.527815550778781,0.8784624883193165,0.5,0.0,0.9998556914446463,0.5,1.0,0.0,0,base,Logistic regression,class weights,1.2
+logreg,10,10000,16,0.7506160713787268,0.8346917568108974,0.75,0.00010016025641025641,0.994508858175746,0.6875,1.0,0.0,0,base,Logistic regression,class weights,1.2
+logreg,11,10000,8,0.47990858872978903,0.876788931144916,0.125,0.0,0.9999999966469826,0.625,0.5,0.0005004003202562049,0,base,Logistic regression,class weights,1.2
+logreg,12,10000,14,0.7983809996866964,0.997460730737318,0.6428571428571429,0.0001001401962747847,0.9978997554162296,0.2857142857142857,1.0,0.0,0,base,Logistic regression,class weights,1.2
+logreg,13,10000,3,0.3890184225676453,0.7426227868360508,0.0,0.0,inf,0.6666666666666666,0.6666666666666666,0.00010003000900270081,0,base,Logistic regression,class weights,1.2
+logreg,14,10000,29,0.17485211377823473,0.4990541535971559,0.13793103448275862,0.0,0.9999999999995814,0.20689655172413793,0.23076923076923078,0.0020058168689198676,0,base,Logistic regression,class weights,1.2
+logreg,15,10000,63,0.006397729960323892,0.23021064452079848,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,16,10000,4,0.0021081875786020214,0.5827330932372949,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,17,10000,4,0.0003707293868322358,0.3427871148459384,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,18,10000,7,0.0022064454010331997,0.6425354891281039,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,19,10000,14,0.00311200196638315,0.7360018311350176,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,20,10000,9,0.0009694313707225527,0.39878112523493364,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,21,10000,12,0.006036666831175735,0.4231077292751302,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,22,10000,13,0.011566491917804506,0.6008272292441712,0.0,0.0,inf,0.0,0.0,0.00010013016921998598,0,base,Logistic regression,class weights,1.2
+logreg,23,10000,18,0.00679534038129251,0.6814599612636077,0.0,0.0,inf,0.0,0.0,0.00010018032458425165,0,base,Logistic regression,class weights,1.2
+logreg,24,10000,21,0.013348128703550555,0.718957429649884,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,25,10000,13,0.01857044684866267,0.8070337592716685,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,26,10000,10,0.002189752618143557,0.6133333333333333,0.0,0.0,inf,0.0,0.0,0.0004004004004004004,0,base,Logistic regression,class weights,1.2
+logreg,27,10000,7,0.0009098632608493521,0.37493388228903085,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg,28,4807,4,0.0007155290244918569,0.30871330418488446,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,class weights,1.2
+logreg_acc6+adwin,6,10000,12,0.603863833788831,0.9544787077826725,0.75,0.00010012014417300761,0.9996594984895782,,,,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,7,10000,21,0.697146888017313,0.9679135708797999,0.5714285714285714,0.0001002104419280489,0.9999963412866044,0.6666666666666666,0.7777777777777778,0.0004008417677121956,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,8,10000,15,0.8743042872620337,0.9994525121014856,0.6666666666666666,0.00010015022533800701,0.999283013495538,0.4,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,9,10000,12,0.527815550778781,0.8784624883193165,0.5,0.0,0.9998556914446463,0.5,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,10,10000,16,0.7506160713787268,0.8346917568108974,0.75,0.00010016025641025641,0.994508858175746,0.6875,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,11,10000,8,0.47990858872978903,0.876788931144916,0.125,0.0,0.9999999966469826,0.625,0.5,0.0005004003202562049,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,12,10000,14,0.7983809996866964,0.997460730737318,0.6428571428571429,0.0001001401962747847,0.9978997554162296,0.2857142857142857,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,13,10000,3,0.3890184225676453,0.7426227868360508,0.0,0.0,inf,0.6666666666666666,0.6666666666666666,0.00010003000900270081,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,14,10000,29,0.17485211377823473,0.4990541535971559,0.13793103448275862,0.0,0.9999999999995814,0.20689655172413793,0.23076923076923078,0.0020058168689198676,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,15,10000,63,0.006397729960323892,0.23021064452079848,0.0,0.0,inf,0.0,,0.0,1,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,16,10000,4,0.6083333333333333,0.9998499399759904,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,17,10000,4,0.4575716736094094,0.9416016406562624,0.25,0.0,1.0,0.25,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,18,10000,7,0.20819570290707215,0.9687495532587097,0.14285714285714285,0.0,0.9999999989088773,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,19,10000,14,0.6242088132127422,0.9375911991073217,0.5714285714285714,0.0,0.9999976642678816,0.35714285714285715,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,20,10000,9,0.8901676612674057,0.9914033741478441,0.8888888888888888,0.0,0.9999998872925944,0.8888888888888888,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,21,10000,12,0.6846566368183378,0.9160325724202376,0.5833333333333334,0.0,0.9999991143296131,0.5,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,22,10000,13,0.5859851349729892,0.9979819919741819,0.0,0.0,inf,0.7692307692307693,0.7692307692307693,0.00030039050765995795,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,23,10000,18,0.8187758130339996,0.9948741067254391,0.7222222222222222,0.00010018032458425165,0.9999998306086115,0.7222222222222222,0.8666666666666667,0.0002003606491685033,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,24,10000,21,0.8041063822733029,0.9701611479344718,0.6190476190476191,0.0001002104419280489,0.9999987175000572,0.5714285714285714,0.9230769230769231,0.0001002104419280489,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,25,10000,13,0.7085489744958348,0.9868367339079265,0.6923076923076923,0.00010013016921998598,0.9999987213848994,0.6923076923076923,0.9,0.00010013016921998598,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,26,10000,10,0.8987719298245616,0.9989489489489489,0.9,0.0001001001001001001,0.9998781965473132,0.7,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,27,10000,7,0.24537240188327508,0.6430501350945661,0.0,0.0,inf,0.42857142857142855,0.5,0.0003002101471029721,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_acc6+adwin,28,4807,4,0.4825564971751412,0.9846970643347908,0.0,0.0,inf,0.5,0.6666666666666666,0.00020820320632937748,0,+ ADWIN + accumulate,Logistic regression,class weights,3.3
+logreg_smote,6,10000,12,0.6077358611122967,0.9548207849419302,0.75,0.00010012014417300761,0.9955694415457585,,,,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,7,10000,21,0.7300230790065733,0.9630175750027439,0.6666666666666666,0.0001002104419280489,0.9991985926074113,0.7142857142857143,0.8333333333333334,0.0003006313257841467,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,8,10000,15,0.860966706249725,0.9993056251043231,0.8,0.00010015022533800701,0.9885383745177456,0.5333333333333333,1.0,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,9,10000,12,0.5326837584615917,0.882091843545588,0.5,0.0,0.9985903022626836,0.5,1.0,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,10,10000,16,0.7505439446202695,0.8269543770032052,0.75,0.00010016025641025641,0.9898839593358163,0.625,1.0,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,11,10000,8,0.47845706020247025,0.8743369695756606,0.125,0.0,0.9999993515608278,0.625,0.7142857142857143,0.00020016012810248197,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,12,10000,14,0.832292392481468,0.9963806471917828,0.7142857142857143,0.0001001401962747847,0.9921340799130526,0.2857142857142857,1.0,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,13,10000,3,0.5556859166558032,0.7442899536527625,0.3333333333333333,0.0,0.9994605998490926,0.6666666666666666,0.6666666666666666,0.00010003000900270081,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,14,10000,29,0.17627744862632816,0.48572238802873163,0.1724137931034483,0.0,0.9999999665486279,0.1724137931034483,0.625,0.0003008725303379801,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,15,10000,63,0.007861811494153855,0.30453443998779617,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,16,10000,4,0.0013687215482905367,0.6385554221688676,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,17,10000,4,0.0007074021067501597,0.4570578231292517,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,18,10000,7,0.0016153620152692106,0.6142013695300997,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,19,10000,14,0.0024689749073501135,0.6805742324969242,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,20,10000,9,0.0008890528466522395,0.43327883984474913,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,21,10000,12,0.002810907316787595,0.44973968762515015,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,22,10000,13,0.008114446617613076,0.6294644576410873,0.0,0.0,inf,0.0,0.0,0.00010013016921998598,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,23,10000,18,0.005090554595338212,0.6786270843073087,0.0,0.0,inf,0.0,0.0,0.00010018032458425165,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,24,10000,21,0.01231501867379081,0.7348479425841887,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,25,10000,13,0.015257344696367841,0.8109696451540851,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,26,10000,10,0.0021939085265651184,0.6162062062062061,0.0,0.0,inf,0.0,0.0,0.0004004004004004004,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,27,10000,7,0.0007571921303575477,0.3726036797186602,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote,28,4807,4,0.0007321179827406961,0.3267228815323756,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,SMOTE,1.5
+logreg_smote_acc6+adwin,6,10000,12,0.6077358611122967,0.9548207849419302,0.75,0.00010012014417300761,0.9955694415457585,,,,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,7,10000,21,0.7300230790065733,0.9630175750027439,0.6666666666666666,0.0001002104419280489,0.9991985926074113,0.7142857142857143,0.8333333333333334,0.0003006313257841467,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,8,10000,15,0.860966706249725,0.9993056251043231,0.8,0.00010015022533800701,0.9885383745177456,0.5333333333333333,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,9,10000,12,0.5326837584615917,0.882091843545588,0.5,0.0,0.9985903022626836,0.5,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,10,10000,16,0.7505439446202695,0.8269543770032052,0.75,0.00010016025641025641,0.9898839593358163,0.625,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,11,10000,8,0.47845706020247025,0.8743369695756606,0.125,0.0,0.9999993515608278,0.625,0.7142857142857143,0.00020016012810248197,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,12,10000,14,0.832292392481468,0.9963806471917828,0.7142857142857143,0.0001001401962747847,0.9921340799130526,0.2857142857142857,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,13,10000,3,0.5556859166558032,0.7442899536527625,0.3333333333333333,0.0,0.9994605998490926,0.6666666666666666,0.6666666666666666,0.00010003000900270081,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,14,10000,29,0.17627744862632816,0.48572238802873163,0.1724137931034483,0.0,0.9999999665486279,0.1724137931034483,0.625,0.0003008725303379801,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,15,10000,63,0.007861811494153855,0.30453443998779617,0.0,0.0,inf,0.0,,0.0,1,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,16,10000,4,0.6083333333333333,0.9998499399759904,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,17,10000,4,0.482710394032755,0.9558823529411764,0.25,0.0,1.0,0.25,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,18,10000,7,0.2249149243246059,0.9722520049749109,0.14285714285714285,0.0,0.9999999392977207,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,19,10000,14,0.6368798268465017,0.941181940430889,0.5714285714285714,0.0,0.9999933549860947,0.42857142857142855,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,20,10000,9,0.8902457409920098,0.991903824553209,0.8888888888888888,0.0,0.9999990963976273,0.8888888888888888,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,21,10000,12,0.6982604810131938,0.920304365238286,0.5,0.0,0.9999999560755547,0.5,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,22,10000,13,0.6041331494912396,0.9982438708782957,0.0,0.0,inf,0.5384615384615384,0.7777777777777778,0.00020026033843997197,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,23,10000,18,0.8263250933538716,0.9965437788018434,0.6666666666666666,0.00010018032458425165,0.9999998519543328,0.6111111111111112,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,24,10000,21,0.8171197584899894,0.9706669720699183,0.7142857142857143,0.0001002104419280489,0.9992166830927095,0.5714285714285714,0.9230769230769231,0.0001002104419280489,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,25,10000,13,0.712569777386196,0.9869984826428202,0.6923076923076923,0.00010013016921998598,0.9999955383468534,0.6923076923076923,0.8181818181818182,0.00020026033843997197,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,26,10000,10,0.9109890109890111,0.9991891891891891,0.9,0.0001001001001001001,0.9998138707895219,0.7,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,27,10000,7,0.262215243808384,0.6455804777630055,0.0,0.0,inf,0.42857142857142855,0.6,0.00020014009806864806,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_smote_acc6+adwin,28,4807,4,0.6071606786427145,0.9827191338746616,0.25,0.0,0.9999999704639386,0.5,0.6666666666666666,0.00020820320632937748,0,+ ADWIN + accumulate,Logistic regression,SMOTE,4.2
+logreg_undersample,6,10000,12,0.5768882163086881,0.9527432919503404,0.0,0.0,inf,,,,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,7,10000,21,0.6193749540031426,0.9924364975973354,0.0,0.0,inf,,,,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,8,10000,15,0.7384692293044696,0.9991120013353363,0.6666666666666666,0.00010015022533800701,0.999995523656642,,,,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,9,10000,12,0.5604128004669473,0.8822336804164999,0.4166666666666667,0.0,0.9999952825146897,0.3333333333333333,1.0,0.0,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,10,10000,16,0.7224127359527565,0.9198279747596154,0.6875,0.00010016025641025641,0.9999537318295817,0.5,0.8888888888888888,0.00010016025641025641,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,11,10000,8,0.2662329760889833,0.9220751601281024,0.0,0.0,inf,0.625,0.5,0.0005004003202562049,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,12,10000,14,0.7211900363845636,0.9975894824182426,0.14285714285714285,0.0,0.9999999999677189,0.5,0.7777777777777778,0.0002002803925495694,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,13,10000,3,0.2792312661498708,0.977026441265713,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,14,10000,29,0.11381710511422159,0.42227632548182836,0.0,0.0,inf,0.1724137931034483,0.7142857142857143,0.00020058168689198675,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,15,10000,63,0.02032716786308788,0.1015301159207771,0.015873015873015872,0.0,0.9999999999996831,0.015873015873015872,0.5,0.00010063399416322834,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,16,10000,4,0.0017167625951183833,0.47924169667867145,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,17,10000,4,0.00041843551100422926,0.21963785514205683,0.0,0.0,inf,0.0,0.0,0.00020008003201280514,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,18,10000,7,0.0014381623466352875,0.47852067876084686,0.0,0.0,inf,0.0,0.0,0.0003002101471029721,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,19,10000,14,0.004295963989789225,0.48914194157534835,0.0,0.0,inf,0.0,0.0,0.0002002803925495694,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,20,10000,9,0.0006346123894459496,0.26700697294231474,0.0,0.0,inf,0.0,0.0,0.000300270243218897,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,21,10000,12,0.003911360340983175,0.3768271926311574,0.0,0.0,inf,0.0,0.0,0.0007008410092110533,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,22,10000,13,0.00368583463069991,0.40390969799200505,0.0,0.0,inf,0.0,0.0,0.0006007810153199159,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,23,10000,18,0.0018150018520536747,0.3274393909036265,0.0,0.0,inf,0.0,0.0,0.00030054097375275494,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,24,10000,21,0.0020475124521616324,0.2901426328623442,0.0,0.0,inf,0.0,0.0,0.0002004208838560978,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,25,10000,13,0.0039804206189181625,0.3931495559612111,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,26,10000,10,0.0006238963957004603,0.18188188188188184,0.0,0.0,inf,0.0,0.0,0.0005005005005005005,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,27,10000,7,0.0015624060878808813,0.3969064059127103,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,undersampling,0.9
+logreg_undersample,28,4807,4,0.0005804528248360762,0.14100562148657086,0.0,0.0,inf,0.0,,0.0,0,base,Logistic regression,undersampling,0.9
+logreg_undersample_acc6+adwin,6,10000,12,0.5768882163086881,0.9527432919503404,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,7,10000,21,0.6193749540031426,0.9924364975973354,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,8,10000,15,0.7384692293044696,0.9991120013353363,0.6666666666666666,0.00010015022533800701,0.999995523656642,,,,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,9,10000,12,0.5604128004669473,0.8822336804164999,0.4166666666666667,0.0,0.9999952825146897,0.3333333333333333,1.0,0.0,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,10,10000,16,0.7224127359527565,0.9198279747596154,0.6875,0.00010016025641025641,0.9999537318295817,0.5,0.8888888888888888,0.00010016025641025641,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,11,10000,8,0.2662329760889833,0.9220751601281024,0.0,0.0,inf,0.625,0.5,0.0005004003202562049,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,12,10000,14,0.7211900363845636,0.9975894824182426,0.14285714285714285,0.0,0.9999999999677189,0.5,0.7777777777777778,0.0002002803925495694,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,13,10000,3,0.2792312661498708,0.977026441265713,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,14,10000,29,0.11381710511422159,0.42227632548182836,0.0,0.0,inf,0.1724137931034483,0.7142857142857143,0.00020058168689198675,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,15,10000,63,0.02032716786308788,0.1015301159207771,0.015873015873015872,0.0,0.9999999999996831,0.015873015873015872,0.5,0.00010063399416322834,1,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,16,10000,4,0.2284722222222222,0.9991996798719487,0.0,0.0,inf,0.0,0.0,0.00010004001600640257,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,17,10000,4,0.14383788254755997,0.9946728691476591,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,18,10000,7,0.10323156010149256,0.9932810109934097,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,19,10000,14,0.17939161040530005,0.9295299133072015,0.0,0.0,inf,0.0,0.0,0.0001001401962747847,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,20,10000,9,0.25335411021963095,0.9887009419588741,0.0,0.0,inf,0.0,0.0,0.00020018016214593134,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,21,10000,12,0.13321041868267064,0.9146892938192497,0.0,0.0,inf,0.0,0.0,0.00040048057669203043,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,22,10000,13,0.19364983894762186,0.9918509446896349,0.0,0.0,inf,0.0,0.0,0.0005006508460999299,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,23,10000,18,0.28407662123826527,0.9944566887063381,0.0,0.0,inf,0.0,0.0,0.00030054097375275494,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,24,10000,21,0.454658071525019,0.9645111877800524,0.0,0.0,inf,0.0,0.0,0.0002004208838560978,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,25,10000,13,0.6985229143148537,0.9783872880899015,0.5384615384615384,0.0,0.9999999184433375,0.0,,0.0,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,26,10000,10,0.29703601709764754,0.9966966966966968,0.0,0.0,inf,0.3,0.375,0.0005005005005005005,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,27,10000,7,0.09388296581213643,0.880330517076239,0.0,0.0,inf,0.0,0.0,0.00010007004903432403,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+logreg_undersample_acc6+adwin,28,4807,4,0.22663346775836082,0.9801686445971269,0.0,0.0,inf,0.0,0.0,0.00020820320632937748,0,+ ADWIN + accumulate,Logistic regression,undersampling,1.4
+random_forest_none,6,10000,12,0.7601993084483651,0.9506699706314242,0.6666666666666666,0.0,0.5610119047619047,,,,0,base,Random forest,no handling,13.0
+random_forest_none,7,10000,21,0.866300895803866,0.9484942188118859,0.8571428571428571,0.0002004208838560978,0.16069047619047616,0.7142857142857143,1.0,0.0,0,base,Random forest,no handling,13.0
+random_forest_none,8,10000,15,1.0,1.0,1.0,0.00010015022533800701,0.24758333333333332,1.0,0.9375,0.00010015022533800701,0,base,Random forest,no handling,13.0
+random_forest_none,9,10000,12,0.6333049261083745,0.8659099252436258,0.5833333333333334,0.0,0.5410277777777777,0.5833333333333334,1.0,0.0,0,base,Random forest,no handling,13.0
+random_forest_none,10,10000,16,0.7360758620689656,0.8966252253605769,0.6875,0.00010016025641025641,0.18316666666666662,0.6875,1.0,0.0,0,base,Random forest,no handling,13.0
+random_forest_none,11,10000,8,0.5077727513227512,0.8606948058446757,0.125,0.0,0.8321666666666665,0.625,0.5,0.0005004003202562049,0,base,Random forest,no handling,13.0
+random_forest_none,12,10000,14,0.7781364476793049,0.9613458842379331,0.07142857142857142,0.0,0.8575833333333334,0.07142857142857142,1.0,0.0,0,base,Random forest,no handling,13.0
+random_forest_none,13,10000,3,0.6681394207167403,0.9817445233570071,0.6666666666666666,0.0,0.36725,0.0,,0.0,0,base,Random forest,no handling,13.0
+random_forest_none,14,10000,29,0.5594178558892173,0.9359193384954299,0.3448275862068966,0.00010029084344599338,0.42983333333333335,0.3448275862068966,0.7142857142857143,0.0004011633737839735,0,base,Random forest,no handling,13.0
+random_forest_none,15,10000,63,0.7943719620538581,0.9914165592438711,0.5873015873015873,0.00040253597665291336,0.40008333333333346,0.5238095238095238,0.9705882352941176,0.00010063399416322834,0,base,Random forest,no handling,13.0
+random_forest_none,16,10000,4,0.10196663976324993,0.9960484193677471,0.0,0.0,inf,0.0,0.0,0.00010004001600640257,0,base,Random forest,no handling,13.0
+random_forest_none,17,10000,4,0.3035631544805857,0.9908213285314125,0.25,0.0,0.47491666666666676,0.25,0.25,0.00030012004801920766,0,base,Random forest,no handling,13.0
+random_forest_none,18,10000,7,0.05754398946921142,0.9892353218681649,0.0,0.0,inf,0.0,0.0,0.00010007004903432403,0,base,Random forest,no handling,13.0
+random_forest_none,19,10000,14,0.05637352123016792,0.9570613144116049,0.0,0.0,inf,0.0,0.0,0.0001001401962747847,0,base,Random forest,no handling,13.0
+random_forest_none,20,10000,9,0.118178666006883,0.9751442965335468,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,no handling,13.0
+random_forest_none,21,10000,12,0.08461971912417131,0.8833350020024029,0.0,0.0,inf,0.0,0.0,0.00010012014417300761,0,base,Random forest,no handling,13.0
+random_forest_none,22,10000,13,0.14529882222635865,0.9923053816114795,0.0,0.0,inf,0.0,0.0,0.00020026033843997197,0,base,Random forest,no handling,13.0
+random_forest_none,23,10000,18,0.1797928193803467,0.9858022217769764,0.0,0.0,inf,0.0,0.0,0.00010018032458425165,0,base,Random forest,no handling,13.0
+random_forest_none,24,10000,21,0.24762540520919102,0.9431210303542199,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,no handling,13.0
+random_forest_none,25,10000,13,0.30417388329353895,0.9456447227549661,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,no handling,13.0
+random_forest_none,26,10000,10,0.19004882217449512,0.9822472472472473,0.0,0.0,inf,0.0,0.0,0.0001001001001001001,0,base,Random forest,no handling,13.0
+random_forest_none,27,10000,7,0.004052819008113379,0.8236694257408758,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,no handling,13.0
+random_forest_none,28,4807,4,0.00799821407206135,0.8107953362481782,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,no handling,13.0
+random_forest_none_acc6+adwin,6,10000,12,0.7601993084483651,0.9506699706314242,0.6666666666666666,0.0,0.5610119047619047,,,,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,7,10000,21,0.866300895803866,0.9484942188118859,0.8571428571428571,0.0002004208838560978,0.16069047619047616,0.7142857142857143,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,8,10000,15,1.0,1.0,1.0,0.00010015022533800701,0.24758333333333332,1.0,0.9375,0.00010015022533800701,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,9,10000,12,0.6333049261083745,0.8659099252436258,0.5833333333333334,0.0,0.5410277777777777,0.5833333333333334,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,10,10000,16,0.7360758620689656,0.8966252253605769,0.6875,0.00010016025641025641,0.18316666666666662,0.6875,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,11,10000,8,0.5077727513227512,0.8606948058446757,0.125,0.0,0.8321666666666665,0.625,0.5,0.0005004003202562049,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,12,10000,14,0.7781364476793049,0.9613458842379331,0.07142857142857142,0.0,0.8575833333333334,0.07142857142857142,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,13,10000,3,0.6681394207167403,0.9817445233570071,0.6666666666666666,0.0,0.36725,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,14,10000,29,0.5594178558892173,0.9359193384954299,0.3448275862068966,0.00010029084344599338,0.42983333333333335,0.3448275862068966,0.7142857142857143,0.0004011633737839735,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,15,10000,63,0.7943719620538581,0.9914165592438714,0.5873015873015873,0.00040253597665291336,0.4000833333333334,0.5238095238095238,0.9705882352941176,0.00010063399416322834,1,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,16,10000,4,0.6791666666666667,0.9998999599839936,0.0,0.0,inf,1.0,0.6666666666666666,0.00020008003201280514,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,17,10000,4,0.7501,0.8698729491796718,0.75,0.0,0.4061666666666666,0.75,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,18,10000,7,0.6254501400560224,0.9255121442152364,0.5714285714285714,0.0,0.1906666666666667,0.14285714285714285,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,19,10000,14,0.508358032958033,0.8528368287030414,0.21428571428571427,0.0,0.5607916666666667,0.5714285714285714,0.5714285714285714,0.0006008411776487082,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,20,10000,9,0.888988888888889,0.9422813865812564,0.8888888888888888,0.0,0.23324999999999999,0.4444444444444444,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,21,10000,12,0.6799927368993359,0.9100670804965959,0.5833333333333334,0.0,0.7227916666666665,0.5833333333333334,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,22,10000,13,0.841855319148936,0.9595820720783171,0.7692307692307693,0.00010013016921998598,0.22274999999999998,0.46153846153846156,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,23,10000,18,0.8982441740628102,0.9986253033237605,0.8888888888888888,0.00010018032458425165,0.23450000000000004,0.8888888888888888,0.9411764705882353,0.00010018032458425165,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,24,10000,21,0.8541084801878289,0.973983460505156,0.7619047619047619,0.0,0.19112500000000002,0.7142857142857143,1.0,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,25,10000,13,0.7024740246275003,0.9184632329720944,0.6923076923076923,0.00010013016921998598,0.20066666666666663,0.6923076923076923,0.9,0.00010013016921998598,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,26,10000,10,0.9000999999999999,0.9482332332332332,0.9,0.0001001001001001001,0.2814523809523809,0.9,0.8181818181818182,0.0002002002002002002,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,27,10000,7,0.2841271943909796,0.9224600077196895,0.14285714285714285,0.0,0.8735833333333334,0.2857142857142857,0.3333333333333333,0.0004002801961372961,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest_none_acc6+adwin,28,4807,4,0.755586592178771,0.991229439933375,0.75,0.0,0.32483333333333336,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,no handling,41.5
+random_forest,6,10000,12,0.7638612021857923,0.9120694833800561,0.75,0.00010012014417300761,0.3943705181039631,,,,0,base,Random forest,class weights,8.2
+random_forest,7,10000,21,0.8921413919413921,0.9500236210327402,0.8571428571428571,0.0002004208838560978,0.09972796116848555,0.8095238095238095,1.0,0.0,0,base,Random forest,class weights,8.2
+random_forest,8,10000,15,1.0,1.0,1.0,0.00010015022533800701,0.11476608226971784,1.0,0.9375,0.00010015022533800701,0,base,Random forest,class weights,8.2
+random_forest,9,10000,12,0.7503000000000001,0.8694558470164196,0.75,0.00010012014417300761,0.08978266815464007,0.5833333333333334,1.0,0.0,0,base,Random forest,class weights,8.2
+random_forest,10,10000,16,0.752081798245614,0.8988506610576924,0.75,0.00010016025641025641,0.09988142370357009,0.75,0.9230769230769231,0.00010016025641025641,0,base,Random forest,class weights,8.2
+random_forest,11,10000,8,0.4459935967302452,0.8645541433146517,0.0,0.0,inf,0.625,0.5555555555555556,0.00040032025620496394,0,base,Random forest,class weights,8.2
+random_forest,12,10000,14,0.8095848603777175,0.9623651683785872,0.21428571428571427,0.0,0.874787666626536,0.8571428571428571,0.8,0.0003004205888243541,0,base,Random forest,class weights,8.2
+random_forest,13,10000,3,0.6667666666666666,0.8245973792137641,0.6666666666666666,0.0,0.4695447784944465,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,14,10000,29,0.4855964768046612,0.9503456575793939,0.1724137931034483,0.0,0.6843177402012819,0.1724137931034483,1.0,0.0,0,base,Random forest,class weights,8.2
+random_forest,15,10000,63,0.5194316483022695,0.9793237076119233,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,16,10000,4,0.11846003134796237,0.9982242897158864,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,17,10000,4,0.06341862991530924,0.9917717086834734,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,18,10000,7,0.03187177046774353,0.9702077168303527,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,19,10000,14,0.14530910788085483,0.8646354896855598,0.07142857142857142,0.0,0.18986585227929315,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,20,10000,9,0.10678904772218611,0.932428074155629,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,21,10000,12,0.08285699808056879,0.930871212121212,0.0,0.0,inf,0.0,0.0,0.00010012014417300761,0,base,Random forest,class weights,8.2
+random_forest,22,10000,13,0.28006738950849736,0.9923592978564442,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,23,10000,18,0.14635300109707852,0.8969339255103632,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,24,10000,21,0.29734235558458794,0.9343263710935822,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,25,10000,13,0.23877570128745484,0.9477204981861034,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,26,10000,10,0.11215578210410053,0.9381281281281282,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,27,10000,7,0.008026663163226925,0.8675358465211362,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest,28,4807,4,0.03414621864278615,0.7136164896939412,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,class weights,8.2
+random_forest_acc6+adwin,6,10000,12,0.7638612021857923,0.9120694833800561,0.75,0.00010012014417300761,0.3943705181039631,,,,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,7,10000,21,0.8921413919413921,0.9500236210327402,0.8571428571428571,0.0002004208838560978,0.09972796116848555,0.8095238095238095,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,8,10000,15,1.0,1.0,1.0,0.00010015022533800701,0.11476608226971784,1.0,0.9375,0.00010015022533800701,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,9,10000,12,0.7503000000000001,0.8694558470164196,0.75,0.00010012014417300761,0.08978266815464007,0.5833333333333334,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,10,10000,16,0.752081798245614,0.8988506610576924,0.75,0.00010016025641025641,0.09988142370357009,0.75,0.9230769230769231,0.00010016025641025641,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,11,10000,8,0.4459935967302452,0.8645541433146517,0.0,0.0,inf,0.625,0.5555555555555556,0.00040032025620496394,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,12,10000,14,0.8095848603777175,0.9623651683785872,0.21428571428571427,0.0,0.874787666626536,0.8571428571428571,0.8,0.0003004205888243541,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,13,10000,3,0.6667666666666666,0.8245973792137641,0.6666666666666666,0.0,0.4695447784944465,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,14,10000,29,0.4855964768046612,0.9503456575793939,0.1724137931034483,0.0,0.6843177402012819,0.1724137931034483,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,15,10000,63,0.5194316483022695,0.9793237076119233,0.0,0.0,inf,0.0,,0.0,1,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,16,10000,4,0.9166666666666666,0.9999499799919969,0.75,0.0,0.5635232201059437,0.25,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,17,10000,4,0.7501,0.8700980392156863,0.75,0.0,0.4393640600868259,0.5,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,18,10000,7,0.7325213369523678,0.9959400151534645,0.7142857142857143,0.0,0.10989911252804059,0.14285714285714285,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,19,10000,14,0.4498331065759638,0.8526937712797917,0.0,0.0,inf,0.5714285714285714,0.7272727272727273,0.0003004205888243541,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,20,10000,9,0.8889888888888888,0.9422035387404218,0.8888888888888888,0.0,0.42974225292923324,0.8888888888888888,0.8888888888888888,0.00010009008107296567,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,21,10000,12,0.6538547785547786,0.8692055466559873,0.5833333333333334,0.0,0.5947022502744319,0.5833333333333334,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,22,10000,13,0.8882118881118879,0.9600211043587434,0.8461538461538461,0.00010013016921998598,0.10976286640416522,0.6923076923076923,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,23,10000,18,0.896605376344086,0.9706276853892561,0.8888888888888888,0.00010018032458425165,0.17984230144433844,0.8888888888888888,0.9411764705882353,0.00010018032458425165,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,24,10000,21,0.8909945192255153,0.9740621972809566,0.8095238095238095,0.0001002104419280489,0.11482216876011955,0.8095238095238095,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,25,10000,13,0.6927076923076922,0.8419021651223513,0.6923076923076923,0.00010013016921998598,0.11984833005624383,0.6923076923076923,0.9,0.00010013016921998598,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,26,10000,10,0.9001,0.9484284284284284,0.9,0.0001001001001001001,0.13969147973026913,0.9,0.6923076923076923,0.0004004004004004004,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,27,10000,7,0.3686882982091874,0.9208660347957858,0.2857142857142857,0.0,0.7948120875937115,0.42857142857142855,0.3333333333333333,0.0006004202942059442,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_acc6+adwin,28,4807,4,0.7502080299563136,0.871070164480533,0.75,0.0,0.504637374255137,0.25,1.0,0.0,0,+ ADWIN + accumulate,Random forest,class weights,19.8
+random_forest_smote,6,10000,12,0.781787675070028,0.9457932852756641,0.75,0.00010012014417300761,0.7341666666666665,,,,0,base,Random forest,SMOTE,16.7
+random_forest_smote,7,10000,21,0.8888032021360379,0.9710033928392481,0.8571428571428571,0.0002004208838560978,0.31283333333333335,0.8095238095238095,1.0,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,8,10000,15,1.0,1.0,1.0,0.00010015022533800701,0.42949999999999994,1.0,0.8823529411764706,0.00020030045067601402,0,base,Random forest,SMOTE,16.7
+random_forest_smote,9,10000,12,0.7419666666666667,0.850374616206114,0.75,0.00010012014417300761,0.40708333333333335,0.6666666666666666,0.8888888888888888,0.00010012014417300761,0,base,Random forest,SMOTE,16.7
+random_forest_smote,10,10000,16,0.7532871323529412,0.8855669070512819,0.75,0.00010016025641025641,0.27258333333333334,0.75,1.0,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,11,10000,8,0.48243255914814115,0.9059372497998399,0.125,0.0,0.99,0.625,0.5555555555555556,0.00040032025620496394,0,base,Random forest,SMOTE,16.7
+random_forest_smote,12,10000,14,0.7329202122087387,0.9949393436525422,0.0,0.0,inf,0.07142857142857142,0.5,0.0001001401962747847,0,base,Random forest,SMOTE,16.7
+random_forest_smote,13,10000,3,0.6678936605316973,0.9734086892734488,0.6666666666666666,0.0,0.7979166666666667,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,14,10000,29,0.32322622231628195,0.9374963255509944,0.1724137931034483,0.0,0.7139166666666665,0.10344827586206896,1.0,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,15,10000,63,0.26437743689825033,0.9837404218001985,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,16,10000,4,0.026058384191104504,0.990296118447379,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,17,10000,4,0.014237839316156613,0.9816301520608244,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,18,10000,7,0.03888439862985497,0.9680776543580506,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,19,10000,14,0.04893699357350695,0.8887227833252268,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,20,10000,9,0.03234243883968961,0.9039079616098933,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,21,10000,12,0.028622935793214215,0.9364779401949005,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,22,10000,13,0.13459127258183762,0.9917161540772235,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,23,10000,18,0.05860637993202828,0.9763824884792627,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,24,10000,21,0.07669627911013241,0.9674053607814506,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,25,10000,13,0.08559841520496729,0.9352542921182152,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,26,10000,10,0.027768699078113024,0.972127127127127,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,27,10000,7,0.006999360290778078,0.7616831782247574,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote,28,4807,4,0.015595696674888125,0.7524203622735791,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,SMOTE,16.7
+random_forest_smote_acc6+adwin,6,10000,12,0.781787675070028,0.9457932852756641,0.75,0.00010012014417300761,0.7341666666666665,,,,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,7,10000,21,0.8888032021360379,0.9710033928392481,0.8571428571428571,0.0002004208838560978,0.31283333333333335,0.8095238095238095,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,8,10000,15,1.0,1.0,1.0,0.00010015022533800701,0.42949999999999994,1.0,0.8823529411764706,0.00020030045067601402,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,9,10000,12,0.7419666666666667,0.850374616206114,0.75,0.00010012014417300761,0.40708333333333335,0.6666666666666666,0.8888888888888888,0.00010012014417300761,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,10,10000,16,0.7532871323529412,0.885566907051282,0.75,0.00010016025641025641,0.27258333333333334,0.75,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,11,10000,8,0.48243255914814115,0.9059372497998399,0.125,0.0,0.99,0.625,0.5555555555555556,0.00040032025620496394,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,12,10000,14,0.7329202122087387,0.9949393436525422,0.0,0.0,inf,0.07142857142857142,0.5,0.0001001401962747847,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,13,10000,3,0.6678936605316973,0.9734086892734488,0.6666666666666666,0.0,0.7979166666666667,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,14,10000,29,0.32322622231628195,0.9374963255509944,0.1724137931034483,0.0,0.7139166666666665,0.10344827586206896,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,15,10000,63,0.26437743689825033,0.9837396231177051,0.0,0.0,inf,0.0,,0.0,1,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,16,10000,4,0.9166666666666666,0.9999499799919966,0.75,0.0,0.8470833333333334,1.0,0.6666666666666666,0.00020008003201280514,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,17,10000,4,0.7501,0.8619697879151661,0.75,0.0,0.86725,0.75,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,18,10000,7,0.7236657549617784,0.9931166101985676,0.7142857142857143,0.0,0.415,0.2857142857142857,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,19,10000,14,0.5234382186476021,0.8802788189179136,0.0,0.0,inf,0.5714285714285714,0.6666666666666666,0.0004005607850991388,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,20,10000,9,0.8889888888888888,0.9386892647827488,0.8888888888888888,0.0,0.7279166666666669,0.8888888888888888,0.8888888888888888,0.00010009008107296567,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,21,10000,12,0.6500874100961216,0.9044812107862769,0.5833333333333334,0.0,0.60175,0.3333333333333333,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,22,10000,13,0.902472690707985,0.996310588380279,0.8461538461538461,0.00010013016921998598,0.4960833333333333,0.8461538461538461,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,23,10000,18,0.9138857482212401,0.9994072664128766,0.8333333333333334,0.00010018032458425165,0.4894166666666666,0.7777777777777778,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,24,10000,21,0.8975614583779005,0.9714495679021182,0.9047619047619048,0.0002004208838560978,0.23708333333333337,0.8095238095238095,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,25,10000,13,0.7080821913380737,0.9126171715537892,0.6923076923076923,0.00010013016921998598,0.3441666666666666,0.6923076923076923,0.75,0.00030039050765995795,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,26,10000,10,0.9000999999999999,0.9445995995995995,0.9,0.0001001001001001001,0.3837499999999999,0.9,0.9,0.0001001001001001001,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,27,10000,7,0.46045684745362164,0.9134608511672457,0.42857142857142855,0.0,0.9124999999999999,0.42857142857142855,0.42857142857142855,0.0004002801961372961,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_smote_acc6+adwin,28,4807,4,0.7547619047619047,0.9900843222985634,0.75,0.0,0.8501666666666666,0.5,1.0,0.0,0,+ ADWIN + accumulate,Random forest,SMOTE,52.8
+random_forest_undersample,6,10000,12,0.5983343914017936,0.9499148978774529,0.0,0.0,inf,,,,0,base,Random forest,undersampling,3.1
+random_forest_undersample,7,10000,21,0.8646022328949157,0.9918948840183432,0.8571428571428571,0.0002004208838560978,0.7482500000000001,,,,0,base,Random forest,undersampling,3.1
+random_forest_undersample,8,10000,15,1.0,0.9999999999999999,1.0,0.00010015022533800701,0.758107142857143,1.0,0.8823529411764706,0.00020030045067601402,0,base,Random forest,undersampling,3.1
+random_forest_undersample,9,10000,12,0.5945071670831271,0.9234664931250834,0.5833333333333334,0.0,0.8908333333333335,0.5833333333333334,1.0,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,10,10000,16,0.7444248445124148,0.9453031099759616,0.6875,0.00010016025641025641,0.7936904761904762,0.625,1.0,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,11,10000,8,0.5492579622402534,0.9052742193755005,0.25,0.0,1.0,0.625,0.7142857142857143,0.00020016012810248197,0,base,Random forest,undersampling,3.1
+random_forest_undersample,12,10000,14,0.8027274428303484,0.984413893736946,0.9285714285714286,0.0001001401962747847,0.7685833333333334,0.2857142857142857,0.8,0.0001001401962747847,0,base,Random forest,undersampling,3.1
+random_forest_undersample,13,10000,3,0.6697626418988648,0.9893301323730452,0.6666666666666666,0.0,0.7919583333333332,0.6666666666666666,0.6666666666666666,0.00010003000900270081,0,base,Random forest,undersampling,3.1
+random_forest_undersample,14,10000,29,0.33224243358435707,0.957628847796541,0.1724137931034483,0.0,0.995,0.1724137931034483,1.0,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,15,10000,63,0.5977926230047438,0.9936329031629424,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,16,10000,4,0.09830198537095089,0.9970988395358142,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,17,10000,4,0.024506750194250193,0.9733143257302921,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,18,10000,7,0.02717226328765719,0.9593644122314191,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,19,10000,14,0.08310848563590077,0.9449300449200309,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,20,10000,9,0.058700767738859,0.9364539196387859,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,21,10000,12,0.05601273232527641,0.9220564677613134,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,22,10000,13,0.15303780393809283,0.9911500335050951,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,23,10000,18,0.1067672885025856,0.9771087958324984,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,24,10000,21,0.21686036759178012,0.9682881670555785,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,25,10000,13,0.22709878810756973,0.9469233079926982,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,26,10000,10,0.06465718201398986,0.9703303303303303,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,27,10000,7,0.008906471558209127,0.8587082386241798,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample,28,4807,4,0.014876003400271141,0.8520976473037685,0.0,0.0,inf,0.0,,0.0,0,base,Random forest,undersampling,3.1
+random_forest_undersample_acc6+adwin,6,10000,12,0.5983343914017936,0.949914897877453,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,7,10000,21,0.8646022328949157,0.9918948840183432,0.8571428571428571,0.0002004208838560978,0.7482500000000001,,,,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,8,10000,15,1.0,1.0,1.0,0.00010015022533800701,0.758107142857143,1.0,0.8823529411764706,0.00020030045067601402,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,9,10000,12,0.5945071670831271,0.9234664931250833,0.5833333333333334,0.0,0.8908333333333335,0.5833333333333334,1.0,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,10,10000,16,0.7444248445124148,0.9453031099759615,0.6875,0.00010016025641025641,0.7936904761904762,0.625,1.0,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,11,10000,8,0.5492579622402534,0.9052742193755003,0.25,0.0,1.0,0.625,0.7142857142857143,0.00020016012810248197,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,12,10000,14,0.8027274428303484,0.984413893736946,0.9285714285714286,0.0001001401962747847,0.7685833333333332,0.2857142857142857,0.8,0.0001001401962747847,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,13,10000,3,0.6697626418988648,0.9893301323730452,0.6666666666666666,0.0,0.7919583333333332,0.6666666666666666,0.6666666666666666,0.00010003000900270081,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,14,10000,29,0.33224243358435707,0.957628847796541,0.1724137931034483,0.0,0.995,0.1724137931034483,1.0,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,15,10000,63,0.5982736234857444,0.9936329031629424,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,16,10000,4,0.09830198537095089,0.9970988395358142,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,17,10000,4,0.024506750194250193,0.9733143257302921,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,18,10000,7,0.02717226328765719,0.9593644122314192,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,19,10000,14,0.08310867636083571,0.9449336213556121,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,20,10000,9,0.058700767738859,0.9364539196387859,0.0,0.0,inf,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,21,10000,12,0.05601273232527641,0.9220564677613136,0.0,0.0,inf,0.0,,0.0,1,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,22,10000,13,0.8128619074314926,0.9586192819896635,0.6153846153846154,0.0,0.7654166666666667,0.0,,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,23,10000,18,0.8517263213824873,0.9932656559585031,0.7777777777777778,0.00010018032458425165,0.7389166666666667,0.7222222222222222,1.0,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,24,10000,21,0.8283969531859023,0.9685196054571744,0.7142857142857143,0.0001002104419280489,0.8206388888888889,0.8095238095238095,0.7083333333333334,0.0007014730934963423,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,25,10000,13,0.7694897012290963,0.9696875168488266,0.6923076923076923,0.00010013016921998598,0.9263690476190476,0.6923076923076923,0.5294117647058824,0.0008010413537598879,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,26,10000,10,0.808975858975859,0.9592642642642643,0.6,0.0,0.9823333333333332,0.7,0.7,0.0003003003003003003,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,27,10000,7,0.3816628179725073,0.9693213821103344,0.2857142857142857,0.0,0.9591666666666668,0.14285714285714285,1.0,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+random_forest_undersample_acc6+adwin,28,4807,4,0.7506016847172082,0.9136997709764731,0.75,0.0,0.9025833333333333,0.5,1.0,0.0,0,+ ADWIN + accumulate,Random forest,undersampling,5.9
+gradient_boosting_none,6,10000,12,0.023714599919383246,0.7306601254839142,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,7,10000,21,0.217495507401172,0.8560834896139033,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,8,10000,15,0.07290447563140898,0.7674979135369722,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,9,10000,12,0.01919268292682927,0.5785692831397677,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,10,10000,16,0.25457384982428993,0.8818171574519231,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,11,10000,8,0.0467544513457557,0.7860663530824659,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,12,10000,14,0.13120631071251257,0.869878544247661,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,13,10000,3,0.010003921568627451,0.6160014671067987,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,14,10000,29,0.02634636015325671,0.5441902206052724,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,15,10000,63,0.0063,0.4822381000301902,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,16,10000,4,0.0004,0.4763405362144858,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,17,10000,4,0.0004,0.4764405762304922,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,18,10000,7,0.0007,0.47438206744721306,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,19,10000,14,0.0014,0.4764670538754256,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,20,10000,9,0.0009,0.4781803623260935,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,21,10000,12,0.0012,0.4765218261914297,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,22,10000,13,0.0013,0.47747071192550317,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,23,10000,18,0.0018,0.4764075335604087,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,24,10000,21,0.005968253968253968,0.49873066773557806,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,25,10000,13,0.0013,0.47727045158706316,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,26,10000,10,0.001,0.47862862862862865,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,27,10000,7,0.0007,0.4779845892124487,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none,28,4807,4,0.0008321198252548367,0.47793046012908597,0.0,0.0,inf,,,,0,base,Gradient boosting,no handling,1.4
+gradient_boosting_none_acc6+adwin,6,10000,12,0.023714599919383246,0.7306601254839142,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,7,10000,21,0.217495507401172,0.8560834896139033,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,8,10000,15,0.07290447563140898,0.7674979135369722,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,9,10000,12,0.01919268292682927,0.5785692831397677,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,10,10000,16,0.25457384982428993,0.8818171574519231,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,11,10000,8,0.0467544513457557,0.7860663530824659,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,12,10000,14,0.13120631071251257,0.869878544247661,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,13,10000,3,0.010003921568627451,0.6160014671067987,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,14,10000,29,0.02634636015325671,0.5441902206052724,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,15,10000,63,0.0063,0.4822381000301902,0.0,0.0,inf,,,,1,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,16,10000,4,0.6915816326530613,0.9939475790316127,0.5,0.0,0.9999401498404306,,,,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,17,10000,4,0.1360429780768396,0.992797118847539,0.0,0.0,inf,0.75,0.14285714285714285,0.001800720288115246,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,18,10000,7,0.0007,0.4938957270089062,0.0,0.0,inf,0.0,0.0,0.006204343040128089,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,19,10000,14,0.0014,0.39650510715001,0.0,0.0,inf,0.0,0.0,0.0157220108151412,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,20,10000,9,0.0009,0.49839855870283256,0.0,0.0,inf,0.0,0.0,0.0011009908918026225,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,21,10000,12,0.0012,0.4945935122146576,0.0,0.0,inf,0.0,0.0,0.007008410092110532,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,22,10000,13,0.0013,0.4939921898468008,0.0,0.0,inf,0.0,0.0,0.00821067387603885,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,23,10000,18,0.00246103500761035,0.5219478394443332,0.0,0.0,inf,0.05555555555555555,0.0136986301369863,0.007212983370066119,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,24,10000,21,0.0021,0.49478905701974146,0.0,0.0,inf,0.0,0.0,0.007716204028459766,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,25,10000,13,0.005314963119072707,0.5715468570680345,0.0,0.0,inf,0.15384615384615385,0.0273972602739726,0.007109242014619005,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,26,10000,10,0.001,0.4935435435435435,0.0,0.0,inf,0.0,0.0,0.007607607607607607,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,27,10000,7,0.0007,0.4926448513959772,0.0,0.0,inf,0.0,0.0,0.010807565295706995,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting_none_acc6+adwin,28,4807,4,0.0008321198252548367,0.49489902144493025,0.0,0.0,inf,0.0,0.0,0.006662502602540079,0,+ ADWIN + accumulate,Gradient boosting,no handling,3.8
+gradient_boosting,6,10000,12,0.7627809490889949,0.9567939861166732,0.75,0.00010012014417300761,0.7931888859273236,,,,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,7,10000,21,0.9152789187496428,0.9539938633034133,0.8571428571428571,0.0002004208838560978,0.016506334669289715,0.8095238095238095,0.9444444444444444,0.0001002104419280489,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,8,10000,15,0.9866269841269841,0.9999799699549324,1.0,0.00010015022533800701,0.1888791705228397,1.0,0.8823529411764706,0.00020030045067601402,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,9,10000,12,0.696970888213104,0.7992591109331199,0.6666666666666666,0.0,0.07018067340330478,0.5833333333333334,1.0,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,10,10000,16,0.7547385193939128,0.8651216947115385,0.75,0.00010016025641025641,0.13782883500502877,0.75,0.8571428571428571,0.00020032051282051281,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,11,10000,8,0.6253330160937781,0.7317604083266612,0.625,0.0,0.9077431214863037,0.625,0.7142857142857143,0.00020016012810248197,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,12,10000,14,0.8038469467040895,0.9937626963463135,0.5714285714285714,0.0,0.9889977547473148,0.5714285714285714,0.8888888888888888,0.0001001401962747847,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,13,10000,3,0.6667795717135222,0.7047781000966957,0.6666666666666666,0.0,0.739121032789533,0.3333333333333333,1.0,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,14,10000,29,0.15721629885564015,0.49508574867114635,0.10344827586206896,0.0,0.9997711297390894,0.10344827586206896,1.0,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,15,10000,63,0.04711593519276272,0.5497044076092078,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,16,10000,4,0.002872534192878852,0.6001025410164065,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,17,10000,4,0.0021667886609904262,0.5055022008803521,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,18,10000,7,0.002240380106388111,0.5584909436605624,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,19,10000,14,0.07786779841658767,0.5162012531830277,0.07142857142857142,0.0,0.9886882575212559,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,20,10000,9,0.0006809172917424376,0.20449515675218807,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,21,10000,12,0.009272313915054432,0.6118717460953141,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,22,10000,13,0.06318192271055678,0.5509007864069443,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,23,10000,18,0.0048262494080847,0.40441962198624193,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,24,10000,21,0.0056840694880843055,0.2598218162904003,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,25,10000,13,0.0020941159200434725,0.2955573014149164,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,26,10000,10,0.002399602558139141,0.44609609609609613,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,27,10000,7,0.0013165234328442878,0.3776572171948936,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting,28,4807,4,0.0008143724551188938,0.4392567145534041,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,class weights,9.7
+gradient_boosting_acc6+adwin,6,10000,12,0.7627809490889949,0.9567939861166732,0.75,0.00010012014417300761,0.7931888859273236,,,,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,7,10000,21,0.9152789187496428,0.9539938633034133,0.8571428571428571,0.0002004208838560978,0.016506334669289715,0.8095238095238095,0.9444444444444444,0.0001002104419280489,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,8,10000,15,0.9866269841269841,0.9999799699549324,1.0,0.00010015022533800701,0.1888791705228397,1.0,0.8823529411764706,0.00020030045067601402,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,9,10000,12,0.696970888213104,0.7992591109331199,0.6666666666666666,0.0,0.07018067340330478,0.5833333333333334,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,10,10000,16,0.7547385193939128,0.8651216947115385,0.75,0.00010016025641025641,0.13782883500502877,0.75,0.8571428571428571,0.00020032051282051281,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,11,10000,8,0.6253330160937781,0.7317604083266612,0.625,0.0,0.9077431214863037,0.625,0.7142857142857143,0.00020016012810248197,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,12,10000,14,0.8038469467040895,0.9937626963463135,0.5714285714285714,0.0,0.9889977547473148,0.5714285714285714,0.8888888888888888,0.0001001401962747847,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,13,10000,3,0.6667795717135222,0.7047781000966957,0.6666666666666666,0.0,0.739121032789533,0.3333333333333333,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,14,10000,29,0.15721629885564015,0.49508574867114635,0.10344827586206896,0.0,0.9997711297390894,0.10344827586206896,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,15,10000,63,0.04711593519276272,0.5497044076092078,0.0,0.0,inf,0.0,,0.0,1,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,16,10000,4,0.7678571428571428,0.9998749499799919,0.25,0.0,0.9995892113827827,0.0,,0.0,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,17,10000,4,0.750104821802935,0.761654661864746,0.75,0.0,0.9420619849294241,0.5,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,18,10000,7,0.47474928041132897,0.575538591299624,0.2857142857142857,0.0,0.027173356309560793,0.14285714285714285,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,19,10000,14,0.3609783913771892,0.8014935194987268,0.0,0.0,inf,0.35714285714285715,0.45454545454545453,0.0006008411776487082,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,20,10000,9,0.8890337324578346,0.9588129316384745,0.8888888888888888,0.0,0.8037823313035055,0.8888888888888888,0.8888888888888888,0.00010009008107296567,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,21,10000,12,0.6286161968259321,0.8183319983980778,0.5,0.0,0.971458836930799,0.5,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,22,10000,13,0.8568752332905291,0.9973581039967343,0.8461538461538461,0.00010013016921998598,0.023791823017461747,0.7692307692307693,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,23,10000,18,0.8645593335810726,0.9444444444444444,0.7777777777777778,0.00010018032458425165,0.04999444428026811,0.7777777777777778,0.9333333333333333,0.00010018032458425165,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,24,10000,21,0.8591709156256534,0.9183714371608949,0.8095238095238095,0.0001002104419280489,0.11917241415368325,0.8095238095238095,0.8947368421052632,0.0002004208838560978,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,25,10000,13,0.6953154526641289,0.8235051721083563,0.6923076923076923,0.00010013016921998598,0.2731282994131382,0.6923076923076923,0.9,0.00010013016921998598,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,26,10000,10,0.8789931424335093,0.904064064064064,0.9,0.0001001001001001001,0.12713149416426459,0.8,0.8888888888888888,0.0001001001001001001,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,27,10000,7,0.44025508470195723,0.8024617232062443,0.42857142857142855,0.0,0.9967700814582401,0.42857142857142855,0.6,0.00020014009806864806,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_acc6+adwin,28,4807,4,0.7602040816326531,0.9951072246512597,0.75,0.0,0.7626402750527282,0.5,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,class weights,52.8
+gradient_boosting_smote,6,10000,12,0.771737030627456,0.9744526765451876,0.75,0.00010012014417300761,0.8972842188150073,,,,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,7,10000,21,0.8664447404262889,0.9756727222405146,0.8571428571428571,0.0002004208838560978,0.11527436565088706,0.8571428571428571,1.0,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,8,10000,15,0.9805555555555554,0.999966616591554,0.8666666666666667,0.00010015022533800701,0.9454376406436817,1.0,0.7142857142857143,0.0006009013520280421,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,9,10000,12,0.7361713046950181,0.8647543719129622,0.6666666666666666,0.0,0.9951495565647321,0.6666666666666666,0.8888888888888888,0.00010012014417300761,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,10,10000,16,0.7509538928826918,0.9046599559294872,0.75,0.00010016025641025641,0.33798449077120074,0.25,1.0,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,11,10000,8,0.4442431069569139,0.7852281825460368,0.0,0.0,inf,0.625,0.45454545454545453,0.0006004803843074459,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,12,10000,14,0.8188746946363062,0.980208005493405,0.2857142857142857,0.0,0.9999581013999045,0.8571428571428571,0.8571428571428571,0.0002002803925495694,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,13,10000,3,0.6670003336670003,0.9001700510153046,0.6666666666666666,0.0,0.9951878085490077,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,14,10000,29,0.18540839553744146,0.8719355095293593,0.1724137931034483,0.0,0.9999099070453594,0.1724137931034483,1.0,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,15,10000,63,0.04924550313329118,0.8868841958305579,0.015873015873015872,0.0,0.9922290682056716,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,16,10000,4,0.004032331987193204,0.8385354141656662,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,17,10000,4,0.0047419943293629035,0.8961334533813525,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,18,10000,7,0.010142091980074572,0.6326428499949965,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,19,10000,14,0.07634785101594248,0.7191282080627164,0.07142857142857142,0.0,0.977152319563353,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,20,10000,9,0.0030923301110101866,0.7910953191205418,0.0,0.0,inf,0.0,0.0,0.00020018016214593134,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,21,10000,12,0.007639744657017352,0.894273127753304,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,22,10000,13,0.03741529949580565,0.9406998328596405,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,23,10000,18,0.00799049269539587,0.828814087579866,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,24,10000,21,0.020588341804233367,0.8870914635019255,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,25,10000,13,0.007523589119799602,0.7677095608906964,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,26,10000,10,0.009354750201113244,0.9357957957957957,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,27,10000,7,0.0010149962895889906,0.589283927320553,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote,28,4807,4,0.001554244017816512,0.5915313345825526,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,SMOTE,1.5
+gradient_boosting_smote_acc6+adwin,6,10000,12,0.771737030627456,0.9744526765451876,0.75,0.00010012014417300761,0.8972842188150073,,,,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,7,10000,21,0.8664447404262889,0.9756727222405146,0.8571428571428571,0.0002004208838560978,0.11527436565088706,0.8571428571428571,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,8,10000,15,0.9805555555555554,0.999966616591554,0.8666666666666667,0.00010015022533800701,0.9454376406436817,1.0,0.7142857142857143,0.0006009013520280421,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,9,10000,12,0.7361713046950181,0.8647543719129622,0.6666666666666666,0.0,0.9951495565647321,0.6666666666666666,0.8888888888888888,0.00010012014417300761,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,10,10000,16,0.7509538928826918,0.9046599559294872,0.75,0.00010016025641025641,0.33798449077120074,0.25,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,11,10000,8,0.4442431069569139,0.7852281825460368,0.0,0.0,inf,0.625,0.45454545454545453,0.0006004803843074459,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,12,10000,14,0.8188746946363062,0.980208005493405,0.2857142857142857,0.0,0.9999581013999045,0.8571428571428571,0.8571428571428571,0.0002002803925495694,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,13,10000,3,0.6670003336670003,0.9001700510153046,0.6666666666666666,0.0,0.9951878085490077,0.0,,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,14,10000,29,0.18540839553744146,0.8719355095293593,0.1724137931034483,0.0,0.9999099070453594,0.1724137931034483,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,15,10000,63,0.04924550313329118,0.8868841958305579,0.015873015873015872,0.0,0.9922290682056716,0.0,,0.0,1,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,16,10000,4,1.0,1.0,1.0,0.0,0.565547099682983,0.75,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,17,10000,4,0.7501009387301908,0.7523384353741495,0.75,0.0,0.9999281729623366,0.75,0.75,0.00010004001600640257,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,18,10000,7,0.6956213425964445,0.8596374605080698,0.5714285714285714,0.0,0.033987252774552425,0.14285714285714285,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,19,10000,14,0.3867439990326472,0.8848673857686474,0.07142857142857142,0.0,0.9999709075228403,0.5714285714285714,0.5333333333333333,0.0007009813739234929,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,20,10000,9,0.8896368320452089,0.9852978792023932,0.8888888888888888,0.0,0.9998035450564946,0.0,,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,21,10000,12,0.6678307068312074,0.8823129421973035,0.5833333333333334,0.0,0.9591703435570995,0.16666666666666666,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,22,10000,13,0.8907504105393288,0.9971039274133296,0.8461538461538461,0.00010013016921998598,0.6674812496463818,0.8461538461538461,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,23,10000,18,0.8744987955531789,0.9986586967652886,0.7222222222222222,0.00010018032458425165,0.9496736880705896,0.7222222222222222,0.8666666666666667,0.0002003606491685033,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,24,10000,21,0.9016694975543446,0.9828687863561097,0.9047619047619048,0.0002004208838560978,0.39682990975201005,0.7619047619047619,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,25,10000,13,0.7021157825451843,0.945236499757377,0.6923076923076923,0.00010013016921998598,0.27996614487601645,0.6923076923076923,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,26,10000,10,0.9011792452830188,0.9916116116116117,0.9,0.0001001001001001001,0.8592604615042666,0.9,0.8181818181818182,0.0002002002002002002,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,27,10000,7,0.4478599458563448,0.843018684507727,0.42857142857142855,0.0,0.999775387355854,0.42857142857142855,0.6,0.00020014009806864806,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_smote_acc6+adwin,28,4807,4,0.7536764705882353,0.9860503851759317,0.75,0.0,0.9872432516599555,0.25,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,SMOTE,5.8
+gradient_boosting_undersample,6,10000,12,0.5730308271898894,0.9467444266453077,0.0,0.0,inf,,,,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,7,10000,21,0.8459575473177317,0.9691590435151913,0.8095238095238095,0.0001002104419280489,0.9986675287631659,,,,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,8,10000,15,0.9888888888888889,0.9999799699549323,0.9333333333333333,0.00010015022533800701,0.9970431643330098,0.8,1.0,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,9,10000,12,0.7197893294139449,0.928430783606995,0.5833333333333334,0.0,0.9987579212739018,0.5833333333333334,0.875,0.00010012014417300761,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,10,10000,16,0.7391514483379825,0.9198029346955128,0.6875,0.00010016025641025641,0.9958016928562817,0.5625,1.0,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,11,10000,8,0.4317519973635994,0.9458566853482786,0.0,0.0,inf,0.625,0.5,0.0005004003202562049,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,12,10000,14,0.7372165532879817,0.9914022488626935,0.7142857142857143,0.0001001401962747847,0.998421587878548,0.7142857142857143,0.7692307692307693,0.0003004205888243541,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,13,10000,3,0.38500448967375034,0.9140408789303458,0.3333333333333333,0.0,0.9996988689087506,0.3333333333333333,0.5,0.00010003000900270081,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,14,10000,29,0.19196716982230458,0.8707112695783288,0.1724137931034483,0.0,0.999801116666765,0.1724137931034483,1.0,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,15,10000,63,0.06361132070862906,0.916283698411101,0.015873015873015872,0.0,0.9994474647557675,0.0,,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,16,10000,4,0.002599996693054149,0.8920068027210886,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,17,10000,4,0.00311149765790567,0.8180522208883553,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,18,10000,7,0.008525195147899987,0.8045203070720933,0.0,0.0,inf,0.0,0.0,0.00010007004903432403,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,19,10000,14,0.033642603860345066,0.8892807072759006,0.0,0.0,inf,0.0,0.0,0.0002002803925495694,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,20,10000,9,0.007257530506397601,0.8182030494111366,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,21,10000,12,0.009050924064265435,0.8768605660125484,0.0,0.0,inf,0.0,0.0,0.00010012014417300761,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,22,10000,13,0.031350010409409566,0.9513829516833421,0.0,0.0,inf,0.0,0.0,0.00010013016921998598,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,23,10000,18,0.01639734871525107,0.8485885705380797,0.0,0.0,inf,0.0,0.0,0.0002003606491685033,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,24,10000,21,0.027203092517568715,0.9130459679612901,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,25,10000,13,0.017413872178178528,0.9111614329397447,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,26,10000,10,0.008677509077405398,0.8954354354354354,0.0,0.0,inf,0.0,0.0,0.0001001001001001001,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,27,10000,7,0.001697532542274359,0.6260668182013124,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample,28,4807,4,0.004095464810734615,0.6833749739745992,0.0,0.0,inf,0.0,,0.0,0,base,Gradient boosting,undersampling,0.8
+gradient_boosting_undersample_acc6+adwin,6,10000,12,0.5730308271898894,0.9467444266453077,0.0,0.0,inf,,,,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,7,10000,21,0.8459575473177317,0.9691590435151913,0.8095238095238095,0.0001002104419280489,0.9986675287631659,,,,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,8,10000,15,0.9888888888888889,0.9999799699549323,0.9333333333333333,0.00010015022533800701,0.9970431643330098,0.8,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,9,10000,12,0.7197893294139449,0.928430783606995,0.5833333333333334,0.0,0.9987579212739018,0.5833333333333334,0.875,0.00010012014417300761,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,10,10000,16,0.7391514483379825,0.9198029346955128,0.6875,0.00010016025641025641,0.9958016928562817,0.5625,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,11,10000,8,0.4317519973635994,0.9458566853482786,0.0,0.0,inf,0.625,0.5,0.0005004003202562049,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,12,10000,14,0.7372165532879817,0.9914022488626935,0.7142857142857143,0.0001001401962747847,0.998421587878548,0.7142857142857143,0.7692307692307693,0.0003004205888243541,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,13,10000,3,0.38500448967375034,0.9140408789303458,0.3333333333333333,0.0,0.9996988689087506,0.3333333333333333,0.5,0.00010003000900270081,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,14,10000,29,0.19196716982230458,0.8707112695783288,0.1724137931034483,0.0,0.999801116666765,0.1724137931034483,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,15,10000,63,0.06361132070862906,0.916283698411101,0.015873015873015872,0.0,0.9994474647557675,0.0,,0.0,1,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,16,10000,4,0.787037037037037,0.9994247699079631,0.75,0.0,0.997504576997469,0.0,,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,17,10000,4,0.7559523809523809,0.9958983593437375,0.75,0.0,0.9897163618646413,0.5,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,18,10000,7,0.22092178859102846,0.9811296478963846,0.14285714285714285,0.0,0.9997896792361473,0.14285714285714285,0.25,0.0003002101471029721,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,19,10000,14,0.5294061094003131,0.9283353838230666,0.07142857142857142,0.0,0.9999085286324729,0.14285714285714285,0.6666666666666666,0.0001001401962747847,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,20,10000,9,0.8668326693227092,0.9330842202426628,0.7777777777777778,0.0,0.9996386225008486,0.4444444444444444,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,21,10000,12,0.6595988933019633,0.9390184888532906,0.4166666666666667,0.0,0.9997539787639498,0.4166666666666667,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,22,10000,13,0.8706058726220015,0.9961180303625483,0.8461538461538461,0.00010013016921998598,0.9995740063840323,0.6153846153846154,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,23,10000,18,0.7960067195364143,0.9960039181638058,0.7777777777777778,0.00010018032458425165,0.9992243765905251,0.6666666666666666,0.9230769230769231,0.00010018032458425165,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,24,10000,21,0.7338423313793708,0.9869058355880682,0.6190476190476191,0.0001002104419280489,0.999495465882442,0.6666666666666666,0.7777777777777778,0.0004008417677121956,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,25,10000,13,0.6833543061683826,0.9647926920381111,0.23076923076923078,0.0,0.9998402667994801,0.38461538461538464,0.8333333333333334,0.00010013016921998598,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,26,10000,10,0.6407196360896601,0.9954254254254256,0.5,0.0,0.9995625449406237,0.1,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,27,10000,7,0.20053067693205248,0.9192291747080099,0.0,0.0,inf,0.2857142857142857,0.5,0.00020014009806864806,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9
+gradient_boosting_undersample_acc6+adwin,28,4807,4,0.6106991525423728,0.9968769519050593,0.5,0.0,0.9995089860660974,0.25,1.0,0.0,0,+ ADWIN + accumulate,Gradient boosting,undersampling,1.9

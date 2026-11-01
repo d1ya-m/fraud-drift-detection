@@ -24,6 +24,7 @@ STRATEGY_COLORS = {
     "+ ADWIN": "#1baf7a",
     "+ DDM": "#eda100",
     "+ ADWIN + accumulate": "#e87ba4",
+    "DDM warning window": "#008300",
 }
 IMBALANCE_COLORS = {
     "no handling": "#2a78d6",
@@ -35,16 +36,18 @@ SINGLE_SERIES = STRATEGY_COLORS["base"]
 # DDM is drawn first and wider so that where it matches ADWIN exactly (same alarm batch) the
 # ADWIN line stays visible on top of it instead of being hidden
 LINE_WIDTHS = {"+ DDM": 3.4}
-DRAW_ORDER = ["+ DDM", "+ ADWIN", "periodic retrain", "+ ADWIN + accumulate", "base"]
+DRAW_ORDER = ["+ DDM", "+ ADWIN", "DDM warning window", "periodic retrain", "+ ADWIN + accumulate", "base"]
 
 METRIC_LABELS = {
     "pr_auc": "PR-AUC",
     "roc_auc": "ROC-AUC",
-    "recall_at_p": "Recall at 90% precision",
+    "recall_at_p": "Recall at 90% precision (oracle threshold)",
+    "op_recall": "Recall at the previous batch's 90%-precision threshold",
     "fpr": "False-positive rate",
     "mean_pr_auc": "Mean PR-AUC across batches",
     "mean_pr_auc_after_drift": "Mean PR-AUC after the drift",
-    "mean_recall_at_p": "Mean recall at 90% precision",
+    "mean_recall_at_p": "Mean recall at 90% precision (oracle threshold)",
+    "mean_op_recall": "Mean operational recall",
 }
 
 
@@ -100,7 +103,8 @@ def plot_metric_over_time(results, out_path, metric="pr_auc", drift_batch=None, 
             ax.plot(run.loc[fired, "batch_idx"], y[fired], "o", color=color, markersize=6,
                     markeredgecolor=SURFACE, markeredgewidth=1.5, linestyle="none", zorder=10 + z)
         # a detector that never fires leaves its line hidden under "base", so say so
-        silent = [s.lstrip("+ ") for s in ("+ ADWIN", "+ DDM")
+        detectors = {"+ ADWIN": "ADWIN", "+ DDM": "DDM", "DDM warning window": "DDM warning window"}
+        silent = [label for s, label in detectors.items()
                   if (fam["strategy"] == s).any() and fam.loc[fam["strategy"] == s, "drift_flag"].sum() == 0]
         if silent:
             ax.text(0.99, 0.03, f"no alarms from {' or '.join(silent)} (lines = base)", transform=ax.transAxes,
@@ -177,6 +181,130 @@ def plot_grouped_bars(summary, out_path, metrics, group="family", color_by="imba
     fig.legend(handles, levels, loc="upper left", ncol=len(levels), fontsize=9,
                bbox_to_anchor=(0.005, 1 - 0.3 / fig.get_figheight()))
     fig.tight_layout(rect=(0, 0, 1, top))
+    fig.savefig(out_path)
+    plt.close(fig)
+    return out_path
+
+
+FAMILY_COLORS = {
+    "Logistic regression (static)": "#2a78d6",
+    "Random forest (static)": "#eb6834",
+    "Gradient boosting (static)": "#1baf7a",
+}
+
+
+def plot_comparison_intervals(comparisons, out_path, reference, title=None):
+    """Forest plot: one panel per alternative strategy; per scenario, the reference minus that strategy
+    (post-drift PR-AUC) with its 95% CI for each model. Filled marker = CI excludes 0."""
+    apply_style()
+    # "vs base" (the frozen model) is left to the tables: its large gaps would squash the shared scale
+    others = [s for s in ["periodic retrain", "+ ADWIN", "+ DDM", "DDM warning window"]
+              if s in set(comparisons["vs"])]
+    scenarios = list(dict.fromkeys(comparisons["scenario"]))
+    families = [f for f in FAMILY_COLORS if f in set(comparisons["family"])]
+    fig, axes = plt.subplots(1, len(others), figsize=(3.6 * len(others), 0.42 * len(scenarios) + 1.8),
+                             sharey=True, sharex=True, squeeze=False)
+    offsets = {f: (i - (len(families) - 1) / 2) * 0.22 for i, f in enumerate(families)}
+    for ax, other in zip(axes[0], others):
+        ax.axvline(0, color=INK_SECONDARY, linewidth=1, zorder=1)
+        ax.spines["left"].set_visible(False)
+        for y, scenario in enumerate(scenarios):
+            for family in families:
+                row = comparisons[(comparisons["scenario"] == scenario) & (comparisons["family"] == family)
+                                  & (comparisons["vs"] == other)]
+                if row.empty:
+                    continue
+                r = row.iloc[0]
+                color = FAMILY_COLORS[family]
+                yy = y + offsets[family]
+                ax.plot([r["lo"], r["hi"]], [yy, yy], color=color, linewidth=1.6, solid_capstyle="round")
+                ax.plot(r["mean"], yy, "o", markersize=6, color=color, markeredgecolor=color,
+                        markerfacecolor=color if r["significant"] else SURFACE, markeredgewidth=1.5)
+        ax.set_title(f"vs {other}", loc="left", fontsize=10)
+        ax.grid(axis="y", visible=False)
+        ax.grid(axis="x", visible=True)
+        ax.set_xlabel("Difference in post-drift PR-AUC")
+    axes[0, 0].set_yticks(range(len(scenarios)), scenarios)
+    axes[0, 0].invert_yaxis()
+    axes[0, 0].tick_params(axis="y", length=0, labelcolor=INK_SECONDARY)
+
+    handles = [plt.Line2D([], [], color=FAMILY_COLORS[f], marker="o", linewidth=1.6) for f in families]
+    handles += [plt.Line2D([], [], color=MUTED, marker="o", markerfacecolor=MUTED, linestyle="none"),
+                plt.Line2D([], [], color=MUTED, marker="o", markerfacecolor=SURFACE, linestyle="none")]
+    labels = [f.replace(" (static)", "") for f in families] + ["95% CI excludes 0", "CI includes 0"]
+    top = 1 - 0.6 / fig.get_figheight()
+    fig.suptitle(title or f"{reference} minus each alternative (right of 0 = {reference} better)",
+                 x=0.01, y=0.995, ha="left", va="top", fontsize=12, color=INK)
+    fig.legend(handles, labels, loc="upper left", ncol=len(labels), fontsize=9,
+               bbox_to_anchor=(0.005, 1 - 0.3 / fig.get_figheight()))
+    fig.tight_layout(rect=(0, 0, 1, top))
+    fig.savefig(out_path)
+    plt.close(fig)
+    return out_path
+
+
+MODEL_COLORS = {"Logistic regression": "#2a78d6", "Random forest": "#eb6834", "Gradient boosting": "#1baf7a"}
+
+
+def plot_severity(table, out_path, title=None):
+    """Drift severity study: per dataset (row), post-drift PR-AUC of the frozen model (hollow) and of
+    accumulate-after-drift (filled), and ADWIN's detection delay, against the severity level."""
+    apply_style()
+    datasets = list(dict.fromkeys(table["dataset"]))
+    fig, axes = plt.subplots(len(datasets), 2, figsize=(10, 3.3 * len(datasets) + 0.8), squeeze=False)
+    for row, dataset in zip(axes, datasets):
+        d = table[table["dataset"] == dataset]
+        for model, g in d.groupby("model", sort=False):
+            g = g.sort_values("level")
+            color = MODEL_COLORS.get(model, MUTED)
+            row[0].plot(g["level"], g["frozen_pr_auc_after"], color=color, linewidth=1.6, marker="o", markersize=6,
+                        markerfacecolor=SURFACE, markeredgecolor=color, markeredgewidth=1.5)
+            row[0].plot(g["level"], g["accumulate_pr_auc_after"], color=color, linewidth=1.6, marker="o",
+                        markersize=6, markeredgecolor=SURFACE, markeredgewidth=1.5)
+            row[1].plot(g["level"], g["adwin_delay_batches"], color=color, linewidth=1.6, marker="o", markersize=6,
+                        markeredgecolor=SURFACE, markeredgewidth=1.5)
+        axis_name = d["axis"].iloc[0]
+        row[0].set_title(f"{dataset}: post-drift PR-AUC", loc="left")
+        row[0].set_ylim(0, 1.02)
+        row[1].set_title(f"{dataset}: ADWIN detection delay (batches)", loc="left")
+        row[1].set_ylim(bottom=0)
+        for ax in row:
+            ax.set_xlabel(f"Drift severity: {axis_name}")
+    handles = [plt.Line2D([], [], color=c, linewidth=1.6) for m, c in MODEL_COLORS.items() if m in set(table["model"])]
+    labels = [m for m in MODEL_COLORS if m in set(table["model"])]
+    handles += [plt.Line2D([], [], color=MUTED, marker="o", markerfacecolor=SURFACE, linestyle="none"),
+                plt.Line2D([], [], color=MUTED, marker="o", markerfacecolor=MUTED, linestyle="none")]
+    labels += ["frozen model", "+ ADWIN + accumulate"]
+    top = 1 - 0.6 / fig.get_figheight()
+    fig.suptitle(title or "Drift severity vs performance loss and detection", x=0.01, y=0.995, ha="left",
+                 va="top", fontsize=12, color=INK)
+    fig.legend(handles, labels, loc="upper left", ncol=len(labels), fontsize=9,
+               bbox_to_anchor=(0.005, 1 - 0.3 / fig.get_figheight()))
+    fig.tight_layout(rect=(0, 0, 1, top))
+    fig.savefig(out_path)
+    plt.close(fig)
+    return out_path
+
+
+def plot_feature_importance(tables, out_path, top=10, title=None):
+    """Side-by-side horizontal bars: the top features of each importance table (e.g. before/after drift)."""
+    apply_style()
+    fig, axes = plt.subplots(1, len(tables), figsize=(3.9 * len(tables), 0.32 * top + 1.6), squeeze=False)
+    for ax, (label, series) in zip(axes[0], tables.items()):
+        s = series.sort_values(ascending=False).head(top)[::-1]
+        ax.set_axisbelow(True)
+        ax.barh(s.index, s.values, color=SINGLE_SERIES, height=0.7)
+        for y, v in enumerate(s.values):
+            ax.annotate(f"{v:.3f}", (v, y), xytext=(3, 0), textcoords="offset points", va="center",
+                        fontsize=8, color=INK_SECONDARY)
+        ax.set_xlim(0, s.max() * 1.25 if len(s) else 1)
+        ax.grid(axis="y", visible=False)
+        ax.grid(axis="x", visible=True)
+        ax.tick_params(axis="y", length=0, labelcolor=INK_SECONDARY)
+        ax.set_title(label, loc="left", fontsize=10)
+        ax.set_xlabel("mean |SHAP value|")
+    fig.suptitle(title or "", x=0.01, y=0.99, ha="left", va="top", fontsize=12, color=INK)
+    fig.tight_layout(rect=(0, 0, 1, 1 - 0.45 / fig.get_figheight()))
     fig.savefig(out_path)
     plt.close(fig)
     return out_path

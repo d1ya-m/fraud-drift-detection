@@ -1,0 +1,151 @@
+scenario,role,family,vs,mean,lo,hi,n_batches,significant
+dev,development,Logistic regression (static),base,0.5677394242512758,0.47496151139179305,0.7285140462849818,14,True
+dev,development,Logistic regression (static),periodic retrain,0.07118033444410442,-0.007807210785631915,0.2255360765171999,14,False
+dev,development,Logistic regression (static),+ ADWIN,0.10030328696813529,0.003095685293388241,0.17792718396070162,14,True
+dev,development,Logistic regression (static),+ DDM,0.10040276447010295,0.0031963847407296482,0.17792718396070162,14,True
+dev,development,Logistic regression (static),DDM warning window,0.10025589102316101,0.003048289348413954,0.17792718396070162,14,True
+dev,development,Random forest (static),base,0.5676544884678207,0.531297849617315,0.6454771825541414,14,True
+dev,development,Random forest (static),periodic retrain,-0.03442816565692799,-0.05154631726304669,-0.00013049778905384373,14,True
+dev,development,Random forest (static),+ ADWIN,0.055660997623985395,0.018383078498774796,0.1000182302259083,14,True
+dev,development,Random forest (static),+ DDM,0.03326687707758537,-0.014516184854711385,0.09993290499068215,14,False
+dev,development,Random forest (static),DDM warning window,0.03376032527267526,-0.013882382485419351,0.09993290499068215,14,False
+dev,development,Gradient boosting (static),base,0.6465210872218109,0.5695420398676662,0.7786883366952212,14,True
+dev,development,Gradient boosting (static),periodic retrain,-0.03568895890850909,-0.0973968759692133,0.05814203867999333,14,False
+dev,development,Gradient boosting (static),+ ADWIN,0.17888428385774424,0.11214311165445102,0.24437995622311023,14,True
+dev,development,Gradient boosting (static),+ DDM,0.11926201895378379,-0.00017631383331590195,0.24437995622311023,14,False
+dev,development,Gradient boosting (static),DDM warning window,0.017928770782964693,-0.06186642551187574,0.1244598743233781,14,False
+drift30,held-out,Logistic regression (static),base,0.5478245589900608,0.3861482158797359,0.7286767742562645,20,True
+drift30,held-out,Logistic regression (static),periodic retrain,-0.008920916067513707,-0.12231712619306542,0.12748337183776853,20,False
+drift30,held-out,Logistic regression (static),+ ADWIN,0.19625423522951263,0.08609506509061611,0.31220675197567765,20,True
+drift30,held-out,Logistic regression (static),+ DDM,-0.12086465290835524,-0.2683006382631698,0.034023032447286924,20,False
+drift30,held-out,Logistic regression (static),DDM warning window,-0.12086465290835524,-0.2683006382631698,0.034023032447286924,20,False
+drift30,held-out,Random forest (static),base,0.45735664765667855,0.2867022027059017,0.6293490444877188,20,True
+drift30,held-out,Random forest (static),periodic retrain,-0.09824805103816978,-0.207570448070705,-0.001798345586544071,20,True
+drift30,held-out,Random forest (static),+ ADWIN,0.07474601729412027,0.026806882595606773,0.12457823272294571,20,True
+drift30,held-out,Random forest (static),+ DDM,-0.02993967929661649,-0.12478009241577197,0.044718728041550464,20,False
+drift30,held-out,Random forest (static),DDM warning window,-0.06298780309855437,-0.17488583280873918,0.018355768076162002,20,False
+drift30,held-out,Gradient boosting (static),base,0.5289733148989052,0.3370605309826855,0.718381838385888,20,True
+drift30,held-out,Gradient boosting (static),periodic retrain,-0.11474353291150344,-0.2556143466737633,0.018230935712257663,20,False
+drift30,held-out,Gradient boosting (static),+ ADWIN,0.22176104843637656,0.11664043886762765,0.3545321678902237,20,True
+drift30,held-out,Gradient boosting (static),+ DDM,-0.12515665029465142,-0.2934476390960387,0.029065629596554735,20,False
+drift30,held-out,Gradient boosting (static),DDM warning window,-0.12515665029465142,-0.2934476390960387,0.029065629596554735,20,False
+drift70,held-out,Logistic regression (static),base,0.4757320356488443,0.16925635800173425,0.777930823779265,9,True
+drift70,held-out,Logistic regression (static),periodic retrain,-0.005030348236401589,-0.13363472717440467,0.09170698632168268,9,False
+drift70,held-out,Logistic regression (static),+ ADWIN,0.0751881654250834,0.016673983629466975,0.13326851509521054,9,True
+drift70,held-out,Logistic regression (static),+ DDM,-0.12923520704464206,-0.3936323901298165,0.04520323508536675,9,False
+drift70,held-out,Logistic regression (static),DDM warning window,-0.07480064763543447,-0.4443019570068898,0.20919316133273463,9,False
+drift70,held-out,Random forest (static),base,0.411978582350396,0.16668852288342254,0.6156699339651758,9,True
+drift70,held-out,Random forest (static),periodic retrain,-0.12717475513516208,-0.3226561274906776,0.01557451707496376,9,False
+drift70,held-out,Random forest (static),+ ADWIN,0.015437447016491853,0.0014943591520108963,0.03468617161540541,9,True
+drift70,held-out,Random forest (static),+ DDM,0.02517666458400376,-0.032745551066068836,0.08309888023407636,9,False
+drift70,held-out,Random forest (static),DDM warning window,0.011497335205828595,-0.04312985179453737,0.06939870840793327,9,False
+drift70,held-out,Gradient boosting (static),base,0.49588265537147513,0.18602446876804393,0.8058673865293136,9,True
+drift70,held-out,Gradient boosting (static),periodic retrain,-0.11283706719701023,-0.3566406866258149,0.07544154351076143,9,False
+drift70,held-out,Gradient boosting (static),+ ADWIN,0.020000577677553675,0.0012791067854866316,0.0508687242321804,9,True
+drift70,held-out,Gradient boosting (static),+ DDM,0.020000577677553675,0.0012791067854866316,0.0508687242321804,9,True
+drift70,held-out,Gradient boosting (static),DDM warning window,0.009774587615735254,0.00297347579593727,0.023966491195387282,9,True
+k2,held-out,Logistic regression (static),base,0.0,0.0,0.0,14,False
+k2,held-out,Logistic regression (static),periodic retrain,-0.29040795233058125,-0.4480200146029166,-0.12059624131213034,14,True
+k2,held-out,Logistic regression (static),+ ADWIN,0.0,0.0,0.0,14,False
+k2,held-out,Logistic regression (static),+ DDM,-0.22478999823040244,-0.37902569592306995,-0.17793390166322165,14,True
+k2,held-out,Logistic regression (static),DDM warning window,-0.2248744433944829,-0.379027092532438,-0.17793531594132614,14,True
+k2,held-out,Random forest (static),base,0.11725647880498613,0.06516273941826062,0.16534579122415247,14,True
+k2,held-out,Random forest (static),periodic retrain,-0.02591765675427837,-0.06416994580844507,-0.0013650542423439258,14,True
+k2,held-out,Random forest (static),+ ADWIN,0.06560346489342515,0.031085059962244775,0.10658266176211209,14,True
+k2,held-out,Random forest (static),+ DDM,0.06131915440359847,0.024827980748486262,0.1065330840571538,14,True
+k2,held-out,Random forest (static),DDM warning window,0.06251455343805203,0.027143651061099762,0.1065330840571538,14,True
+k2,held-out,Gradient boosting (static),base,0.6231461135430664,0.5489982781332395,0.7440115518226561,14,True
+k2,held-out,Gradient boosting (static),periodic retrain,-0.04449956395712298,-0.09806217634678621,0.03501652009088748,14,False
+k2,held-out,Gradient boosting (static),+ ADWIN,0.1787830364367215,0.11214311165445102,0.24426202945227152,14,True
+k2,held-out,Gradient boosting (static),+ DDM,0.11798854921281775,-0.002525820844253592,0.24426202945227152,14,False
+k2,held-out,Gradient boosting (static),DDM warning window,0.05520861665485425,-0.010663364351362727,0.16789321482447467,14,False
+k6,held-out,Logistic regression (static),base,0.0,0.0,0.0,14,False
+k6,held-out,Logistic regression (static),periodic retrain,-0.3907960537569419,-0.6090053417118642,-0.1455226883954637,14,True
+k6,held-out,Logistic regression (static),+ ADWIN,0.0,0.0,0.0,14,False
+k6,held-out,Logistic regression (static),+ DDM,-0.37256468811111937,-0.5205650481565592,-0.3163654897596477,14,True
+k6,held-out,Logistic regression (static),DDM warning window,-0.37238881160477355,-0.5205650481565592,-0.3160150243079213,14,True
+k6,held-out,Random forest (static),base,0.6450503291418743,0.6001574856295527,0.7477396625177106,14,True
+k6,held-out,Random forest (static),periodic retrain,-0.05566777170106919,-0.08606939900510907,3.40735651143151e-05,14,False
+k6,held-out,Random forest (static),+ ADWIN,0.05973763181798126,0.026941844736026954,0.10068597784894669,14,True
+k6,held-out,Random forest (static),+ DDM,0.01744573638077167,-0.046622415646996075,0.10065943744635272,14,False
+k6,held-out,Random forest (static),DDM warning window,0.018421295755766894,-0.04467129689700563,0.10065943744635272,14,False
+k6,held-out,Gradient boosting (static),base,0.6445135426075742,0.5676806106288627,0.7757606390822797,14,True
+k6,held-out,Gradient boosting (static),periodic retrain,-0.01915313413397688,-0.07491800798838451,0.07934217222259364,14,False
+k6,held-out,Gradient boosting (static),+ ADWIN,0.17877213726132965,0.11214311165445105,0.24425115137238415,14,True
+k6,held-out,Gradient boosting (static),+ DDM,0.12082454340239532,0.003167399486500008,0.24425115137238415,14,True
+k6,held-out,Gradient boosting (static),DDM warning window,0.06754057835647562,-0.05716681330853261,0.19193041618645823,14,False
+random_pairs,held-out,Logistic regression (static),base,0.5978623096178414,0.4736496467628525,0.7249203172295612,14,True
+random_pairs,held-out,Logistic regression (static),periodic retrain,0.06619618838947405,-0.019471788899137102,0.1743371029636599,14,False
+random_pairs,held-out,Logistic regression (static),+ ADWIN,0.32486938069394183,0.25085653685764886,0.4234728094485198,14,True
+random_pairs,held-out,Logistic regression (static),+ DDM,0.1261200590277797,-0.022145853982561404,0.17500468389211216,14,False
+random_pairs,held-out,Logistic regression (static),DDM warning window,0.13793936879826857,0.11151790111237721,0.168996335933339,14,True
+random_pairs,held-out,Random forest (static),base,0.23637186994090956,0.1859093329663082,0.2866297505843989,14,True
+random_pairs,held-out,Random forest (static),periodic retrain,0.0031509188968739175,-0.018012043562151248,0.021743623947042833,14,False
+random_pairs,held-out,Random forest (static),+ ADWIN,0.06646973337853981,0.02550055263844078,0.11450349748984973,14,True
+random_pairs,held-out,Random forest (static),+ DDM,0.06664229631082332,0.02563251193978403,0.11450349748984973,14,True
+random_pairs,held-out,Random forest (static),DDM warning window,0.06740381219396294,0.026215449135374855,0.11450349748984973,14,True
+random_pairs,held-out,Gradient boosting (static),base,0.36790706653348515,0.3111991408572011,0.4480601198152978,14,True
+random_pairs,held-out,Gradient boosting (static),periodic retrain,-0.034669209833143866,-0.10342397875434799,0.02301935673561074,14,False
+random_pairs,held-out,Gradient boosting (static),+ ADWIN,0.18330139290269695,0.11529950397775257,0.25018190467752116,14,True
+random_pairs,held-out,Gradient boosting (static),+ DDM,0.16400404170245314,0.08311453013867517,0.25018190467752116,14,True
+random_pairs,held-out,Gradient boosting (static),DDM warning window,0.16705147237821863,0.08872046066861838,0.25018190467752116,14,True
+gradual,held-out,Logistic regression (static),base,0.3998612937735328,0.16065675551785744,0.6528762879887117,17,True
+gradual,held-out,Logistic regression (static),periodic retrain,-0.02002167517572359,-0.12483379998090753,0.07262520131612393,17,False
+gradual,held-out,Logistic regression (static),+ ADWIN,0.0907848240303146,0.02854765438823478,0.15964729997602733,17,True
+gradual,held-out,Logistic regression (static),+ DDM,0.00068390640829842,-0.174242950240301,0.08867143480566364,17,False
+gradual,held-out,Logistic regression (static),DDM warning window,-0.011289227486157304,-0.1789417732589025,0.0665864157119968,17,False
+gradual,held-out,Random forest (static),base,0.3283617296458159,0.10290276182676278,0.5474938108799439,17,True
+gradual,held-out,Random forest (static),periodic retrain,-0.137678248964408,-0.3674073998918327,-0.0010670530313959328,17,True
+gradual,held-out,Random forest (static),+ ADWIN,0.01602637486953623,-0.0007146746339803828,0.038034230020068706,17,False
+gradual,held-out,Random forest (static),+ DDM,-0.08597781650176846,-0.32363386279118583,0.07311828596203382,17,False
+gradual,held-out,Random forest (static),DDM warning window,-0.09823970463219452,-0.33827554385006153,0.05825176034661348,17,False
+gradual,held-out,Gradient boosting (static),base,0.34313410827572555,0.07863702197849172,0.6307476694579565,17,True
+gradual,held-out,Gradient boosting (static),periodic retrain,-0.14595249483513528,-0.3312240723505933,-0.02038228898903952,17,True
+gradual,held-out,Gradient boosting (static),+ ADWIN,-0.0010574906090775572,-0.007841845481295627,0.017348225607204396,17,False
+gradual,held-out,Gradient boosting (static),+ DDM,-0.15795137482387792,-0.4214558178583722,0.023047829737074577,17,False
+gradual,held-out,Gradient boosting (static),DDM warning window,-0.1169054878196564,-0.3992726368848955,0.08250344878368675,17,False
+delay1,label delay,Logistic regression (static),base,0.5291182371916434,0.40980612579279907,0.7183314264574072,14,True
+delay1,label delay,Logistic regression (static),periodic retrain,0.09651100380875022,0.011321289876010129,0.24979238375903745,14,True
+delay1,label delay,Logistic regression (static),+ ADWIN,0.10498389603384092,0.04895937098529942,0.15216424184865635,14,True
+delay1,label delay,Logistic regression (static),+ DDM,0.10521592589316023,0.04933185953332589,0.15216424184865635,14,True
+delay1,label delay,Logistic regression (static),DDM warning window,0.10506899864585521,0.049180165107382864,0.15216424184865635,14,True
+delay1,label delay,Random forest (static),base,0.5169604790461583,0.4184586616231076,0.6281476782435272,14,True
+delay1,label delay,Random forest (static),periodic retrain,-0.0362786207182832,-0.11406468478413362,0.006795888709089051,14,False
+delay1,label delay,Random forest (static),+ ADWIN,0.059889444208955374,0.025728404131403086,0.10263430445029677,14,True
+delay1,label delay,Random forest (static),+ DDM,-0.05483829572685887,-0.16661436307198801,0.011933375509723315,14,False
+delay1,label delay,Random forest (static),DDM warning window,0.006851908837243659,-0.12077480383635138,0.10239136927602804,14,False
+delay1,label delay,Gradient boosting (static),base,0.5750721640701215,0.416404972365552,0.772945947763216,14,True
+delay1,label delay,Gradient boosting (static),periodic retrain,-0.026139320122842445,-0.1340183925849141,0.075629524014703,14,False
+delay1,label delay,Gradient boosting (static),+ ADWIN,0.16207711846778788,0.0790587547911755,0.23227036670182122,14,True
+delay1,label delay,Gradient boosting (static),+ DDM,-0.03874204909343148,-0.22055092458697104,0.10467650494920264,14,False
+delay1,label delay,Gradient boosting (static),DDM warning window,0.015052295635270744,-0.11834508814826798,0.12031213563545838,14,False
+delay3,label delay,Logistic regression (static),base,0.42261621864166676,0.19437263606433378,0.682893165635088,14,True
+delay3,label delay,Logistic regression (static),periodic retrain,0.0758248611099526,-0.013679999933825751,0.23798459703346658,14,False
+delay3,label delay,Logistic regression (static),+ ADWIN,0.06510485318884093,-0.005821188346743551,0.12726818023433317,14,False
+delay3,label delay,Logistic regression (static),+ DDM,0.06373474025561385,-0.008617539163157157,0.1268674354496074,14,False
+delay3,label delay,Logistic regression (static),DDM warning window,0.06531272121065819,-0.005159814727507645,0.1275168144006232,14,False
+delay3,label delay,Random forest (static),base,0.41358370566702857,0.20339126654661693,0.6065162912474248,14,True
+delay3,label delay,Random forest (static),periodic retrain,-0.024235296419852916,-0.13009423912166168,0.03728287711704706,14,False
+delay3,label delay,Random forest (static),+ ADWIN,0.05192627655187028,0.020454098344432688,0.09382789641592693,14,True
+delay3,label delay,Random forest (static),+ DDM,-0.05377713070483481,-0.16433344594852495,0.009685284666143159,14,False
+delay3,label delay,Random forest (static),DDM warning window,0.00979138813776551,-0.10366238551543416,0.09220173488928027,14,False
+delay3,label delay,Gradient boosting (static),base,0.4681731755647118,0.192900548360192,0.7477637998228414,14,True
+delay3,label delay,Gradient boosting (static),periodic retrain,-0.010411623171048148,-0.12360446666979039,0.07954613829374547,14,False
+delay3,label delay,Gradient boosting (static),+ ADWIN,0.11662547536454891,0.030366031403897827,0.1891935136317898,14,True
+delay3,label delay,Gradient boosting (static),+ DDM,-0.020939886946034908,-0.16508283471679447,0.08919259615096621,14,False
+delay3,label delay,Gradient boosting (static),DDM warning window,0.007445290483363099,-0.12497096777439458,0.11006965979363809,14,False
+synthetic,development,Logistic regression (static),base,0.7790086069267222,0.6933084846368659,0.871745211937531,12,True
+synthetic,development,Logistic regression (static),periodic retrain,0.1923835421975654,0.04484597695807286,0.3868246381446381,12,True
+synthetic,development,Logistic regression (static),+ ADWIN,0.04015634885548776,0.021176186903871307,0.06358602524330007,12,True
+synthetic,development,Logistic regression (static),+ DDM,0.3667290294767136,0.3226055432258879,0.4593633673134972,12,True
+synthetic,development,Logistic regression (static),DDM warning window,0.3667290294767136,0.3226055432258879,0.4593633673134972,12,True
+synthetic,development,Random forest (static),base,0.5311570666373172,0.22462741745184853,0.8078976392863069,12,True
+synthetic,development,Random forest (static),periodic retrain,-0.11689056848556266,-0.3031209441161826,-0.010164264375453948,12,True
+synthetic,development,Random forest (static),+ ADWIN,0.03939660137646559,0.013884341269592135,0.06518814155687044,12,True
+synthetic,development,Random forest (static),+ DDM,-0.143804844700077,-0.4064580470672408,0.026131113370403605,12,False
+synthetic,development,Random forest (static),DDM warning window,-0.15344264980891834,-0.4135686639209168,0.014252404618613603,12,False
+synthetic,development,Gradient boosting (static),base,0.6756784227075249,0.5234919753117414,0.8281667848886138,12,True
+synthetic,development,Gradient boosting (static),periodic retrain,0.022101128346394064,-0.0012792760455940246,0.06447687347784112,12,False
+synthetic,development,Gradient boosting (static),+ ADWIN,0.028831561104726514,0.010070759598128818,0.04861011053950003,12,True
+synthetic,development,Gradient boosting (static),+ DDM,-0.03175187963949013,-0.17039157785021605,0.05691368716938599,12,False
+synthetic,development,Gradient boosting (static),DDM warning window,0.015531094965737999,-0.12548746800039484,0.11068894558708742,12,False

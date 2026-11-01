@@ -1,25 +1,25 @@
 model_name,family,strategy,imbalance,mean_pr_auc,mean_recall_at_p,mean_fpr,n_drift_flags,runtime_s
-logreg_none,Logistic regression,base,no handling,0.37191820988854374,0.25910793899419554,0.00019770638751471305,0,0.5
-logreg_none_acc6+adwin,Logistic regression,+ ADWIN + accumulate,no handling,0.781815380477649,0.6124242043467029,0.0005055297518762193,1,0.7
-logreg,Logistic regression,base,class weights,0.29703276868257444,0.11639093956700633,6.59095861778589e-05,0,0.4
-logreg_acc6+adwin,Logistic regression,+ ADWIN + accumulate,class weights,0.703656024115711,0.47516986082300944,0.00037373295053936515,1,0.7
-logreg_smote,Logistic regression,base,SMOTE,0.3343053503194852,0.18729725091617674,0.00015377783400597337,0,0.4
-logreg_smote_acc6+adwin,Logistic regression,+ ADWIN + accumulate,SMOTE,0.7472616442334565,0.5457415226754628,0.00043962027780652653,1,0.8
-logreg_undersample,Logistic regression,base,undersampling,0.26915830115920053,0.0781711165847658,6.59095861778589e-05,0,0.4
-logreg_undersample_acc6+adwin,Logistic regression,+ ADWIN + accumulate,undersampling,0.6676418246875623,0.4020203319593872,0.00035180745337871704,1,0.6
-random_forest_none,Random forest,base,no handling,0.368235580006937,0.2615450798584464,0.00017572546695375995,0,4.5
-random_forest_none_acc6+adwin,Random forest,+ ADWIN + accumulate,no handling,0.6972199910526043,0.5342029255432461,0.00043964241359366503,1,10.4
-random_forest,Random forest,base,class weights,0.3519743114885788,0.19119577308768318,0.00010982703260192907,0,4.9
-random_forest_acc6+adwin,Random forest,+ ADWIN + accumulate,class weights,0.7044245876215752,0.4669342763348199,0.00037368855584152917,1,14.0
-random_forest_smote,Random forest,base,SMOTE,0.32025331673737367,0.16195977038620732,8.790153544128096e-05,0,4.4
-random_forest_smote_acc6+adwin,Random forest,+ ADWIN + accumulate,SMOTE,0.7036517077404565,0.45181182879671095,0.00035174081078557644,1,11.2
-random_forest_undersample,Random forest,base,undersampling,0.3370015743378316,0.20279519130306586,0.00015377783400597337,0,4.2
-random_forest_undersample_acc6+adwin,Random forest,+ ADWIN + accumulate,undersampling,0.732767133917903,0.5188811281036066,0.00046160119836747963,1,8.5
-gradient_boosting_none,Gradient boosting,base,no handling,0.3729889318608368,0.2137533294990557,0.00013185233684532524,0,1.5
-gradient_boosting_none_acc6+adwin,Gradient boosting,+ ADWIN + accumulate,no handling,0.7133635511288441,0.48918517040850995,0.0003957138600849254,1,10.2
-gradient_boosting,Gradient boosting,base,class weights,0.34852286721707754,0.22563857038550808,0.00015379996979311182,0,5.3
-gradient_boosting_acc6+adwin,Gradient boosting,+ ADWIN + accumulate,class weights,0.7286800610709693,0.5053131944441513,0.000395646868395816,1,27.1
-gradient_boosting_smote,Gradient boosting,base,SMOTE,0.32490629126063064,0.18419297196723497,0.00013188562445849177,0,1.5
-gradient_boosting_smote_acc6+adwin,Gradient boosting,+ ADWIN + accumulate,SMOTE,0.7145438203348518,0.4956566018921838,0.000439708988819998,1,7.8
-gradient_boosting_undersample,Gradient boosting,base,undersampling,0.2811563887888393,0.14340460544525693,6.589847909318941e-05,0,0.8
-gradient_boosting_undersample_acc6+adwin,Gradient boosting,+ ADWIN + accumulate,undersampling,0.661152260271153,0.4476912186221231,0.00032980436342372986,1,3.2
+logreg_none,Logistic regression,base,no handling,0.2879987178536416,0.2098831726092603,0.00013296195856798778,0,0.2
+logreg_none_acc6+adwin,Logistic regression,+ ADWIN + accumulate,no handling,0.7926495251757053,0.6375818096149269,0.0005055902417424427,1,0.3
+logreg,Logistic regression,base,class weights,0.26948899210713506,0.16965401118896314,0.00013298889023072492,0,0.3
+logreg_acc6+adwin,Logistic regression,+ ADWIN + accumulate,class weights,0.7774337420685352,0.6070613121521125,0.0005056171734051798,1,0.3
+logreg_smote,Logistic regression,base,SMOTE,0.28208572474027244,0.19736533495291847,0.00013296195856798778,0,0.3
+logreg_smote_acc6+adwin,Logistic regression,+ ADWIN + accumulate,SMOTE,0.7944750544646366,0.634367533893726,0.0004789817589581311,1,0.3
+logreg_undersample,Logistic regression,base,undersampling,0.26081270944535906,0.14965423338814246,0.00010635347578367612,0,0.2
+logreg_undersample_acc6+adwin,Logistic regression,+ ADWIN + accumulate,undersampling,0.7498722984383646,0.5416822309468947,0.0004524403676583991,1,0.3
+random_forest_none,Random forest,base,no handling,0.29175555042992335,0.1976794999037137,0.00015959737301503657,0,2.9
+random_forest_none_acc6+adwin,Random forest,+ ADWIN + accumulate,no handling,0.6964887525903974,0.5277389973116291,0.000479075782105448,1,8.8
+random_forest,Random forest,base,class weights,0.26732365270077535,0.1584564069898924,0.00010635347578367612,0,3.9
+random_forest_acc6+adwin,Random forest,+ ADWIN + accumulate,class weights,0.7004771517816717,0.49224512144695265,0.00042576479338950776,1,11.6
+random_forest_smote,Random forest,base,SMOTE,0.2500968040747886,0.10784560613467245,7.985238001567208e-05,0,5.7
+random_forest_smote_acc6+adwin,Random forest,+ ADWIN + accumulate,SMOTE,0.716614356030837,0.4587191505263347,0.0003992367659587666,1,13.1
+random_forest_undersample,Random forest,base,undersampling,0.26377331849165214,0.14069343426113837,7.978528853109237e-05,0,2.2
+random_forest_undersample_acc6+adwin,Random forest,+ ADWIN + accumulate,undersampling,0.7429987461943075,0.5233237788091615,0.0004524135717055473,1,5.6
+gradient_boosting_none,Gradient boosting,base,no handling,0.2766154677412297,0.16971635040316807,0.00010623299416582423,0,2.1
+gradient_boosting_none_acc6+adwin,Gradient boosting,+ ADWIN + accumulate,no handling,0.7514640360482272,0.5391426536487866,0.0004789149776082597,1,7.2
+gradient_boosting,Gradient boosting,base,class weights,0.2859814953660943,0.1782234928723441,7.971853452882947e-05,0,4.4
+gradient_boosting_acc6+adwin,Gradient boosting,+ ADWIN + accumulate,class weights,0.7568635087908334,0.5515232683121211,0.00042573833491897276,1,23.6
+gradient_boosting_smote,Gradient boosting,base,SMOTE,0.26407171830863646,0.1499233412831262,7.985238001567208e-05,0,1.5
+gradient_boosting_smote_acc6+adwin,Gradient boosting,+ ADWIN + accumulate,SMOTE,0.7376646197898648,0.5118063847484883,0.00042592588067379584,1,7.1
+gradient_boosting_undersample,Gradient boosting,base,undersampling,0.2522564070324038,0.10102532576868571,5.3243897231360435e-05,0,1.0
+gradient_boosting_undersample_acc6+adwin,Gradient boosting,+ ADWIN + accumulate,undersampling,0.7132756856118249,0.46937227856173425,0.0003727089151051726,1,2.7

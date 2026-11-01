@@ -1,0 +1,28 @@
+strategy,period,group,frauds,recall
+frozen,after drift,1 < amount <= 100,78,0.0
+frozen,after drift,amount <= 1,68,0.0
+frozen,after drift,amount > 100,53,0.0
+frozen,after drift,busy hours,136,0.0
+frozen,after drift,quiet hours,63,0.0
+frozen,before drift,1 < amount <= 100,26,0.6538461538461539
+frozen,before drift,amount <= 1,29,0.7931034482758621
+frozen,before drift,amount > 100,34,0.8235294117647058
+frozen,before drift,busy hours,89,0.7640449438202247
++ ADWIN + accumulate,after drift,1 < amount <= 100,78,0.3974358974358974
++ ADWIN + accumulate,after drift,amount <= 1,68,0.5
++ ADWIN + accumulate,after drift,amount > 100,53,0.49056603773584906
++ ADWIN + accumulate,after drift,busy hours,136,0.6691176470588235
++ ADWIN + accumulate,after drift,quiet hours,63,0.0
++ ADWIN + accumulate,before drift,1 < amount <= 100,26,0.6538461538461539
++ ADWIN + accumulate,before drift,amount <= 1,29,0.7931034482758621
++ ADWIN + accumulate,before drift,amount > 100,34,0.8235294117647058
++ ADWIN + accumulate,before drift,busy hours,89,0.7640449438202247
++ DDM,after drift,1 < amount <= 100,78,0.5
++ DDM,after drift,amount <= 1,68,0.4852941176470588
++ DDM,after drift,amount > 100,53,0.6415094339622641
++ DDM,after drift,busy hours,136,0.5294117647058824
++ DDM,after drift,quiet hours,63,0.5396825396825397
++ DDM,before drift,1 < amount <= 100,26,0.6538461538461539
++ DDM,before drift,amount <= 1,29,0.7931034482758621
++ DDM,before drift,amount > 100,34,0.8235294117647058
++ DDM,before drift,busy hours,89,0.7640449438202247

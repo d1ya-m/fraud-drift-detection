@@ -53,7 +53,8 @@ def test_reported_vs_deployed_end_to_end(tmp_path):
 def test_run_experiment_end_to_end(tmp_path):
     cmd = [sys.executable, str(ROOT / "experiments" / "run_experiment.py"),
            "--n-samples", "12000", "--batch-size", "2000",
-           "--models", "logreg,online_logreg", "--detectors", "adwin", "--out", str(tmp_path)]
+           "--models", "logreg,online_logreg", "--strategies", "base,periodic,adwin,accumulate",
+           "--warmup-batches", "2", "--out", str(tmp_path)]
     done = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
     assert done.returncode == 0, done.stderr
 

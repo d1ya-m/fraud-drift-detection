@@ -1,0 +1,20 @@
+model_name,batch_idx,n,n_fraud,pr_auc,roc_auc,recall_at_p,fpr,threshold,op_recall,op_precision,op_fpr,drift_flag,family,strategy,runtime_s
+random_forest_acc6+adwin,6,2000,24,0.5189273324652561,0.9778803981106613,0.125,0.0,0.5932060153045063,,,,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,7,2000,12,0.32220962009720905,0.9781606304493629,0.08333333333333333,0.0,0.5932558131666579,0.08333333333333333,1.0,0.0,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,8,2000,22,0.5553769674777922,0.9312092104053682,0.2727272727272727,0.0,0.5730373614816556,0.13636363636363635,1.0,0.0,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,9,2000,19,0.43530550907189064,0.9063737081218948,0.0,0.0,inf,0.15789473684210525,0.75,0.0005047955577990914,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,10,2000,17,0.5079934630847144,0.9730058437898609,0.0,0.0,inf,0.23529411764705882,0.8,0.0005042864346949068,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,11,2000,22,0.2895634168786054,0.9329442044305543,0.0,0.0,inf,0.045454545454545456,0.3333333333333333,0.0010111223458038423,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,12,2000,22,0.2735718636992498,0.7454614394705394,0.18181818181818182,0.0,0.562326682349532,0.13636363636363635,1.0,0.0,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,13,2000,25,0.020580564020621965,0.6586025316455697,0.0,0.0,inf,0.0,0.0,0.0005063291139240507,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,14,2000,22,0.018002778610568062,0.6616187149554187,0.0,0.0,inf,0.0,,0.0,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,15,2000,16,0.011924774105381217,0.6390656502016129,0.0,0.0,inf,0.0,0.0,0.0005040322580645161,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,16,2000,17,0.013665146416643202,0.5981727032719291,0.0,0.0,inf,0.0,,0.0,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,17,2000,24,0.01178203968164149,0.5159412955465588,0.0,0.0,inf,0.0,,0.0,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,18,2000,28,0.032345097585748314,0.7233320052158795,0.0,0.0,inf,0.0,0.0,0.0005070993914807302,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,19,2000,24,0.01231475991089559,0.5257570006747638,0.0,0.0,inf,0.0,,0.0,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,20,2000,19,0.016515494643159847,0.6788836047716463,0.0,0.0,inf,0.0,0.0,0.0005047955577990914,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,21,2000,18,0.00924855062358769,0.5209104159659155,0.0,0.0,inf,0.0,0.0,0.0005045408678102926,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,22,2000,22,0.015788325863257485,0.6128205717437265,0.0,0.0,inf,0.0,,0.0,0,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,23,2000,29,0.021375184515425402,0.6230252453681835,0.0,0.0,inf,0.0,,0.0,1,Random forest (static),+ ADWIN + accumulate,5.0
+random_forest_acc6+adwin,24,2000,18,0.4790908410586298,0.9738479650184999,0.16666666666666666,0.0,0.5166466653718873,0.05555555555555555,1.0,0.0,0,Random forest (static),+ ADWIN + accumulate,5.0

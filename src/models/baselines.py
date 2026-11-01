@@ -1,5 +1,7 @@
 """Static models: fit once at warm-up, then frozen (partial_fit is a no-op)."""
 import numpy as np
+import pandas as pd
+from scipy.special import expit
 from sklearn.base import clone
 from sklearn.ensemble import HistGradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -56,4 +58,35 @@ def make_random_forest(seed=42, imbalance="weights"):
 
 
 def make_gradient_boosting(seed=42, imbalance="weights"):
-    return _static("gradient_boosting", HistGradientBoostingClassifier(random_state=seed), imbalance, seed)
+    # early_stopping off: its default ("auto") silently holds out 10% of the training data, i.e. only a
+    # handful of frauds, to decide when to stop; max_iter is the default 100, now stated explicitly
+    return _static("gradient_boosting", HistGradientBoostingClassifier(
+        max_iter=100, early_stopping=False, random_state=seed,
+    ), imbalance, seed)
+
+
+class SingleFeatureRule(BaseDetector):
+    """Trivial baseline: flag transactions by ONE feature, the one most correlated with fraud in the
+    training data (sign included). Shows how much the ML models add over a one-line rule."""
+
+    name = "rule"
+
+    def fit(self, X, y):
+        if not has_both_classes(y):
+            raise ValueError(f"{self.name}: training data needs both classes")
+        corr = X.corrwith(pd.Series(np.asarray(y), index=X.index)).fillna(0)
+        self.feature = corr.abs().idxmax()
+        self.sign = np.sign(corr[self.feature]) or 1.0
+        self.mean, self.std = X[self.feature].mean(), X[self.feature].std() or 1.0
+        return self
+
+    def refit(self, X, y):
+        return self.fit(X, y) if has_both_classes(y) else self
+
+    def predict_proba(self, X):
+        z = self.sign * (X[self.feature].to_numpy() - self.mean) / self.std
+        return expit(z)
+
+
+def make_rule(seed=42, imbalance="weights"):
+    return SingleFeatureRule()

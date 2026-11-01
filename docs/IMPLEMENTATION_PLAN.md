@@ -43,25 +43,56 @@ We detect **fraudulent credit-card transactions** with classical machine learnin
 2. **Fraud patterns change over time** (*concept drift*). Fraudsters change tactics, so a
    model trained on last month's fraud slowly or suddenly stops working.
 
+### Project title (final report)
+**Keeping Credit-Card Fraud Detectors Reliable Under Concept Drift: A Comparison of Adaptive
+Model-Maintenance Strategies**
+
 ### The research question
-**How do we keep a fraud model accurate as fraud patterns change?** We compare:
-- **static** models: trained once, then frozen
-- **periodic retraining**: refit on recent data every few batches
-- **online** models: learn from every transaction
-- **drift-triggered retraining**: a detector (ADWIN or DDM) notices when performance drops
-  and triggers a refit
-- **our improvement, "accumulate after drift"**: drift-triggered, but the model keeps
-  learning from new data for a few batches after the alarm
+**How do we best keep a fraud model reliable as fraud patterns change?** We compare the adaptive strategies a
+bank could use, against a frozen reference:
+- **periodic retraining**: refit on the latest 6 batches every 3 batches, on a fixed schedule
+- **online** models: update after every batch
+- **drift-triggered retraining**: a detector (ADWIN or DDM) notices a rise in missed frauds and triggers a refit
+- **DDM warning window** (Gama et al., 2004): retrain on the examples since DDM's warning
+- **accumulate-after-drift** (our variant): after an ADWIN alarm, keep refitting on new batches until 6 are
+  gathered
+- reference: a **static** model, trained once and then frozen
 
-### The three objectives (from the synopsis, mapped in PIPELINE.md section 11)
-1. Baselines with imbalance-aware metrics (PR-AUC, recall at a fixed precision) and
-   imbalance handling.
-2. A prequential (test-then-train) comparison of static, periodic and online learning over time.
-3. Drift detection (ADWIN, DDM) and recovery after drift.
+### Three research questions (the structure of notebook 02 and of the report)
+1. How well do classical models detect rare fraud, measured properly (PR-AUC, recall at 90% precision,
+   false-positive rate; imbalance handling)?
+2. How badly does a model that is never updated degrade, and would a standard (shuffled) evaluation notice?
+3. Which adaptive strategy keeps a fraud model working best, and why?
 
-> The synopsis is in the repo root: `MLL_project_synopsis_format.pdf`. Objective 3 explicitly asks for the
-> **recovery time** after drift, and the problem statement argues that shuffled test sets hide decay; both are
-> now measured (see "Completing the evaluation" in section 2).
+### Storyline for the report and PPT (lead with the strong results; report everything)
+1. **The hidden problem.** Random forest *reports* 0.81–0.89 PR-AUC on a test split, then *deploys* at 0.07
+   after the drift. Frozen models lose 79–99%.
+2. **Strong baselines.** Random forest 0.76 PR-AUC on ULB, about 440× random, holding ~0.9 precision.
+3. **Adaptation works.** Held-out post-drift PR-AUC goes from 0.16 (frozen) to 0.65 (periodic retraining), and
+   operational fraud recall rises by +0.43. The best combination is random forest + periodic retraining (0.75).
+4. **Ranking of strategies:**
+   1. periodic retraining
+   2. the DDM methods
+   3. accumulate
+   4. ADWIN refit-on-alarm
+   5. online logistic regression
+
+   The ranking is confirmed with paired 95% CIs and on 4 fresh scenarios.
+5. **Why detectors trail.** They learn from ~13 frauds per batch and react 1–9 batches late. Accumulate still
+   improves on standard refit-on-alarm (14 of 18), and ADWIN never raised a false alarm, so it makes a good
+   monitor.
+6. **SHAP** shows what changed, and how retraining moves to the new features.
+7. **Rigour:**
+   - 10 scenarios × 3 seeds, block-bootstrap CIs
+   - held-out and fresh scenarios, label delay
+   - 89 tests, reproducible scripts
+8. **Recommendation:** retrain on a schedule and use detectors as alarms. Future work: combining label-based
+   and label-free drift signals (offline check in notebook 02 section 3.1), and a natural-drift dataset.
+
+Wording to use for our variant: *"Accumulate-after-drift fixes the main weakness of detector-triggered
+retraining (refitting on a single batch) and improves it significantly, but it inherits the detector's delay,
+so scheduled retraining remained more reliable."* Do not drop these results or quote only the development
+scenario.
 
 ### Datasets
 | Dataset | Role | Status |
@@ -77,14 +108,29 @@ does the model learn from that batch, the way a bank would see transactions arri
 come in later. This gives a score **per batch**, so we can watch performance change over time
 and see it crash when drift hits. Data is never shuffled.
 
-### The main findings so far
-1. Static models **collapse** after drift: PR-AUC drops from ~0.7 to ~0.01–0.23.
-2. **ADWIN** fires exactly once at the real drift, and never when there's no drift. **DDM**
-   also catches drift but raises false alarms that hurt performance.
-3. Our **accumulate-after-drift** retraining is the best strategy in 5 of 6 tests, while
-   retraining far less often than periodic retraining.
-4. On real data, **imbalance handling matters**: class weights work best for logistic
-   regression and random forest; SMOTE works best for gradient boosting after drift.
+### The main findings (after the audit fixes; 3 seeds, held-out scenarios, 95% CIs)
+1. **Frozen models collapse after drift.** On ULB + drift, PR-AUC falls from ~0.64–0.78 to 0.005–0.16, while
+   the model's pre-deployment test score still looks fine.
+2. **ADWIN never raised a false alarm** and caught every drift on the tree models, one batch after it hit.
+   **DDM** raises false alarms on logistic regression that cost real performance.
+3. **Detection is limited by fraud counts.** The detectors get one value per fraud (~13 per batch). Detection
+   took 1 batch on the development drift only because a large fraud burst followed it; elsewhere 3–9 batches.
+   A moderate rise in the miss rate (logistic regression after 2- or 6-pair swaps) is never detected.
+4. **Accumulate-after-drift reliably beats refitting on the alarm batch alone** (14 of 18 held-out comparisons
+   significant, none worse).
+5. **It does *not* beat periodic retraining** on held-out scenarios (12 not significant, 6 worse). Periodic
+   retraining has the best held-out mean (0.649 vs 0.562). Accumulate looked best only on the development
+   scenarios, because a large fraud burst right after that drift made detection unusually fast.
+   - **Supplementary check** on 4 fresh scenarios (`run_supplementary.py`): accumulate is 0.13 behind periodic
+     retraining.
+   - **A hybrid fix** (periodic + ADWIN reset) looked slightly better on the scenarios it was designed from, but
+     was level with periodic on the fresh ones (−0.003), so it was not adopted. **Periodic retraining is the
+     recommendation.**
+6. **Label delay** (labels arriving 1–3 batches late) costs every strategy 0.1–0.2 PR-AUC.
+7. **Only the tree models hold the 90% precision target** when the threshold is carried over from the previous
+   batch. Logistic regression slips to about 0.52–0.77.
+
+Full analysis: `notebooks/02_results_analysis.ipynb`.
 
 ---
 
@@ -173,9 +219,11 @@ The decisions matter: section 3 collects the important ones.
 - **Needed fix:** as the model recovers, its error rate *falls*, and ADWIN flags any change,
   including improvement. That would reset the growing window. The detector now **ignores
   alarms where the error rate went down**.
-- **Found:** best strategy in 5 of 6 static-model tests (e.g. ULB random forest 0.75 vs 0.70
-  for single-batch refits and 0.65 for periodic retraining), at roughly half the runtime of
-  periodic retraining.
+- **First found (superseded):** best in 5 of 6 tests under the original setup (single seed, 2-batch warm-up,
+  development scenario only).
+- **After the audit fixes** (equal warm-up, 3 seeds, held-out and fresh scenarios): it beats single-batch
+  refits (14 of 18 held-out comparisons) but **not** periodic retraining, because it waits for ADWIN, which
+  reacts 1–9 batches late. See section 1 and notebook 02 section 6.
 
 ### Stage 5: Imbalance handling ✅
 - **Built:** `src/imbalance/samplers.py`, offering none / class weights / SMOTE /
@@ -217,9 +265,31 @@ Reading the synopsis showed two gaps, now closed:
   command-line Jupyter couldn't reach a kernel from the assistant's sandbox, so the saved outputs were produced
   by executing the cells in-process; the notebooks themselves are ordinary `.ipynb` files.)
 
+### Post-audit fixes ✅
+An internal project audit (kept locally, not in the repo) found the core correct but several claims unsupported. Everything it
+listed was then fixed, except the report itself, the literature review (a report section), running the notebooks
+in a real Jupyter kernel (needs a person in VS Code) and a natural-drift dataset (needs a Kaggle download):
+- **Equal starting data:** every strategy now warms up on **6 batches** (one periodic-retrain window).
+  Before, static models had 20,000 rows and periodic windows had 60,000, which mixed "adapting" with "more data".
+- **Operational metrics:** besides the per-batch oracle recall at 90% precision, every run reports
+  `op_recall`, `op_precision` and `op_fpr` at the threshold learnt on the *previous* labelled batch, which is
+  what a live system can do.
+- **Frozen protocol with held-out scenarios** (`run_protocol.py`): the settings were frozen after a sensitivity
+  sweep on the development scenarios only (`run_sensitivity.py`). All strategies were then evaluated with
+  3 seeds on 6 held-out drift scenarios: drift at 30% or 70%, 2 or 6 swapped pairs, random pairs, and
+  gradual drift. Differences are judged with block-bootstrap 95% CIs (`src/evaluation/stats.py`).
+- **Prior-art comparator:** `DDM warning window` (Gama et al., 2004, the scheme that accumulate-after-drift
+  varies) and a **single-feature rule** baseline.
+- **Label delay:** `--label-delay N`; labels reach the models and detectors N batches after scoring.
+- **Drift severity study** (`run_severity.py`), **error analysis** (`run_error_analysis.py`) and **SHAP**
+  (`run_shap.py`), plus a detector blind-spot check (`run_detector_blindspot.py`).
+- **Smaller fixes:** gradient boosting without its hidden 10% early-stopping split; pinned
+  `requirements-lock.txt`; unused packages removed; `PIPELINE.md` marked historical; a GitHub Actions test
+  workflow.
+
 ### Infrastructure ✅
 - GitHub repo: https://github.com/d1ya-m/fraud-drift-detection
-- 71 tests (`pytest -q`, about 1 minute; no dataset needed)
+- 86 tests (`pytest -q`, about 1 minute; no dataset needed); GitHub Actions runs them on every push
 - Results CSVs and figures **are committed** (`.gitignore` lines commented out by Sanjay, 2026-10-25), so the
   report numbers are versioned. Rerunning an experiment changes them, so commit reruns deliberately.
 
@@ -236,7 +306,11 @@ results so far. If you think one is wrong, raise it with the team first.
 | Predict first, learn after (prequential) | Matches how a real system works | `prequential.py` |
 | PR-AUC as the headline metric, not accuracy | Accuracy is ~99.8% for a useless model | `metrics.py` |
 | ULB batch size 10,000 | At 2,000, ~3 frauds per batch means noisy scores | commands in section 5 |
-| 2 warm-up batches | One batch has too few frauds to train on | `--warmup-batches` |
+| 6 warm-up batches for every strategy | Same starting data as one periodic-retrain window, so strategies differ only in how they adapt | `--warmup-batches` |
+| Report operational metrics beside the oracle ones | The per-batch 90%-precision threshold uses that batch's labels (an upper bound); `op_*` use the previous batch's threshold | `metrics.py`, `prequential.py` |
+| Settings frozen: accumulate 6, retrain every 3 on the last 6, ADWIN δ 0.002 | Chosen on the development scenarios only (`sensitivity_summary.csv`); no value beat these on both | `run_experiment.py` defaults |
+| Judge strategy differences with the held-out protocol and block-bootstrap CIs | Per-batch scores are noisy (sd ~0.2) and neighbouring batches correlated; one seed and one scenario can't rank strategies | `run_protocol.py`, `stats.py` |
+| Gradient boosting `early_stopping=False`, `max_iter=100` | The default silently held out 10% of training data (~8 frauds) | `baselines.py` |
 | Drift signal = per-fraud "missed?" (score < 0.5) | ADWIN/DDM need a stream of 0/1 errors, not one value per batch | `prequential.py` |
 | ADWIN `clock=1` | The default (32) barely checks with our batch counts | `detectors.py` |
 | Detector reset after each alarm | Otherwise the refit model gets compared with the old one | `detectors.py` |
@@ -254,7 +328,12 @@ results so far. If you think one is wrong, raise it with the team first.
 | Term | Meaning |
 |---|---|
 | **Concept drift** | The relationship between features and fraud changes over time, so a trained model goes stale |
-| **Abrupt / gradual drift** | The change happens at one moment / phases in over a period. All our drifts so far are abrupt |
+| **Abrupt / gradual drift** | The change happens at one moment / phases in over a period. The protocol tests both (`--drift-width`) |
+| **Development vs held-out scenario** | Development scenarios were looked at while designing methods and choosing settings; held-out scenarios were not, so results on them are a fair test |
+| **Operational recall / precision** | Recall and precision at a threshold fixed *before* the batch (learnt on the previous labelled batch), as a live system would use |
+| **Oracle recall at 90% precision** | The same, but with the threshold chosen on the batch's own labels: an upper bound |
+| **Label delay** | Fraud labels arrive some time after the transaction; `--label-delay N` = N batches later |
+| **Block bootstrap CI** | A 95% confidence interval made by resampling runs of consecutive batches; a difference whose CI includes 0 is not established |
 | **Batch** | A chunk of consecutive transactions (e.g. 10,000) processed together |
 | **Warm-up** | The first batches, used only for training before any scoring |
 | **Prequential evaluation** | "Predictive sequential", or test-then-train: for each batch, predict, score, then learn |
@@ -273,7 +352,8 @@ results so far. If you think one is wrong, raise it with the team first.
 | **ADWIN** | ADaptive WINdowing: keeps a window of recent errors and alarms when recent errors differ significantly from older ones |
 | **DDM** | Drift Detection Method: alarms when the error rate rises well above its lowest point so far |
 | **Drift injection / feature swap** | Our way of creating a known drift in real data by swapping feature columns from a point in time onwards |
-| **Accumulate after drift** | Our method: after an alarm, refit on every new batch until 6 have been gathered, then freeze |
+| **Accumulate after drift** | This project's variant: after an ADWIN alarm, refit on every new batch until 6 have been gathered, then freeze |
+| **DDM warning window** | The established scheme it varies (Gama et al., 2004): buffer data from DDM's warning, retrain on it at the drift |
 | **SHAP** | A method that splits a prediction into per-feature contributions, used for explaining models |
 
 ---
@@ -287,8 +367,8 @@ git clone https://github.com/d1ya-m/fraud-drift-detection.git
 cd fraud-drift-detection
 python -m venv .venv
 .venv\Scripts\activate              # macOS/Linux: source .venv/bin/activate
-pip install -r requirements.txt     # takes a few minutes
-pytest -q                           # expect: 71 passed (about 1 minute)
+pip install -r requirements-lock.txt   # exact versions used for the results (or requirements.txt, unpinned)
+pytest -q                              # expect: 86 passed (about 1 minute)
 ```
 
 **Get the ULB data** (not in Git; the file is 150 MB): download `creditcard.csv` from
@@ -310,14 +390,27 @@ python experiments/run_imbalance.py --data data/raw/creditcard.csv --batch-size 
 python experiments/run_reported_vs_deployed.py
 python experiments/run_reported_vs_deployed.py --data data/raw/creditcard.csv --batch-size 10000
 python experiments/run_reported_vs_deployed.py --data data/raw/creditcard.csv --batch-size 10000 --inject-drift 0.5
+# (also run run_imbalance.py with no --data, and with --data but no --inject-drift, for the other two datasets)
+
+# post-audit experiments
+python experiments/run_sensitivity.py --data data/raw/creditcard.csv      # ~25 min, development scenarios only
+python experiments/run_protocol.py --data data/raw/creditcard.csv         # ~2 h, resumable; 10 scenarios x 3 seeds
+python experiments/run_severity.py --data data/raw/creditcard.csv         # ~10 min
+python experiments/run_error_analysis.py --data data/raw/creditcard.csv --batch-size 10000 --inject-drift 0.5
+python experiments/run_shap.py --data data/raw/creditcard.csv --batch-size 10000 --inject-drift 0.5
+python experiments/run_shap.py                                            # synthetic
+python experiments/run_detector_blindspot.py --data data/raw/creditcard.csv
+python experiments/run_supplementary.py --data data/raw/creditcard.csv       # supplementary, ~1.5 h
 ```
 
-Outputs go to `results/` (CSVs) and `results/figures/` (PNGs). They are committed to Git (see
-"Infrastructure" in section 2), so commit reruns deliberately. The two notebooks in `notebooks/` read them.
+Outputs go to `results/` (CSVs; the protocol and sweeps in subfolders) and `results/figures/` (PNGs). They are
+committed to Git (see "Infrastructure" in section 2), so commit reruns deliberately. The two notebooks in
+`notebooks/` read them.
 
-Tips: `--models logreg,online_logreg` runs a subset, which is handy for quick checks.
-`--detectors adwin` skips DDM. `python experiments/run_experiment.py --help` lists every option.
-The online adaptive random forest (`online_arf`) is by far the slowest model.
+Tips: `--models logreg,online_logreg` and `--strategies base,accumulate` run a subset, which is handy for quick
+checks. `python experiments/run_experiment.py --help` lists every option, including the drift scenarios
+(`--swap-k`, `--pair-seed`, `--drift-width`) and `--label-delay`. The online adaptive random forest
+(`online_arf`) is by far the slowest model.
 
 ---
 
@@ -328,27 +421,38 @@ src/data/loader.py            load_dataset(path=None, **synthetic_kwargs) -> Dat
                               get_feature_columns(df) -> every column except Time and Class
 src/data/synthetic.py         generate_synthetic_stream(...): 1% fraud; pattern flips halfway
                               (fraud on V1-V3 before, on V4-V6 after)
-src/data/drift_injection.py   inject_feature_swap(df, at=0.5, k=4) -> (drifted_df, pairs)
+src/data/drift_injection.py   inject_feature_swap(df, at=0.5, k=4, pair_seed=None, width=0.0) -> (drifted_df, pairs)
 src/data/stream.py            make_stream(df, batch_size) -> yields (X, y) in time order
 
 src/models/base.py            BaseDetector: fit / partial_fit / predict_proba / refit
 src/models/baselines.py       make_logreg / make_random_forest / make_gradient_boosting
                               (seed=42, imbalance="weights") -> StaticModel (fitted model in .model)
+                              make_rule -> SingleFeatureRule (trivial one-feature baseline)
 src/models/retrain.py         PeriodicRetrain(inner, every=3, window=6)
-src/models/drift_retrain.py   AccumulateAfterDrift(inner, accumulate=6)   <- our improved method
+src/models/drift_retrain.py   AccumulateAfterDrift(inner, accumulate=6)   <- this project's variant
+                              WarningWindowRetrain(inner)                 <- Gama et al. 2004 (prior art)
 src/models/online.py          make_online_logreg / make_arf (River, learn every transaction)
 
 src/drift/detectors.py        make_adwin() / make_ddm() / NoDriftDetector
                               .update(errors) -> bool   (errors = 1 per missed fraud)
 src/imbalance/samplers.py     with_imbalance_handling(estimator, method), METHODS
-src/evaluation/metrics.py     compute_metrics(y, scores) -> pr_auc, roc_auc, recall_at_p, fpr, threshold
-src/evaluation/prequential.py prequential_eval(model, stream, drift_detector=None,
-                              warmup_batches=1) -> one row per batch
-src/viz/plots.py              plot_metric_over_time / plot_summary / plot_grouped_bars + colour constants
+src/evaluation/metrics.py     compute_metrics (pr_auc, roc_auc, oracle recall_at_p, fpr, threshold)
+                              operational_metrics (op_recall, op_precision, op_fpr at a fixed threshold)
+src/evaluation/prequential.py prequential_eval(model, stream, drift_detector=None, warmup_batches=1,
+                              label_delay=0, score_sink=None) -> one row per batch
+src/evaluation/drift_metrics.py drift_response(_table), trend_per_10_batches
+src/evaluation/stats.py       block_bootstrap_mean, paired_difference (CIs for strategy comparisons)
+src/explain/shap_analysis.py  shap_importance(model, X, y)
+src/viz/plots.py              all figures + colour constants + apply_style()
 
-experiments/run_experiment.py main experiment; also exposes load_data(args), evaluate(...)
-experiments/run_imbalance.py  Stage 5 experiment
-tests/                        one test file per module; all use synthetic or tiny fake data
+experiments/run_experiment.py main experiment; exposes add_common_args, load_data, evaluate, run
+experiments/run_imbalance.py  imbalance handling          experiments/run_reported_vs_deployed.py
+experiments/run_sensitivity.py  settings sweep (dev only)  experiments/run_protocol.py  held-out protocol
+experiments/run_severity.py   drift severity              experiments/run_error_analysis.py
+experiments/run_shap.py       SHAP before/after drift
+experiments/run_detector_blindspot.py  what the missed-fraud drift signal can and cannot see (diagnostic)
+experiments/run_supplementary.py  SUPPLEMENTARY: periodic + ADWIN reset, on 4 fresh scenarios
+tests/                        one test file per module (+ test_audit_fixes.py); synthetic or tiny fake data
 ```
 
 **Every model has the same four methods** (`BaseDetector`), so the evaluation loop treats
@@ -356,13 +460,13 @@ them all alike. A new model only needs `fit`, `predict_proba`, and optionally `p
 (learn from a new batch) and `refit` (respond to a drift alarm).
 
 **Results format** (every experiment writes this): one CSV row per batch with columns
-`model_name, batch_idx, n, n_fraud, pr_auc, roc_auc, recall_at_p, fpr, threshold, drift_flag`,
-plus `family`, `strategy`, `runtime_s`. Plots only ever read these columns, so a plot can
+`model_name, batch_idx, n, n_fraud, pr_auc, roc_auc, recall_at_p, fpr, threshold, op_recall, op_precision,
+op_fpr, drift_flag`, plus `family`, `strategy`, `runtime_s`. Plots only ever read these columns, so a plot can
 be built or changed without running any model.
 
-**Model names in results:** `logreg` (static), `logreg_retrain3` (periodic),
-`logreg+adwin` (drift-triggered), `logreg_acc6+adwin` (accumulate after drift),
-`logreg_smote` (SMOTE instead of class weights), `online_logreg`, `online_arf`.
+**Model names in results:** `rule` (single-feature baseline), `logreg` (static), `logreg_retrain3` (periodic),
+`logreg+adwin` (drift-triggered), `logreg_acc6+adwin` (accumulate after drift), `logreg_ddmwarn` (DDM warning
+window), `logreg_smote` (SMOTE instead of class weights), `online_logreg`, `online_arf`.
 
 ---
 
@@ -374,6 +478,10 @@ for someone new to the codebase.
 ---
 
 ### Task A: SHAP explainability (Stage 7)
+
+> ✅ **Done** as specified below: `src/explain/shap_analysis.py`, `experiments/run_shap.py`, `plot_feature_importance`,
+> tests in `tests/test_audit_fixes.py`. Results: `results/*_shap_importance.csv`, notebook 02 section 5.
+> Kept for reference.
 
 **Effort:** 1–2 days · **Depends on:** nothing · **Branch:** `feat/shap`
 
@@ -581,30 +689,25 @@ starting draft for the Introduction and Method.
 
 | Report section | Content | Source |
 |---|---|---|
-| Introduction | Fraud is rare and its patterns change (concept drift); a model trained once goes stale | Section 1 here, synopsis |
-| Data | ULB + synthetic (+ IEEE-CIS); class imbalance; how drift was injected | Task C notebook, `drift_injection.py` docstring |
-| Method: evaluation | Prequential test-then-train; why not a random train/test split; PR-AUC and recall at 90% precision instead of accuracy | Section 2 here, `prequential.py`, `metrics.py` |
-| Method: models | Static (LR, RF, GB), periodic retrain, online (River LR, ARF) | `src/models/` |
-| Method: drift detection | ADWIN and DDM on the "missed fraud" signal; ignoring improvements | Section 3 here, `detectors.py` docstring |
-| Method: our improvement | Accumulate-after-drift retraining | Section 2 here, `drift_retrain.py` docstring |
-| Method: imbalance | Class weights / SMOTE / undersampling, applied only at training time | `samplers.py` |
-| Results 1: objective 1 | Baselines + imbalance comparison | `*_imbalance.png`, section 10 tables |
-| Results 2: objective 2 | Static vs periodic vs online over time | `*_pr_auc_over_time.png` |
-| Results 3: objective 3 | Detectors + recovery; accumulate beats single-batch refits and periodic retraining | `*_summary.png`, section 10 |
-| Explainability | Features before/after drift | Task A figure |
-| Natural drift | IEEE-CIS findings | Task B |
-| Limitations | Section 11 here | |
+| Introduction | Fraud is rare and its patterns change (concept drift); an unmaintained model silently goes stale. Research question: which adaptive strategy keeps it reliable? | Section 1 here (title, research questions, storyline) |
+| Related work | Active (detector-triggered) vs passive (scheduled/continuous) adaptation; ADWIN, DDM, DDM warning window; fraud-specific work (Dal Pozzolo et al.) | Literature review (Task to write) |
+| Data | ULB + synthetic; class imbalance; how drift was injected (6 drift types) | `01_eda.ipynb`, `drift_injection.py` docstring |
+| Method: evaluation | Prequential test-then-train; PR-AUC, oracle vs operational recall; held-out and fresh scenarios, 3 seeds, block-bootstrap CIs | Section 2 here, `prequential.py`, `metrics.py`, `stats.py`, `run_protocol.py` |
+| Method: models and strategies | Static LR / RF / GB + rule; periodic retraining; online; ADWIN / DDM refit; DDM warning window; accumulate-after-drift | `src/models/`, notebook 02 Q3 intro |
+| Results Q1: baselines | Baselines, oracle vs operational, imbalance handling | Notebook 02 section 1 |
+| Results Q2: degradation | Reported vs deployed; degradation; severity | Notebook 02 section 2, `*_reported_vs_deployed.png`, `severity.png` |
+| Results Q3: strategy comparison | Ranking table; forest plot; recall gain; recovery; label delay; cost. Periodic retraining is best; accumulate beats refit-on-alarm but not periodic | Notebook 02 section 3 + overall ranking, `protocol_comparisons.png` |
+| Analysis: why detectors trail | Gap by phase, detection delay vs fraud count, supplementary fresh scenarios | Notebook 02 section 6 |
+| Error analysis and explainability | Confusion at operational threshold; SHAP before/after drift | Notebook 02 sections 4–5 |
+| Limitations and future work | Section 11 here; label-free drift signal | |
 | Reproducibility | The exact commands from section 5 | |
-| Contributions | Who did what | `git log --format="%an: %s"` |
 
-**Figures to include** (regenerate them with the commands in section 5):
-- `synthetic_pr_auc_over_time.png`: the clearest picture of the core idea
-- `creditcard_drift50_pr_auc_over_time.png`: the same story on real data
-- `creditcard_drift50_summary.png`: the ranking of every strategy after drift
-- `creditcard_drift50_imbalance.png`: Stage 5
-- `creditcard_pr_auc_over_time.png` (raw ULB, no drift): shows ADWIN correctly stays quiet
-  when there is no drift, and DDM's false alarms
-- the Task A SHAP figure; the Task B IEEE-CIS figure
+**Figures to include:**
+- `creditcard_drift50_reported_vs_deployed` (from notebook 02 section 2.1): the hidden problem
+- `creditcard_drift50_pr_auc_over_time.png`: strategies over time on real data
+- `figures/protocol_comparisons.png`: paired CIs across scenarios
+- `severity.png` and `creditcard_drift50_shap.png`
+- the overall ranking table from notebook 02
 
 #### Done when
 - [ ] Every number in the report can be traced to a CSV in `results/` produced by a listed command
@@ -614,6 +717,8 @@ starting draft for the Introduction and Method.
 ---
 
 ### Task E (optional): Automatic tests on GitHub
+
+> ✅ **Done:** `.github/workflows/tests.yml` (installs `requirements-lock.txt`, runs `pytest -q` on Python 3.13).
 
 **Effort:** 1–2 hours · **Branch:** `chore/ci`
 
@@ -641,6 +746,10 @@ jobs:
 ---
 
 ### Task F (optional): Robustness checks
+
+> ✅ **Mostly done** through `run_protocol.py` (3 seeds, held-out scenarios including gradual drift),
+> `run_sensitivity.py` (accumulate 3/6/10, retrain interval 2/3/5, ADWIN δ 0.0002/0.002/0.02) and
+> `run_severity.py`. Still open: more seeds (5+) if time allows, and gradual drift on the synthetic generator.
 
 **Effort:** 1–3 days · **Depends on:** nothing · **Branch:** `feat/robustness`
 
@@ -709,39 +818,30 @@ Week 3   D: finish, proofread, final reruns of all commands from section 5
 
 ## 10. Results so far (reference numbers)
 
-All runs use seed 42 and are reproducible with the commands in section 5.
-PR-AUC: 0 = useless, 1 = perfect; a random guess scores about the fraud rate.
+Numbers as of the post-audit commit (warm-up 6 batches, seed 42 unless stated). The full tables, figures
+and interpretation are in `notebooks/02_results_analysis.ipynb`; rerunning experiments changes these numbers.
+PR-AUC: 0 = useless, 1 = perfect; a random guess scores about the fraud rate (0.0017 on ULB).
 
-**Mean PR-AUC after the drift, static models**
+**ULB as recorded (static models, mean PR-AUC over 23 batches):** random forest 0.762, gradient boosting 0.741,
+adaptive random forest 0.728, logistic regression 0.598, single-feature rule 0.588. ADWIN never fires (correct:
+no injected drift). DDM fires once on logistic regression and lowers its score to 0.480.
 
-| Data | Model | No adaptation | Periodic retrain | + ADWIN | + DDM | **+ ADWIN + accumulate** |
+**ULB + injected drift (development scenario), mean PR-AUC after the drift:**
+
+| Model | Frozen | Periodic retrain | + ADWIN | + DDM | DDM warning window | + ADWIN + accumulate |
 |---|---|---|---|---|---|---|
-| Synthetic | Logistic regression | 0.04 | 0.65 | 0.79 | 0.79 | **0.82** |
-| Synthetic | Random forest | 0.03 | **0.72** | 0.69 | 0.69 | 0.71 |
-| Synthetic | Gradient boosting | 0.03 | 0.64 | 0.73 | 0.73 | **0.76** |
-| ULB + injected drift | Logistic regression | 0.01 | 0.48 | 0.48 | 0.39 | **0.58** |
-| ULB + injected drift | Random forest | 0.23 | 0.65 | 0.70 | 0.70 | **0.75** |
-| ULB + injected drift | Gradient boosting | 0.03 | 0.54 | 0.49 | 0.54 | **0.60** |
+| Logistic regression | 0.005 | 0.502 | 0.473 | 0.473 | 0.473 | **0.573** |
+| Random forest | 0.156 | **0.762** | 0.680 | 0.708 | 0.758 | 0.736 |
+| Gradient boosting | 0.016 | **0.698** | 0.484 | 0.543 | 0.644 | 0.662 |
 
-**Online models, ULB + injected drift (PR-AUC after the drift):** online logistic regression
-0.52 (ADWIN never fires: the model adapts by itself); adaptive random forest 0.65, or 0.70
-with DDM.
+**Held-out protocol (6 scenarios × 3 seeds, paired 95% CIs)** is the evidence to quote: accumulate beats plain
+ADWIN in 14 of 18 comparisons (none worse), is never significantly better than periodic retraining (12 not
+significant, 6 worse), and is mixed against DDM and the DDM warning window (5 better, 11 not significant, 2 worse).
+Mean held-out post-drift PR-AUC: periodic 0.649, DDM warning window 0.596, DDM 0.591, accumulate 0.562, ADWIN 0.464,
+frozen 0.161. Details: `results/protocol_summary.csv`, `results/protocol_comparisons.csv`.
 
-**Raw ULB (no injected drift):** static random forest is best at 0.76 with no adaptation.
-ADWIN never fires, which is correct, since there's no drift in 48 hours. DDM raises false
-alarms that *lower* scores (random forest 0.76 → 0.70).
-
-**Imbalance handling, ULB + injected drift, "+ ADWIN + accumulate" (mean PR-AUC):**
-
-| Model | No handling | Class weights | SMOTE | Undersampling |
-|---|---|---|---|---|
-| Logistic regression | 0.46 | **0.52** | 0.38 | 0.37 |
-| Random forest | 0.71 | **0.75** | 0.74 | 0.57 |
-| Gradient boosting | 0.46 | 0.61 | **0.70** | 0.60 |
-
-Undersampling is the fastest (random forest 6s vs 25–37s) but the weakest after drift.
-On synthetic data (1% fraud, easy to separate), "no handling" is often as good as or better
-than balancing.
+**Imbalance handling:** see the notebook (section 1.3). Class weights are never far from the best and are the
+default. Gradient boosting with no handling collapses (0.129 on ULB). Undersampling is cheapest but weakest after drift.
 
 ---
 
@@ -749,16 +849,23 @@ than balancing.
 
 Discuss these in the report.
 
-1. **The drift signal only watches missed frauds.** A drift that mainly causes *false alarms*
-   on legitimate customers would go unnoticed.
-2. **"Recall at 90% precision" is optimistic.** The threshold is chosen per batch *using
-   that batch's labels*, so it's an upper bound on what a live system would get.
-3. **Labels are assumed to arrive immediately.** In reality, fraud is confirmed days or
-   weeks later (label delay).
-4. **ULB's drift is injected**, not natural (which is why Task B matters). ULB itself covers
-   only 48 hours.
-5. **Imputation and encoding use the whole file** (a mild look-ahead; mainly IEEE-CIS).
-6. **Results come from single runs with one seed** (Task F.1 fixes this).
+1. **The drift signal learns from missed frauds only** (~13 per batch). Detection is slow unless
+   frauds are plentiful, and a moderate rise in the miss rate goes unnoticed (`results/detector_blindspot.csv`,
+   `results/detector_signals.csv`). An offline check of richer signals found no free fix. Fraud scores help
+   little. Label-free signals (all transactions) catch every drift on logistic regression within 0–3 batches,
+   but they are slower for tree models on abrupt drift and raise 1–3 false alarms on undrifted data.
+2. **The oracle recall is optimistic.** "Recall at 90% precision (oracle)" picks the threshold
+   on each batch's own labels. The operational metrics (`op_*`) fix this, but their precision
+   often misses the 90% target for linear models.
+3. **Label delay is studied only at 1 and 3 batches** (10,000–30,000 transactions, a few hours of
+   ULB). Real fraud labels take days to weeks.
+4. **ULB's drift is injected**, not natural, and ULB covers only 48 hours from one issuer in 2013.
+   A natural-drift dataset (Task B, IEEE-CIS) is still missing. Recurring drift is not tested.
+5. **Small post-drift samples.** ~17 frauds per batch and ~14 post-drift batches. One batch of
+   detection delay can decide a third of the post-drift frauds (see the error analysis).
+6. **Three seeds only change model randomness**, not the data. The CIs mainly capture
+   batch-to-batch variation.
+7. **Imputation and encoding use the whole file** (a mild look-ahead; mainly IEEE-CIS).
 
 ---
 
@@ -780,3 +887,12 @@ Discuss these in the report.
   "error". Check the last line (`main -> main`) instead.
 - **Scripts must run from the project root** with the venv active; they add the root to
   `sys.path` themselves.
+- **Jupyter kernels from an AI-assistant sandbox:** command-line `jupyter nbconvert --execute`
+  could not reach a kernel there, so saved notebook outputs were produced by executing the
+  cells in-process. In VS Code, just pick the `.venv` kernel and Run All.
+- **The protocol takes ~3 hours** (30 runs of ~6.5 min on ULB). It is resumable: finished
+  scenario/seed folders are skipped. Use `--aggregate-only` to rebuild the summary tables.
+- **Alarms in the drift batch:** the batch that contains the drift point is excluded from the
+  "after drift" metrics (it is half clean), but an alarm in it counts as a detection, not a false alarm.
+- **shap 0.53 output shapes:** random forest returns `(rows, features, 2)`, so take `[:, :, 1]`;
+  gradient boosting returns `(rows, features)`.
