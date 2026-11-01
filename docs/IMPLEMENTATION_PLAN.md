@@ -401,6 +401,7 @@ python experiments/run_shap.py --data data/raw/creditcard.csv --batch-size 10000
 python experiments/run_shap.py                                            # synthetic
 python experiments/run_detector_blindspot.py --data data/raw/creditcard.csv
 python experiments/run_supplementary.py --data data/raw/creditcard.csv       # supplementary, ~1.5 h
+# everything in one notebook (presentation): notebooks/fraud_drift_project.ipynb
 ```
 
 Outputs go to `results/` (CSVs; the protocol and sweeps in subfolders) and `results/figures/` (PNGs). They are

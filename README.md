@@ -20,6 +20,9 @@ python experiments/run_experiment.py
 ```
 
 ## Notebooks
+- **`notebooks/fraud_drift_project.ipynb`: the whole project in one notebook** (all code, EDA, experiments and
+  analysis). Run All takes about a minute: experiments are switched off and load the saved results; switch
+  them on to re-run (same code and seeds, same results)
 - `notebooks/01_eda.ipynb`: exploratory analysis of the ULB data
 - `notebooks/02_results_analysis.ipynb`: all results, organised by three research questions
 
