@@ -13,6 +13,10 @@ pip install -r requirements.txt
 python experiments/run_experiment.py
 ```
 
+## Notebooks
+- `notebooks/01_eda.ipynb`: exploratory analysis of the ULB data
+- `notebooks/02_results_analysis.ipynb`: all results, organised by the synopsis objectives
+
 ## Test
 ```bash
 pytest -q
@@ -21,4 +25,5 @@ pytest -q
 ## Data
 See [data/README.md](data/README.md) to download the real datasets into `data/raw/`.
 
-See [PIPELINE.md](PIPELINE.md) for the full build plan.
+See [PIPELINE.md](PIPELINE.md) for the full build plan, and
+[docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md) for the remaining tasks and how to pick one up.

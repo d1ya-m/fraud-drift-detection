@@ -48,7 +48,8 @@ METRIC_LABELS = {
 }
 
 
-def _style():
+def apply_style():
+    """Apply the project chart style (colours, fonts, grid) to matplotlib."""
     plt.rcParams.update({
         "font.family": ["Segoe UI", "DejaVu Sans"],
         "font.size": 10,
@@ -78,7 +79,7 @@ def plot_metric_over_time(results, out_path, metric="pr_auc", drift_batch=None, 
     results needs columns family, strategy, batch_idx, drift_flag and the metric.
     smooth is a rolling-mean window in batches (1 = raw), since per-batch PR-AUC is noisy.
     """
-    _style()
+    apply_style()
     families = list(dict.fromkeys(results["family"]))
     ncols = min(3, len(families))
     nrows = math.ceil(len(families) / ncols)
@@ -137,7 +138,7 @@ def plot_grouped_bars(summary, out_path, metrics, group="family", color_by="imba
                       colors=IMBALANCE_COLORS, title=None):
     """Grid of grouped horizontal bar charts: one row per `row_by` value, one column per metric;
     inside each panel, one group of bars per `group` value, one coloured bar per `color_by` level."""
-    _style()
+    apply_style()
     rows = list(dict.fromkeys(summary[row_by]))
     groups = list(dict.fromkeys(summary[group]))
     levels = [c for c in colors if c in set(summary[color_by])]
@@ -181,9 +182,56 @@ def plot_grouped_bars(summary, out_path, metrics, group="family", color_by="imba
     return out_path
 
 
+REPORTED_COLORS = {
+    "deployed": "#2a78d6",
+    "reported, random split": "#eb6834",
+    "reported, time-ordered split": "#1baf7a",
+}
+
+
+def plot_reported_vs_deployed(raw, out_path, train_pct, drift_pct=None, metric="pr_auc", title=None):
+    """One panel per model: deployed score per slice of the stream (line) against the scores the
+    developer would have reported before deployment (horizontal lines over the deployment period)."""
+    apply_style()
+    families = list(dict.fromkeys(raw["family"]))
+    fig, axes = plt.subplots(1, len(families), figsize=(4.4 * len(families), 3.6), sharey=True, squeeze=False)
+    for ax, family in zip(axes[0], families):
+        fam = raw[raw["family"] == family]
+        dep = fam[fam["evaluation"] == "deployed"].sort_values("position_pct")
+        span = (dep["start_pct"].min(), dep["end_pct"].max())
+        for evaluation in ["reported, random split", "reported, time-ordered split"]:
+            level = fam.loc[fam["evaluation"] == evaluation, metric].mean()
+            ax.hlines(level, *span, color=REPORTED_COLORS[evaluation], linewidth=1.6)
+        ax.plot(dep["position_pct"], dep[metric], color=REPORTED_COLORS["deployed"], linewidth=2,
+                marker="o", markersize=6, markeredgecolor=SURFACE, markeredgewidth=1.5)
+        ax.axvspan(0, train_pct, color=GRID, alpha=0.5, linewidth=0)
+        ax.annotate("training data", (train_pct / 2, 1.0), ha="center", va="top", fontsize=8.5, color=INK_SECONDARY)
+        if drift_pct is not None:
+            ax.axvline(drift_pct, color=MUTED, linewidth=1)
+            ax.annotate("true drift", (drift_pct, 0.9), xytext=(4, 0), textcoords="offset points",
+                        fontsize=8.5, color=INK_SECONDARY)
+        ax.set_xlim(0, 100)
+        ax.set_ylim(0, 1.02)
+        ax.set_title(family, loc="left")
+        ax.set_xlabel("Position in the stream (%)")
+    axes[0, 0].set_ylabel(METRIC_LABELS.get(metric, metric))
+
+    handles = [plt.Line2D([], [], color=c, linewidth=2 if k == "deployed" else 1.6,
+                          marker="o" if k == "deployed" else None, markeredgecolor=SURFACE)
+               for k, c in REPORTED_COLORS.items()]
+    labels = ["deployed (scored on each later slice)", "reported: random split", "reported: time-ordered split"]
+    top = 1 - 0.6 / fig.get_figheight()
+    fig.suptitle(title or "", x=0.01, y=0.995, ha="left", va="top", fontsize=12, color=INK)
+    fig.legend(handles, labels, loc="upper left", ncol=3, fontsize=9, bbox_to_anchor=(0.005, 1 - 0.3 / fig.get_figheight()))
+    fig.tight_layout(rect=(0, 0, 1, top))
+    fig.savefig(out_path)
+    plt.close(fig)
+    return out_path
+
+
 def plot_summary(summary, out_path, metric="mean_pr_auc", title=None):
     """Horizontal bars, one per model run, sorted best first, value printed at each bar end."""
-    _style()
+    apply_style()
     data = summary.dropna(subset=[metric]).sort_values(metric)
     fig, ax = plt.subplots(figsize=(7.5, 0.32 * len(data) + 1.2))
     ax.set_axisbelow(True)

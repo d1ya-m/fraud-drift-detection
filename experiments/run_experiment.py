@@ -19,6 +19,7 @@ from src.data.drift_injection import inject_feature_swap  # noqa: E402
 from src.data.loader import load_dataset  # noqa: E402
 from src.data.stream import make_stream  # noqa: E402
 from src.drift.detectors import make_adwin, make_ddm  # noqa: E402
+from src.evaluation.drift_metrics import drift_response_table, trend_per_10_batches  # noqa: E402
 from src.evaluation.prequential import prequential_eval  # noqa: E402
 from src.models.baselines import make_gradient_boosting, make_logreg, make_random_forest  # noqa: E402
 from src.models.drift_retrain import AccumulateAfterDrift  # noqa: E402
@@ -89,9 +90,14 @@ def summarise(results, drift_batch):
         "n_drift_flags": groups["drift_flag"].sum(),
         "runtime_s": groups["runtime_s"].first(),
     })
+    summary["pr_auc_trend_per_10_batches"] = groups.apply(trend_per_10_batches, include_groups=False)
     if drift_batch is not None:
         after = results[results["batch_idx"] >= drift_batch]
         summary["mean_pr_auc_after_drift"] = after.groupby("model_name")["pr_auc"].mean()
+        summary["mean_recall_at_p_after_drift"] = after.groupby("model_name")["recall_at_p"].mean()
+        response = drift_response_table(results, drift_batch).set_index("model_name")
+        for col in ["before", "drop", "drop_pct", "worst_after", "batches_below", "recovery_batches"]:
+            summary[f"pr_auc_{col}" if col in ("before", "worst_after") else col] = response[col]
     return summary.reset_index()
 
 
