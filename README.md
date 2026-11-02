@@ -26,6 +26,12 @@ python experiments/run_experiment.py
 - `notebooks/01_eda.ipynb`: exploratory analysis of the ULB data
 - `notebooks/02_results_analysis.ipynb`: all results, organised by three research questions
 
+Part F at the end of the single notebook is a live demo: two fresh runs (about 15 s each) that show a model
+collapsing after drift and the adaptive strategies recovering. They write to `demo_out/`, not `results/`.
+
+**Results dashboard:** https://claude.ai/artifact/WrKbujCj6esZtvjbxrt3WZ, interactive charts of the saved results
+(shared with the team).
+
 ## Test
 ```bash
 pytest -q
