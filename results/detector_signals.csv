@@ -1,0 +1,85 @@
+scenario,model,signal,needs_labels,drift_batch,false_alarms,first_alarm_after_drift,delay_batches
+as recorded,logreg,missed frauds,True,,0,,
+as recorded,logreg,fraud score drop,True,,0,,
+as recorded,logreg,alert rate,False,,1,,
+as recorded,logreg,mean score,False,,3,,
+as recorded,random_forest,missed frauds,True,,0,,
+as recorded,random_forest,fraud score drop,True,,0,,
+as recorded,random_forest,alert rate,False,,1,,
+as recorded,random_forest,mean score,False,,2,,
+as recorded,gradient_boosting,missed frauds,True,,0,,
+as recorded,gradient_boosting,fraud score drop,True,,0,,
+as recorded,gradient_boosting,alert rate,False,,1,,
+as recorded,gradient_boosting,mean score,False,,1,,
+k2,logreg,missed frauds,True,14.0,0,,
+k2,logreg,fraud score drop,True,14.0,0,,
+k2,logreg,alert rate,False,14.0,0,14.0,0.0
+k2,logreg,mean score,False,14.0,1,14.0,0.0
+k2,random_forest,missed frauds,True,14.0,0,15.0,1.0
+k2,random_forest,fraud score drop,True,14.0,0,15.0,1.0
+k2,random_forest,alert rate,False,14.0,0,17.0,3.0
+k2,random_forest,mean score,False,14.0,0,15.0,1.0
+k2,gradient_boosting,missed frauds,True,14.0,0,15.0,1.0
+k2,gradient_boosting,fraud score drop,True,14.0,0,15.0,1.0
+k2,gradient_boosting,alert rate,False,14.0,0,17.0,3.0
+k2,gradient_boosting,mean score,False,14.0,0,17.0,3.0
+k4 (dev),logreg,missed frauds,True,14.0,0,15.0,1.0
+k4 (dev),logreg,fraud score drop,True,14.0,0,15.0,1.0
+k4 (dev),logreg,alert rate,False,14.0,0,14.0,0.0
+k4 (dev),logreg,mean score,False,14.0,1,14.0,0.0
+k4 (dev),random_forest,missed frauds,True,14.0,0,15.0,1.0
+k4 (dev),random_forest,fraud score drop,True,14.0,0,15.0,1.0
+k4 (dev),random_forest,alert rate,False,14.0,0,17.0,3.0
+k4 (dev),random_forest,mean score,False,14.0,0,15.0,1.0
+k4 (dev),gradient_boosting,missed frauds,True,14.0,0,15.0,1.0
+k4 (dev),gradient_boosting,fraud score drop,True,14.0,0,15.0,1.0
+k4 (dev),gradient_boosting,alert rate,False,14.0,0,17.0,3.0
+k4 (dev),gradient_boosting,mean score,False,14.0,0,18.0,4.0
+k6,logreg,missed frauds,True,14.0,0,,
+k6,logreg,fraud score drop,True,14.0,0,,
+k6,logreg,alert rate,False,14.0,0,14.0,0.0
+k6,logreg,mean score,False,14.0,1,14.0,0.0
+k6,random_forest,missed frauds,True,14.0,0,15.0,1.0
+k6,random_forest,fraud score drop,True,14.0,0,15.0,1.0
+k6,random_forest,alert rate,False,14.0,0,17.0,3.0
+k6,random_forest,mean score,False,14.0,0,17.0,3.0
+k6,gradient_boosting,missed frauds,True,14.0,0,15.0,1.0
+k6,gradient_boosting,fraud score drop,True,14.0,0,15.0,1.0
+k6,gradient_boosting,alert rate,False,14.0,0,17.0,3.0
+k6,gradient_boosting,mean score,False,14.0,0,17.0,3.0
+drift30,logreg,missed frauds,True,8.0,0,11.0,3.0
+drift30,logreg,fraud score drop,True,8.0,0,10.0,2.0
+drift30,logreg,alert rate,False,8.0,0,8.0,0.0
+drift30,logreg,mean score,False,8.0,0,9.0,1.0
+drift30,random_forest,missed frauds,True,8.0,0,12.0,4.0
+drift30,random_forest,fraud score drop,True,8.0,0,12.0,4.0
+drift30,random_forest,alert rate,False,8.0,0,11.0,3.0
+drift30,random_forest,mean score,False,8.0,0,15.0,7.0
+drift30,gradient_boosting,missed frauds,True,8.0,0,12.0,4.0
+drift30,gradient_boosting,fraud score drop,True,8.0,0,12.0,4.0
+drift30,gradient_boosting,alert rate,False,8.0,0,12.0,4.0
+drift30,gradient_boosting,mean score,False,8.0,0,12.0,4.0
+drift70,logreg,missed frauds,True,19.0,0,22.0,3.0
+drift70,logreg,fraud score drop,True,19.0,0,22.0,3.0
+drift70,logreg,alert rate,False,19.0,1,20.0,1.0
+drift70,logreg,mean score,False,19.0,3,20.0,1.0
+drift70,random_forest,missed frauds,True,19.0,0,22.0,3.0
+drift70,random_forest,fraud score drop,True,19.0,0,22.0,3.0
+drift70,random_forest,alert rate,False,19.0,1,,
+drift70,random_forest,mean score,False,19.0,2,,
+drift70,gradient_boosting,missed frauds,True,19.0,0,22.0,3.0
+drift70,gradient_boosting,fraud score drop,True,19.0,0,22.0,3.0
+drift70,gradient_boosting,alert rate,False,19.0,1,27.0,8.0
+drift70,gradient_boosting,mean score,False,19.0,1,26.0,7.0
+gradual,logreg,missed frauds,True,11.0,0,17.0,6.0
+gradual,logreg,fraud score drop,True,11.0,0,15.0,4.0
+gradual,logreg,alert rate,False,11.0,0,14.0,3.0
+gradual,logreg,mean score,False,11.0,1,14.0,3.0
+gradual,random_forest,missed frauds,True,11.0,0,19.0,8.0
+gradual,random_forest,fraud score drop,True,11.0,0,21.0,10.0
+gradual,random_forest,alert rate,False,11.0,0,15.0,4.0
+gradual,random_forest,mean score,False,11.0,0,15.0,4.0
+gradual,gradient_boosting,missed frauds,True,11.0,0,20.0,9.0
+gradual,gradient_boosting,fraud score drop,True,11.0,0,19.0,8.0
+gradual,gradient_boosting,alert rate,False,11.0,0,15.0,4.0
+gradual,gradient_boosting,mean score,False,11.0,0,15.0,4.0

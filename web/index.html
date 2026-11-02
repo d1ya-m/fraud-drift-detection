@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fraud Detection & Concept Drift Dashboard</title>
+  
+  <!-- Modern Clean Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top App Navigation Bar -->
+  <header class="app-nav">
+    <div class="nav-wrapper">
+      <div class="nav-left">
+        <div class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="nav-title-group">
+          <h1 class="nav-title">FraudShield <span class="nav-badge">Drift-AI</span></h1>
+          <span class="nav-subtitle">Credit Card Fraud Detection under Concept Drift</span>
+        </div>
+      </div>
+
+      <nav class="nav-tabs">
+        <button class="nav-tab active" id="tab-inference-btn" onclick="switchSection('inference')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Live Transaction Inference
+        </button>
+        <button class="nav-tab" id="tab-results-btn" onclick="switchSection('results')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          Project Results & Benchmark
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Viewport -->
+  <main class="app-viewport">
+
+    <!-- ================================================================= -->
+    <!-- SECTION 1: LIVE TRANSACTION RISK INSPECTOR                        -->
+    <!-- ================================================================= -->
+    <section id="section-inference" class="page-section active">
+      
+      <!-- Top Presets Bar -->
+      <div class="presets-banner">
+        <span class="presets-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Load Realistic Test Case:
+        </span>
+        <div class="preset-chips">
+          <button type="button" class="preset-chip active" onclick="applyPreset('preset_concept_drift_fraud', this)">
+            <span class="chip-dot dot-warning"></span> Post-Drift Evasive Fraud (Concept Drift)
+          </button>
+          <button type="button" class="preset-chip" onclick="applyPreset('preset_pre_drift_fraud', this)">
+            <span class="chip-dot dot-danger"></span> Pre-Drift Theft ($99.20)
+          </button>
+          <button type="button" class="preset-chip" onclick="applyPreset('preset_grocery', this)">
+            <span class="chip-dot dot-success"></span> Normal Grocery ($34.20)
+          </button>
+          <button type="button" class="preset-chip" onclick="applyPreset('preset_high_val', this)">
+            <span class="chip-dot dot-info"></span> High-Value Laptop ($1,290.00)
+          </button>
+          <button type="button" class="preset-chip" onclick="applyPreset('preset_card_testing', this)">
+            <span class="chip-dot dot-danger"></span> Card Testing ($1.00)
+          </button>
+          <button type="button" class="preset-chip chip-clear" onclick="clearFields(this)">
+            Clear Inputs
+          </button>
+        </div>
+      </div>
+
+      <!-- Two-Column Inference Layout -->
+      <div class="inference-grid">
+        
+        <!-- Left: Transaction Input Form -->
+        <div class="card form-card">
+          <div class="card-title-row">
+            <div>
+              <h2 class="card-title">Transaction Parameters</h2>
+              <p class="card-desc">Enter transaction amount and key fraud indicators below to run inference.</p>
+            </div>
+            <span class="badge-subtle">9 Core Features</span>
+          </div>
+
+          <form id="transaction-form" onsubmit="executeInference(event)">
+            
+            <!-- Amount Input Field -->
+            <div class="amount-field-group">
+              <label for="input-Amount" class="field-label">Transaction Amount (USD)</label>
+              <div class="amount-input-box">
+                <span class="currency-prefix">$</span>
+                <input type="number" id="input-Amount" step="0.01" min="0" placeholder="0.00" class="amount-input" required>
+              </div>
+            </div>
+
+            <!-- Group A: Historical Fraud Drivers (Pre-Drift Indicators) -->
+            <div class="features-group">
+              <div class="group-header">
+                <span class="group-name">Historical Fraud Indicators (Pre-Drift Drivers)</span>
+                <span class="group-hint">Lower negative values indicate historical fraud signature</span>
+              </div>
+              <div class="fields-grid">
+                <div class="input-cell">
+                  <label for="input-V14" title="Strongest pre-drift indicator (fraud mean: -7.0, normal: 0.0)">V14 (Primary Indicator)</label>
+                  <input type="number" step="any" id="input-V14" class="num-input" placeholder="0.00">
+                </div>
+                <div class="input-cell">
+                  <label for="input-V17" title="Historical fraud indicator">V17</label>
+                  <input type="number" step="any" id="input-V17" class="num-input" placeholder="0.00">
+                </div>
+                <div class="input-cell">
+                  <label for="input-V12" title="Historical fraud indicator">V12</label>
+                  <input type="number" step="any" id="input-V12" class="num-input" placeholder="0.00">
+                </div>
+                <div class="input-cell">
+                  <label for="input-V10" title="Historical fraud indicator">V10</label>
+                  <input type="number" step="any" id="input-V10" class="num-input" placeholder="0.00">
+                </div>
+              </div>
+            </div>
+
+            <!-- Group B: Drift Evasion Target Features (Swapped Indicators) -->
+            <div class="features-group">
+              <div class="group-header">
+                <span class="group-name">Concept Drift Swapped Features (Evasion Targets)</span>
+                <span class="group-hint">Fraud signals migrate here post-drift (e.g. V14 ↔ V23)</span>
+              </div>
+              <div class="fields-grid">
+                <div class="input-cell cell-swapped">
+                  <label for="input-V23" title="Swapped with V14 during drift">V23 (Target for V14)</label>
+                  <input type="number" step="any" id="input-V23" class="num-input" placeholder="0.00">
+                </div>
+                <div class="input-cell cell-swapped">
+                  <label for="input-V22" title="Swapped with V17 during drift">V22 (Target for V17)</label>
+                  <input type="number" step="any" id="input-V22" class="num-input" placeholder="0.00">
+                </div>
+                <div class="input-cell cell-swapped">
+                  <label for="input-V25" title="Swapped with V12 during drift">V25 (Target for V12)</label>
+                  <input type="number" step="any" id="input-V25" class="num-input" placeholder="0.00">
+                </div>
+                <div class="input-cell cell-swapped">
+                  <label for="input-V15" title="Swapped with V10 during drift">V15 (Target for V10)</label>
+                  <input type="number" step="any" id="input-V15" class="num-input" placeholder="0.00">
+                </div>
+              </div>
+            </div>
+
+            <!-- Model & Configuration Row -->
+            <div class="config-row">
+              <div class="config-item">
+                <label for="model-select">Active Classification Model</label>
+                <select id="model-select" class="clean-select">
+                  <option value="rf_adapted" selected>Adapted Random Forest (Champion - Periodic Retrained)</option>
+                  <option value="rf_frozen">Frozen Random Forest (Pre-Drift Baseline)</option>
+                  <option value="gb_adapted">Adapted HistGradientBoosting</option>
+                  <option value="logreg_adapted">Adapted Logistic Regression</option>
+                </select>
+              </div>
+
+              <div class="config-item item-threshold">
+                <label for="threshold-val">Decision Threshold</label>
+                <div class="threshold-input-wrap">
+                  <input type="number" id="threshold-val" step="0.05" min="0.05" max="0.95" value="0.50" class="threshold-num">
+                  <span class="threshold-sub">Default: 0.50</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-action-row">
+              <button type="submit" class="btn-primary" id="btn-submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                Analyze Transaction Risk
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Right: Real-Time Risk Verdict & Concept Drift Diagnostic -->
+        <div class="card decision-card" id="decision-panel">
+          <div class="card-title-row">
+            <div>
+              <h2 class="card-title">Risk Assessment Output</h2>
+              <p class="card-desc">Real-time model prediction, risk score, and drift diagnostic.</p>
+            </div>
+            <span class="latency-badge" id="latency-tag">⚡ 12 ms</span>
+          </div>
+
+          <!-- Main Status Card -->
+          <div class="verdict-banner" id="verdict-banner">
+            <div class="verdict-icon-container" id="verdict-icon-wrap">
+              <!-- Icon by JS -->
+            </div>
+            <div class="verdict-text-container">
+              <div class="verdict-headline" id="verdict-headline">Awaiting Transaction</div>
+              <div class="verdict-subline" id="verdict-subline">Click "Analyze Transaction Risk" to run inference.</div>
+            </div>
+          </div>
+
+          <!-- Risk Score Bar -->
+          <div class="score-meter-card">
+            <div class="meter-labels">
+              <span class="meter-title">Estimated Fraud Risk</span>
+              <span class="meter-score font-mono" id="meter-score-text">0.0%</span>
+            </div>
+            <div class="meter-bar-track">
+              <div class="meter-bar-fill" id="meter-bar-fill" style="width: 0%;"></div>
+              <div class="meter-threshold-pin" id="threshold-pin" style="left: 50%;" title="Decision Threshold"></div>
+            </div>
+            <div class="meter-scale">
+              <span>0% (Legitimate)</span>
+              <span class="pin-label">Threshold (0.50)</span>
+              <span>100% (Definite Fraud)</span>
+            </div>
+          </div>
+
+          <!-- Metrics Table -->
+          <div class="metrics-summary-table">
+            <div class="metric-row">
+              <span class="metric-key">Risk Classification:</span>
+              <span class="metric-val" id="val-risk-level">--</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-key">Evaluated Model:</span>
+              <span class="metric-val font-mono" id="val-model">--</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-key">Decision Recommendation:</span>
+              <span class="metric-val font-semibold" id="val-action">--</span>
+            </div>
+          </div>
+
+          <!-- Concept Drift Evasion Diagnostic Box -->
+          <div class="drift-box" id="drift-diagnostic-box">
+            <div class="drift-box-header">
+              <span class="drift-box-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Concept Drift Diagnostic (Frozen vs Adapted)
+              </span>
+              <span class="drift-status-pill" id="drift-status-pill">Normal</span>
+            </div>
+            
+            <div class="model-compare-row">
+              <div class="compare-cell cell-frozen">
+                <span class="cell-label">Pre-Drift Frozen Model:</span>
+                <span class="cell-score font-mono" id="frozen-score-pill">--</span>
+                <span class="cell-verdict" id="frozen-verdict-pill">--</span>
+              </div>
+              <div class="compare-cell cell-adapted">
+                <span class="cell-label">Periodic Adapted Model:</span>
+                <span class="cell-score font-mono" id="adapted-score-pill">--</span>
+                <span class="cell-verdict" id="adapted-verdict-pill">--</span>
+              </div>
+            </div>
+
+            <div class="drift-alert-text" id="drift-alert-text">
+              Both models are currently in agreement.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- SECTION 2: RESEARCH & BENCHMARK RESULTS HUB                        -->
+    <!-- ================================================================= -->
+    <section id="section-results" class="page-section">
+      
+      <div class="results-intro-banner">
+        <div>
+          <h2 class="results-heading">Project Results & Empirical Benchmarks</h2>
+          <p class="results-subheading">A study on maintaining classical fraud models under concept drift across 10 drift scenarios, 3 random seeds, and block-bootstrap confidence intervals.</p>
+        </div>
+        <div class="dataset-chip">
+          ULB European Cardholders (284,807 transactions, 0.17% fraud)
+        </div>
+      </div>
+
+      <!-- 4 Core Executive Metric Cards -->
+      <div class="kpi-scorecard-grid">
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-name">Baseline PR-AUC</span>
+            <span class="kpi-pill">Peak</span>
+          </div>
+          <div class="kpi-metric">0.762</div>
+          <p class="kpi-caption">Random Forest baseline on undrifted data (~440× over random baseline).</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-name">Frozen Degradation</span>
+            <span class="kpi-pill pill-danger">Silent Failure</span>
+          </div>
+          <div class="kpi-metric metric-danger">-79% to -99%</div>
+          <p class="kpi-caption">Unmaintained models drop to 0.156 (RF) and 0.016 (GB) when tactics drift.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-name">Periodic Retraining</span>
+            <span class="kpi-pill pill-success">#1 Champion</span>
+          </div>
+          <div class="kpi-metric metric-success">0.649</div>
+          <p class="kpi-caption">Average post-drift PR-AUC across held-out scenarios (0.748 with RF).</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-name">ADWIN False Alarms</span>
+            <span class="kpi-pill pill-info">Precision</span>
+          </div>
+          <div class="kpi-metric">0.00</div>
+          <p class="kpi-caption">Zero false alarms across all drift scenarios and seeds.</p>
+        </div>
+      </div>
+
+      <!-- Key Insights Summary Cards -->
+      <div class="card findings-card">
+        <h3 class="section-title">Key Experimental Takeaways</h3>
+        <div class="takeaways-grid">
+          <div class="takeaway-box">
+            <div class="takeaway-num">01</div>
+            <div class="takeaway-body">
+              <strong>Models Die Silently Without Maintenance:</strong>
+              When fraud patterns shift, static models don't trigger internal alerts; after drift, the frozen model raised just 1 alert across 134,807 transactions and caught 0 frauds.
+            </div>
+          </div>
+          <div class="takeaway-box">
+            <div class="takeaway-num">02</div>
+            <div class="takeaway-body">
+              <strong>Standard Evaluation Deceives:</strong>
+              A standard shuffled test split reported <strong>0.888 PR-AUC</strong>, but the deployed model scored <strong>0.069</strong> after drift. Standard cross-validation completely conceals production decay.
+            </div>
+          </div>
+          <div class="takeaway-box">
+            <div class="takeaway-num">03</div>
+            <div class="takeaway-body">
+              <strong>Periodic Retraining Outperforms Detectors:</strong>
+              Retraining on recent data every 3 batches was the most reliable strategy, beating reactive drift detectors by eliminating detection lag.
+            </div>
+          </div>
+          <div class="takeaway-box">
+            <div class="takeaway-num">04</div>
+            <div class="takeaway-body">
+              <strong>Why Drift Detectors Lag:</strong>
+              Because fraud labels are rare (~13 per 10k batch), statistical detectors require 1 to 9 batches to accumulate enough misses to alarm.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategy Comparison Table -->
+      <div class="card table-card">
+        <div class="card-title-row">
+          <div>
+            <h3 class="card-title">Adaptive Strategy Benchmark (Held-Out Scenarios)</h3>
+            <p class="card-desc">Mean performance across 6 held-out drift scenarios and 3 seeds.</p>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Strategy</th>
+                <th>Maintenance Type</th>
+                <th>Post-Drift PR-AUC</th>
+                <th>Operational Recall</th>
+                <th>False Alarms</th>
+                <th>Operational Verdict</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-champion">
+                <td>
+                  <strong>Periodic Retraining</strong>
+                  <span class="badge-champion">Rank 1</span>
+                </td>
+                <td>Passive Fixed Window</td>
+                <td class="font-mono text-success"><strong>0.649</strong></td>
+                <td class="font-mono">0.504</td>
+                <td class="font-mono">0.00</td>
+                <td><strong>Most reliable defense</strong> (0.748 with RF)</td>
+              </tr>
+              <tr>
+                <td><strong>DDM Warning Window</strong></td>
+                <td>Active Buffer</td>
+                <td class="font-mono">0.596</td>
+                <td class="font-mono">0.396</td>
+                <td class="font-mono">0.28</td>
+                <td>Effective buffer; small false alarm rate</td>
+              </tr>
+              <tr>
+                <td><strong>+ DDM (Refit on Alarm)</strong></td>
+                <td>Active Single-Fit</td>
+                <td class="font-mono">0.591</td>
+                <td class="font-mono">0.404</td>
+                <td class="font-mono">0.22</td>
+                <td>Refits once on alarm batch</td>
+              </tr>
+              <tr>
+                <td><strong>+ ADWIN + Accumulate (Proposed)</strong></td>
+                <td>Active Adaptive</td>
+                <td class="font-mono">0.562</td>
+                <td class="font-mono">0.431</td>
+                <td class="font-mono">0.00</td>
+                <td>Substantially beats standard ADWIN; 0 false alarms</td>
+              </tr>
+              <tr>
+                <td><strong>+ ADWIN (Single Refit)</strong></td>
+                <td>Active Baseline</td>
+                <td class="font-mono">0.464</td>
+                <td class="font-mono">0.306</td>
+                <td class="font-mono">0.00</td>
+                <td>Refits on single batch; lacks sample volume</td>
+              </tr>
+              <tr>
+                <td><strong>Online Logistic Regression</strong></td>
+                <td>Incremental SGD</td>
+                <td class="font-mono">0.432</td>
+                <td class="font-mono">0.333</td>
+                <td class="font-mono">0.00</td>
+                <td>Updates every batch; lower capacity</td>
+              </tr>
+              <tr class="row-frozen">
+                <td><strong>Frozen (No Maintenance)</strong></td>
+                <td>None (Static Baseline)</td>
+                <td class="font-mono text-danger">0.161</td>
+                <td class="font-mono">0.070</td>
+                <td class="font-mono">0.00</td>
+                <td>Catastrophic collapse under concept drift</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Core Visualizations Grid -->
+      <div class="visuals-grid">
+        
+        <!-- Figure 1 -->
+        <div class="card visual-card">
+          <div class="visual-card-header">
+            <h4>The Validation Trap: Reported vs Deployed</h4>
+            <p>Shuffled test splits report ~0.89 PR-AUC but hide the real 90% production collapse.</p>
+          </div>
+          <div class="figure-frame">
+            <img src="/figures/creditcard_drift50_reported_vs_deployed.png" alt="Reported vs Deployed" class="report-img">
+          </div>
+        </div>
+
+        <!-- Figure 2 -->
+        <div class="card visual-card">
+          <div class="visual-card-header">
+            <h4>Prequential PR-AUC Over Time</h4>
+            <p>Batch-by-batch performance showing the frozen collapse vs periodic recovery.</p>
+          </div>
+          <div class="figure-frame">
+            <img src="/figures/creditcard_drift50_pr_auc_over_time.png" alt="PR-AUC Over Time" class="report-img">
+          </div>
+        </div>
+
+        <!-- Figure 3 -->
+        <div class="card visual-card">
+          <div class="visual-card-header">
+            <h4>SHAP Feature Attribution: Tracking the Shift</h4>
+            <p>Model importance moves from V10, V14 to V22, V25, matching the swapped tactics.</p>
+          </div>
+          <div class="figure-frame">
+            <img src="/figures/creditcard_drift50_shap.png" alt="SHAP Feature Shift" class="report-img">
+          </div>
+        </div>
+
+        <!-- Operational Summary Table -->
+        <div class="card visual-card">
+          <div class="visual-card-header">
+            <h4>Real-World Financial Protection (70k Transactions)</h4>
+            <p>Operational performance at carried-over alert thresholds.</p>
+          </div>
+          <div class="table-container mini-table-container">
+            <table class="benchmark-table">
+              <thead>
+                <tr>
+                  <th>Condition</th>
+                  <th>Frauds Intercepted</th>
+                  <th>Precision</th>
+                  <th>Stolen $ Saved</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pre-Drift (Normal)</td>
+                  <td>68 / 89 (76%)</td>
+                  <td>88.3%</td>
+                  <td><strong class="text-success">84.6%</strong></td>
+                </tr>
+                <tr class="row-frozen">
+                  <td>Post-Drift: Frozen</td>
+                  <td>0 / 199 (0%)</td>
+                  <td>0.0%</td>
+                  <td><strong class="text-danger">0.0%</strong></td>
+                </tr>
+                <tr class="row-champion">
+                  <td>Post-Drift: Periodic Retrain</td>
+                  <td>106 / 199 (53%)</td>
+                  <td>89.1%</td>
+                  <td><strong class="text-success">56.4%</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="recommendation-callout">
+            <strong>System Recommendation:</strong> Implement <strong>Scheduled (Periodic) Retraining</strong> as the primary defense engine, paired with <strong>ADWIN</strong> as a zero-false-alarm monitoring alarm.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

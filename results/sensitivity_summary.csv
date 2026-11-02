@@ -1,0 +1,73 @@
+parameter,value,dataset,family,strategy,pr_auc_after,recovery_batches,alarms,runtime_s
+accumulate,3,synthetic,Logistic regression (static),+ ADWIN + accumulate,0.8041692577949014,3.0,1,0.3
+accumulate,3,synthetic,Random forest (static),+ ADWIN + accumulate,0.6998997537573798,4.0,1,4.8
+accumulate,3,synthetic,Gradient boosting (static),+ ADWIN + accumulate,0.7822222507083266,3.0,1,8.6
+accumulate,3,ULB drift 50%,Logistic regression (static),+ ADWIN + accumulate,0.46017630533107784,9.0,1,1.1
+accumulate,3,ULB drift 50%,Random forest (static),+ ADWIN + accumulate,0.6991244398187124,1.0,1,9.0
+accumulate,3,ULB drift 50%,Gradient boosting (static),+ ADWIN + accumulate,0.5963953748252093,9.0,1,26.1
+accumulate,6,synthetic,Logistic regression (static),+ ADWIN + accumulate,0.817762916389139,3.0,1,0.4
+accumulate,6,synthetic,Random forest (static),+ ADWIN + accumulate,0.7065190596140559,4.0,1,7.8
+accumulate,6,synthetic,Gradient boosting (static),+ ADWIN + accumulate,0.7802310982358334,3.0,1,15.8
+accumulate,6,ULB drift 50%,Logistic regression (static),+ ADWIN + accumulate,0.5731177631976949,6.0,1,1.8
+accumulate,6,ULB drift 50%,Random forest (static),+ ADWIN + accumulate,0.7356365878639727,1.0,1,16.8
+accumulate,6,ULB drift 50%,Gradient boosting (static),+ ADWIN + accumulate,0.6624163389181879,7.0,1,48.7
+accumulate,10,synthetic,Logistic regression (static),+ ADWIN + accumulate,0.8171661966662441,3.0,1,0.5
+accumulate,10,synthetic,Random forest (static),+ ADWIN + accumulate,0.7102484955430399,4.0,1,12.2
+accumulate,10,synthetic,Gradient boosting (static),+ ADWIN + accumulate,0.7790877730086,3.0,1,25.7
+accumulate,10,ULB drift 50%,Logistic regression (static),+ ADWIN + accumulate,0.618552252217973,6.0,1,3.6
+accumulate,10,ULB drift 50%,Random forest (static),+ ADWIN + accumulate,0.7396699571024042,1.0,1,40.9
+accumulate,10,ULB drift 50%,Gradient boosting (static),+ ADWIN + accumulate,0.6635189777096208,7.0,1,91.2
+retrain-every,2,synthetic,Logistic regression (static),periodic retrain,0.6555679536902838,7.0,0,0.4
+retrain-every,2,synthetic,Random forest (static),periodic retrain,0.7317220423962935,3.0,0,11.3
+retrain-every,2,synthetic,Gradient boosting (static),periodic retrain,0.725067550667532,4.0,0,26.3
+retrain-every,2,ULB drift 50%,Logistic regression (static),periodic retrain,0.5081344887544044,6.0,0,4.3
+retrain-every,2,ULB drift 50%,Random forest (static),periodic retrain,0.7302491836084315,3.0,0,45.6
+retrain-every,2,ULB drift 50%,Gradient boosting (static),periodic retrain,0.6686150872006733,3.0,0,100.1
+retrain-every,3,synthetic,Logistic regression (static),periodic retrain,0.5959747430695472,7.0,0,0.4
+retrain-every,3,synthetic,Random forest (static),periodic retrain,0.701868567095195,4.0,0,9.0
+retrain-every,3,synthetic,Gradient boosting (static),periodic retrain,0.6960034849052373,4.0,0,16.6
+retrain-every,3,ULB drift 50%,Logistic regression (static),periodic retrain,0.5019374287535905,7.0,0,3.0
+retrain-every,3,ULB drift 50%,Random forest (static),periodic retrain,0.7623616532881531,5.0,0,31.6
+retrain-every,3,ULB drift 50%,Gradient boosting (static),periodic retrain,0.6981052978266968,7.0,0,68.6
+retrain-every,5,synthetic,Logistic regression (static),periodic retrain,0.5168966464273107,9.0,0,0.4
+retrain-every,5,synthetic,Random forest (static),periodic retrain,0.6312622583578288,5.0,0,8.2
+retrain-every,5,synthetic,Gradient boosting (static),periodic retrain,0.6329082546886048,5.0,0,14.2
+retrain-every,5,ULB drift 50%,Logistic regression (static),periodic retrain,0.4495661394163041,8.0,0,2.9
+retrain-every,5,ULB drift 50%,Random forest (static),periodic retrain,0.7406673527253805,1.0,0,35.3
+retrain-every,5,ULB drift 50%,Gradient boosting (static),periodic retrain,0.6683542382478088,7.0,0,64.5
+adwin-delta,0.0002,synthetic,Logistic regression (static),+ ADWIN,0.7890622406139891,3.0,1,0.3
+adwin-delta,0.0002,synthetic,Logistic regression (static),+ ADWIN + accumulate,0.817762916389139,3.0,1,0.5
+adwin-delta,0.0002,synthetic,Random forest (static),+ ADWIN,0.6205735003195733,5.0,1,4.4
+adwin-delta,0.0002,synthetic,Random forest (static),+ ADWIN + accumulate,0.6286766813856783,5.0,1,10.6
+adwin-delta,0.0002,synthetic,Gradient boosting (static),+ ADWIN,0.6852993517153694,4.0,1,6.7
+adwin-delta,0.0002,synthetic,Gradient boosting (static),+ ADWIN + accumulate,0.7066660871925184,4.0,1,21.9
+adwin-delta,0.0002,ULB drift 50%,Logistic regression (static),+ ADWIN,0.4728144762295596,7.0,1,1.1
+adwin-delta,0.0002,ULB drift 50%,Logistic regression (static),+ ADWIN + accumulate,0.5731177631976949,6.0,1,2.4
+adwin-delta,0.0002,ULB drift 50%,Random forest (static),+ ADWIN,0.679886805903345,1.0,1,9.1
+adwin-delta,0.0002,ULB drift 50%,Random forest (static),+ ADWIN + accumulate,0.7356365878639727,1.0,1,16.6
+adwin-delta,0.0002,ULB drift 50%,Gradient boosting (static),+ ADWIN,0.48353205506044356,,1,13.7
+adwin-delta,0.0002,ULB drift 50%,Gradient boosting (static),+ ADWIN + accumulate,0.6624163389181879,7.0,1,46.4
+adwin-delta,0.002,synthetic,Logistic regression (static),+ ADWIN,0.7890622406139891,3.0,1,0.2
+adwin-delta,0.002,synthetic,Logistic regression (static),+ ADWIN + accumulate,0.817762916389139,3.0,1,0.3
+adwin-delta,0.002,synthetic,Random forest (static),+ ADWIN,0.6869624408692293,4.0,1,3.2
+adwin-delta,0.002,synthetic,Random forest (static),+ ADWIN + accumulate,0.7065190596140559,4.0,1,7.3
+adwin-delta,0.002,synthetic,Gradient boosting (static),+ ADWIN,0.7252670711339274,3.0,1,4.4
+adwin-delta,0.002,synthetic,Gradient boosting (static),+ ADWIN + accumulate,0.7802310982358334,3.0,1,14.9
+adwin-delta,0.002,ULB drift 50%,Logistic regression (static),+ ADWIN,0.4728144762295596,7.0,1,0.8
+adwin-delta,0.002,ULB drift 50%,Logistic regression (static),+ ADWIN + accumulate,0.5731177631976949,6.0,1,1.8
+adwin-delta,0.002,ULB drift 50%,Random forest (static),+ ADWIN,0.679886805903345,1.0,1,6.1
+adwin-delta,0.002,ULB drift 50%,Random forest (static),+ ADWIN + accumulate,0.7356365878639727,1.0,1,15.2
+adwin-delta,0.002,ULB drift 50%,Gradient boosting (static),+ ADWIN,0.48353205506044356,,1,14.0
+adwin-delta,0.002,ULB drift 50%,Gradient boosting (static),+ ADWIN + accumulate,0.6624163389181879,7.0,1,47.3
+adwin-delta,0.02,synthetic,Logistic regression (static),+ ADWIN,0.7890622406139891,3.0,1,0.2
+adwin-delta,0.02,synthetic,Logistic regression (static),+ ADWIN + accumulate,0.817762916389139,3.0,1,0.3
+adwin-delta,0.02,synthetic,Random forest (static),+ ADWIN,0.6869624408692293,4.0,1,3.2
+adwin-delta,0.02,synthetic,Random forest (static),+ ADWIN + accumulate,0.7065190596140559,4.0,1,7.4
+adwin-delta,0.02,synthetic,Gradient boosting (static),+ ADWIN,0.7252670711339274,3.0,1,4.4
+adwin-delta,0.02,synthetic,Gradient boosting (static),+ ADWIN + accumulate,0.7802310982358334,3.0,1,15.4
+adwin-delta,0.02,ULB drift 50%,Logistic regression (static),+ ADWIN,0.4055178531549431,10.0,1,0.7
+adwin-delta,0.02,ULB drift 50%,Logistic regression (static),+ ADWIN + accumulate,0.6000809530389628,5.0,1,1.9
+adwin-delta,0.02,ULB drift 50%,Random forest (static),+ ADWIN,0.679886805903345,1.0,1,6.0
+adwin-delta,0.02,ULB drift 50%,Random forest (static),+ ADWIN + accumulate,0.7356365878639727,1.0,1,15.4
+adwin-delta,0.02,ULB drift 50%,Gradient boosting (static),+ ADWIN,0.6378643462580804,7.0,2,18.4
+adwin-delta,0.02,ULB drift 50%,Gradient boosting (static),+ ADWIN + accumulate,0.7268527616336754,7.0,1,51.4

@@ -1,0 +1,10 @@
+numpy
+pandas
+scipy
+scikit-learn
+imbalanced-learn
+river
+shap
+matplotlib
+jupyter
+pytest

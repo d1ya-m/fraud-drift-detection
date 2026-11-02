@@ -1,0 +1,16 @@
+﻿# Exact versions the published results were produced with (Python 3.13.5, Windows 11).
+# Install with: pip install -r requirements-lock.txt   (requirements.txt lists the same packages unpinned)
+imbalanced-learn==0.14.2
+ipykernel==7.4.0
+joblib==1.6.0
+jupyter==1.1.1
+matplotlib==3.11.2
+nbformat==5.11.1
+numpy==2.5.4
+pandas==3.0.6
+pytest==9.1.1
+river==0.26.1
+scikit-learn==1.9.1
+scipy==1.18.1
+shap==0.53.0
+threadpoolctl==3.7.0

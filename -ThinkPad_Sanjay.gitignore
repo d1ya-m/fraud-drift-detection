@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+data/raw/*
+!data/raw/.gitkeep
+# results/*.csv
+# results/figures/*
+!results/figures/.gitkeep
+.DS_Store
+.vscode/
+.idea/
+
+# live-demo output (notebook Part F)
+demo_out/
