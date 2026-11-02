@@ -4,6 +4,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import pytest
 
 from src.viz.plots import plot_metric_over_time, plot_summary
 
@@ -32,10 +33,28 @@ def test_plots_write_png_files(tmp_path):
         assert path.exists() and path.stat().st_size > 10_000
 
 
+def test_reported_vs_deployed_end_to_end(tmp_path):
+    cmd = [sys.executable, str(ROOT / "experiments" / "run_reported_vs_deployed.py"),
+           "--n-samples", "20000", "--models", "logreg", "--repeats", "2", "--periods", "4", "--out", str(tmp_path)]
+    done = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+    assert done.returncode == 0, done.stderr
+
+    raw = pd.read_csv(tmp_path / "synthetic_reported_vs_deployed.csv")
+    assert set(raw["evaluation"]) == {"reported, random split", "reported, time-ordered split", "deployed"}
+    deployed = raw[raw["evaluation"] == "deployed"]
+    assert len(deployed) == 4 and deployed["start_pct"].min() == pytest.approx(40)
+    # the synopsis's claim on the synthetic stream: the shuffled estimate hides the post-drift collapse
+    reported = raw.loc[raw["evaluation"] == "reported, random split", "pr_auc"].mean()
+    after = deployed.loc[deployed["start_pct"] >= 50, "pr_auc"].mean()
+    assert reported > 0.5 and after < 0.2
+    assert (tmp_path / "figures" / "synthetic_reported_vs_deployed.png").exists()
+
+
 def test_run_experiment_end_to_end(tmp_path):
     cmd = [sys.executable, str(ROOT / "experiments" / "run_experiment.py"),
            "--n-samples", "12000", "--batch-size", "2000",
-           "--models", "logreg,online_logreg", "--detectors", "adwin", "--out", str(tmp_path)]
+           "--models", "logreg,online_logreg", "--strategies", "base,periodic,adwin,accumulate",
+           "--warmup-batches", "2", "--out", str(tmp_path)]
     done = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
     assert done.returncode == 0, done.stderr
 
@@ -44,5 +63,6 @@ def test_run_experiment_end_to_end(tmp_path):
     assert len(runs) == 6
     summary = pd.read_csv(tmp_path / "synthetic_summary.csv")
     assert len(summary) == 6 and "mean_pr_auc_after_drift" in summary.columns
+    assert {"recovery_batches", "drop", "pr_auc_trend_per_10_batches"} <= set(summary.columns)
     for name in ["pr_auc_over_time", "recall_over_time", "summary"]:
         assert (tmp_path / "figures" / f"synthetic_{name}.png").exists()

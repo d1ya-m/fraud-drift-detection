@@ -11,3 +11,6 @@ data/raw/*
 .DS_Store
 .vscode/
 .idea/
+
+# live-demo output (notebook Part F)
+demo_out/

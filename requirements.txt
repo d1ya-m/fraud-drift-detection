@@ -1,12 +1,10 @@
 numpy
 pandas
+scipy
 scikit-learn
 imbalanced-learn
 river
-xgboost
-lightgbm
 shap
 matplotlib
-seaborn
 jupyter
 pytest

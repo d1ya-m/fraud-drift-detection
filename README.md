@@ -1,6 +1,12 @@
-# Concept-Drift-Aware Credit-Card Fraud Detection
-Classical (non-deep) ML for detecting fraudulent card transactions that keeps
-up as fraud patterns drift over time.
+# Keeping Credit-Card Fraud Detectors Reliable Under Concept Drift: A Comparison of Adaptive Model-Maintenance Strategies
+Classical (non-deep) ML for detecting fraudulent card transactions, and a comparison of the strategies that keep
+such a model reliable as fraud patterns drift over time: periodic retraining, online learning and
+drift-detector-triggered retraining (ADWIN, DDM, DDM warning window, and our accumulate-after-drift variant).
+
+**Main result:** without maintenance, models lose 79–99% of PR-AUC after a drift while their test scores still
+look excellent. Periodic retraining is the most reliable fix (held-out post-drift PR-AUC 0.65 vs 0.16 frozen;
+random forest 0.75). Detector-triggered strategies trail it because the detectors learn from rare fraud labels
+and react late.
 
 ## Setup
 ```bash
@@ -12,6 +18,20 @@ pip install -r requirements.txt
 ```bash
 python experiments/run_experiment.py
 ```
+
+## Notebooks
+- **`notebooks/fraud_drift_project.ipynb`: the whole project in one notebook** (all code, EDA, experiments and
+  analysis). Run All takes about a minute: experiments are switched off and load the saved results; switch
+  them on to re-run (same code and seeds, same results)
+- `notebooks/01_eda.ipynb`: exploratory analysis of the ULB data
+- `notebooks/02_results_analysis.ipynb`: all results, organised by three research questions
+
+Part F at the end of the single notebook is a live demo: two fresh runs with random forest (about 1 and 2
+minutes) that show the model collapsing after drift and the adaptive strategies recovering. They write to
+`demo_out/`, not `results/`.
+
+**Results dashboard:** https://claude.ai/artifact/WrKbujCj6esZtvjbxrt3WZ, interactive charts of the saved results
+(shared with the team).
 
 ## Test
 ```bash
@@ -33,5 +53,10 @@ Navigate to `http://127.0.0.1:8050` in your web browser.
 ## Data
 See [data/README.md](data/README.md) to download the real datasets into `data/raw/`.
 
+<<<<<<< HEAD
 See [PIPELINE.md](PIPELINE.md) for the full build plan.
 
+=======
+See [PIPELINE.md](PIPELINE.md) for the full build plan, and
+[docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md) for the remaining tasks and how to pick one up.
+>>>>>>> 3d82e4a63c44558e0f4920b13ba0550bfc046782

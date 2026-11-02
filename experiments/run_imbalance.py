@@ -15,7 +15,7 @@ sys.path.insert(0, str(ROOT))
 
 import pandas as pd  # noqa: E402
 
-from experiments.run_experiment import evaluate, load_data  # noqa: E402
+from experiments.run_experiment import add_common_args, evaluate, load_data  # noqa: E402
 from src.drift.detectors import make_adwin  # noqa: E402
 from src.imbalance.samplers import METHODS  # noqa: E402
 from src.models.baselines import make_gradient_boosting, make_logreg, make_random_forest  # noqa: E402
@@ -31,18 +31,10 @@ FAMILIES = {
 
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--data", help="CSV path; omit to use the synthetic drifting stream")
-    p.add_argument("--batch-size", type=int, default=2000)
-    p.add_argument("--warmup-batches", type=int, default=2)
-    p.add_argument("--inject-drift", type=float, metavar="FRACTION")
+    add_common_args(p)
     p.add_argument("--models", default=",".join(FAMILIES), help=f"comma-separated subset of {list(FAMILIES)}")
     p.add_argument("--methods", default=",".join(METHODS), help=f"comma-separated subset of {list(METHODS)}")
     p.add_argument("--ratio", type=float, default=0.5, help="frauds per legitimate transaction after resampling")
-    p.add_argument("--accumulate", type=int, default=6)
-    p.add_argument("--precision-target", type=float, default=0.90)
-    p.add_argument("--n-samples", type=int, default=50_000)
-    p.add_argument("--seed", type=int, default=42)
-    p.add_argument("--out", default=str(ROOT / "results"))
     return p.parse_args()
 
 
@@ -60,7 +52,8 @@ def main():
                 return factory(seed=args.seed, imbalance=method)
             labels = {"family": title, "imbalance": METHODS[method]}
             all_results.append(evaluate(build(), None, df, args, strategy="base", **labels))
-            all_results.append(evaluate(AccumulateAfterDrift(build(), accumulate=args.accumulate), make_adwin(),
+            all_results.append(evaluate(AccumulateAfterDrift(build(), accumulate=args.accumulate),
+                                        make_adwin(delta=args.adwin_delta),
                                         df, args, strategy="+ ADWIN + accumulate", **labels))
 
     results = pd.concat(all_results, ignore_index=True)
