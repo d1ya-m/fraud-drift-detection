@@ -174,6 +174,60 @@ and feature–fraud correlations.
   after the drift; significant when the 95% CI excludes 0.
 - **Supplementary:** 4 fresh scenarios, fixed before any run, for the follow-up analysis.
 
+### 3.4a Experiments conducted (for an "Experimental setup" section)
+
+| # | Experiment | Question it answers | Setup | Main output (table in RESULTS_TABLES.md) |
+|---|---|---|---|---|
+| 1 | Main experiments | How do all models and strategies behave over time? | 6 model families × all strategies on synthetic, ULB as recorded and ULB + drift (seed 42) | T1, T3, T20; `fig_2`, `fig_3`, `fig_8` |
+| 2 | Imbalance handling | Which imbalance treatment works best? | no handling / class weights / SMOTE / undersampling; frozen and accumulate; 3 datasets | T16, `fig_6` |
+| 3 | Reported vs deployed | Does a standard test split reveal the decay? | train once on the first 40%; random vs time-ordered 70/30 split vs scoring on each later 10% | T2, `fig_1` |
+| 4 | Sensitivity sweep | Are the settings sensible? (done before testing) | accumulate 3/6/10, retrain every 2/3/5, ADWIN δ 0.0002/0.002/0.02; development scenarios only | T19 |
+| 5 | **Held-out protocol (main evaluation)** | Which strategy is best, reliably? | 10 drift scenarios (section 3.3) × 3 seeds; rule, LR, RF, GB, online LR × all strategies; paired 95% CIs | T5–T11, `fig_4` |
+| 6 | Drift severity | Does a bigger drift cause a bigger loss? | ULB: 1/2/4/6/8 swapped pairs; synthetic: shift 0.5–3; LR and RF; frozen, ADWIN, accumulate | T4, `fig_5` |
+| 7 | Error analysis | Which frauds are missed, and what do alerts cost? | RF frozen / accumulate / DDM at the operational threshold; by amount band and hour | T17 |
+| 8 | Explainability (SHAP) | What does the model look at, before and after the drift? | RF TreeExplainer on all frauds + sampled legitimate rows | T18, `fig_7` |
+| 9 | Gap analysis | Why does accumulate trail periodic retraining? | per-batch differences from experiment 5, split by phase relative to the alarm | T12, T13 |
+| 10 | Fresh-scenario test | Does the conclusion hold on new scenarios? Does a hybrid fix help? | 4 new scenarios × 3 seeds; periodic vs accumulate vs periodic + ADWIN reset | T14 |
+| 11 | Drift-signal check | Would a different signal detect drift sooner? | 4 signals × 7 scenarios × 3 frozen models | T15 |
+
+**Total compute:** about 6.5 hours on a laptop CPU. The protocol takes about 3 h and the supplementary runs
+about 2 h; everything else takes minutes.
+
+### 3.4b Implementation and system design (for an "Implementation" or "System architecture" section)
+
+**Pipeline**, in data-flow order:
+
+```
+creditcard.csv / synthetic generator
+   -> loader (validate, sort by time)  -> optional drift injection (feature swap)
+   -> stream (time-ordered batches of 10,000)
+   -> prequential loop, for each batch:  predict -> score (PR-AUC, recall, precision, FPR)
+                                          -> update drift detector -> retrain / update the model
+   -> per-batch results (CSV) -> summaries, statistics, figures -> analysis notebook
+```
+
+| Component | Module | Role |
+|---|---|---|
+| Data | `src/data/loader.py`, `stream.py`, `synthetic.py`, `drift_injection.py` | load and validate data, batch it in time order, generate the synthetic stream, inject drift |
+| Models | `src/models/baselines.py`, `online.py` | static models (LR, RF, GB, rule) and online models (River LR, ARF) |
+| Adaptive strategies | `src/models/retrain.py`, `drift_retrain.py` | periodic retraining, accumulate-after-drift, DDM warning window |
+| Drift detection | `src/drift/detectors.py` | ADWIN and DDM on the missed-fraud signal |
+| Imbalance | `src/imbalance/samplers.py` | class weights, SMOTE, undersampling (training data only) |
+| Evaluation | `src/evaluation/prequential.py`, `metrics.py`, `drift_metrics.py`, `stats.py` | test-then-train loop, metrics, recovery time, block bootstrap |
+| Explainability | `src/explain/shap_analysis.py` | SHAP feature importance |
+| Experiments | `experiments/run_*.py` (10 scripts) | one script per experiment in section 3.4a |
+| Presentation | `notebooks/fraud_drift_project.ipynb` | the whole project in one notebook |
+
+**Tools and versions:**
+- Python 3.13
+- scikit-learn 1.9.1, River 0.26.1, imbalanced-learn 0.14.2
+- SHAP 0.53.0, pandas 3.0.6, NumPy 2.5.4, SciPy 1.18.1, matplotlib 3.11.2
+
+**Quality:**
+- 89 automated tests (pytest), run on every push by GitHub Actions
+- fixed seeds and a pinned environment (`requirements-lock.txt`)
+- every result traceable to a script
+
 ### 3.5 Results, Question 1: how well do classical models detect fraud?
 ULB as recorded; models frozen after the warm-up; mean over 23 batches (notebook 02 §1.1).
 
@@ -346,17 +400,21 @@ comparisons significantly worse, none better).
 
 ## 4. Figures and tables
 
-| Use for | File (in `results/figures/`) or notebook cell |
-|---|---|
-| The hidden problem | `creditcard_drift50_reported_vs_deployed.png` |
-| Strategies over time | `creditcard_drift50_pr_auc_over_time.png`, `synthetic_pr_auc_over_time.png` |
-| Ranking of strategies | notebook 02, "Overall ranking" table |
-| Significance | `protocol_comparisons.png` (forest plot of paired 95% CIs) |
-| Severity | `severity.png` |
-| Why detectors trail | notebook 02 §6.1 tables (gap by phase, delay vs frauds) |
-| Imbalance handling | `creditcard_drift50_imbalance.png` |
-| Explainability | `creditcard_drift50_shap.png`, `synthetic_shap.png` |
-| No-drift baseline | `creditcard_pr_auc_over_time.png` (ADWIN stays quiet) |
+File names as in `report_materials/figures/`. Tables T1–T20 are in `report_materials/RESULTS_TABLES.md`.
+
+| Use for | Figure | Table |
+|---|---|---|
+| Data and EDA | `eda_1` … `eda_4`, `eda_6` | EDA_FINDINGS.md |
+| The injected drift | `eda_5_injected_drift_V14_V23.png` | |
+| The hidden problem | `fig_1_reported_vs_deployed.png` | T2 |
+| Strategies over time | `fig_2_strategies_over_time_ULB.png`, `fig_3_strategies_over_time_synthetic.png` | T3 |
+| **Ranking of strategies (main result)** | | **T5**, T6 |
+| Significance | `fig_4_paired_comparisons_CIs.png` | T8 |
+| Severity | `fig_5_drift_severity.png` | T4 |
+| Why detectors trail | | T12, T13, T14 |
+| Imbalance handling | `fig_6_imbalance_handling.png` | T16 |
+| Explainability | `fig_7_shap_before_after_drift.png` | T18 |
+| No-drift baseline | `fig_8_no_drift_baseline_ULB.png` (ADWIN stays quiet) | T1 |
 
 ---
 
